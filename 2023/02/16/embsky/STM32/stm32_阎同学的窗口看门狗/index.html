@@ -19,13 +19,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"naoemb.cf","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"naoemb.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="除非递减计数器的值在T6位变成0前被刷新，看门狗电路在达到预置的时间周期时， 会产生一个MCU复位。在递减计数器达到窗口寄存器数值之前，如果7位的递减计 数器数值(在控制寄存器中)被刷新， 那么也将产生一个MCU复位。这表明递减计数器需要在一 个有限的时间窗口中被刷新 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 递减计数器T6位">
 <meta property="og:type" content="article">
 <meta property="og:title" content="stm32_note_阎同学的窗口看门狗">
-<meta property="og:url" content="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_%E9%98%8E%E5%90%8C%E5%AD%A6%E7%9A%84%E7%AA%97%E5%8F%A3%E7%9C%8B%E9%97%A8%E7%8B%97/index.html">
+<meta property="og:url" content="https://naoemb.github.io/2023/02/16/embsky/STM32/stm32_%E9%98%8E%E5%90%8C%E5%AD%A6%E7%9A%84%E7%AA%97%E5%8F%A3%E7%9C%8B%E9%97%A8%E7%8B%97/index.html">
 <meta property="og:site_name" content="naoemb">
 <meta property="og:description" content="除非递减计数器的值在T6位变成0前被刷新，看门狗电路在达到预置的时间周期时， 会产生一个MCU复位。在递减计数器达到窗口寄存器数值之前，如果7位的递减计 数器数值(在控制寄存器中)被刷新， 那么也将产生一个MCU复位。这表明递减计数器需要在一 个有限的时间窗口中被刷新 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 递减计数器T6位">
 <meta property="og:locale" content="zh_CN">
@@ -35,7 +35,7 @@
 <meta property="article:tag" content="stm32_note">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_%E9%98%8E%E5%90%8C%E5%AD%A6%E7%9A%84%E7%AA%97%E5%8F%A3%E7%9C%8B%E9%97%A8%E7%8B%97/">
+<link rel="canonical" href="https://naoemb.github.io/2023/02/16/embsky/STM32/stm32_%E9%98%8E%E5%90%8C%E5%AD%A6%E7%9A%84%E7%AA%97%E5%8F%A3%E7%9C%8B%E9%97%A8%E7%8B%97/">
 
 
 <script id="page-configurations">
@@ -216,7 +216,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_%E9%98%8E%E5%90%8C%E5%AD%A6%E7%9A%84%E7%AA%97%E5%8F%A3%E7%9C%8B%E9%97%A8%E7%8B%97/">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.github.io/2023/02/16/embsky/STM32/stm32_%E9%98%8E%E5%90%8C%E5%AD%A6%E7%9A%84%E7%AA%97%E5%8F%A3%E7%9C%8B%E9%97%A8%E7%8B%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
