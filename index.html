@@ -1151,85 +1151,6 @@ WWDG_CFR寄存器中的WEI位开启该中断，到达0x40时产生中断(ISR)可
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_19day/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="naoemb">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="naoemb">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/02/16/embsky/STM32/stm32_19day/" class="post-title-link" itemprop="url">stm32_note_19day</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-09 22:02:25" itemprop="dateModified" datetime="2022-09-09T22:02:25+08:00">2022-09-09</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>345</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-8<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
-<h1 id="这一天没有看到老师发布日记"><a href="#这一天没有看到老师发布日记" class="headerlink" title="这一天没有看到老师发布日记"></a>这一天没有看到老师发布日记</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_20day/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1495,6 +1416,85 @@ WWDG_CFR寄存器中的WEI位开启该中断，到达0x40时产生中断(ISR)可
 <h1 id="esp8966-c"><a href="#esp8966-c" class="headerlink" title="esp8966.c"></a>esp8966.c</h1><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp8266.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;usart2.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;delay.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdlib.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> O_F	1<span class="comment">//O的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> K_F	2<span class="comment">//K的状态</span></span></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> flag = O_F;</span><br><span class="line"><span class="type">static</span> <span class="type">int</span> ok_flag = <span class="number">0</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">int</span> len = <span class="number">0</span>;<span class="comment">//保存数据长度的整数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//&quot;+IPD,13:1234567890ABC&quot;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ADD_S 	0<span class="comment">//+的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> I_S			1<span class="comment">//I的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P_S			2<span class="comment">//P的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> D_S			3<span class="comment">//D的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> H_S			4<span class="comment">//,的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LEN_S		5<span class="comment">//长度的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> DATA_S	6<span class="comment">//数据的状态</span></span></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> data_flag = ADD_S;<span class="comment">//默认是+的状态</span></span><br><span class="line">wifi_recv_handler wifi_handler = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">set_wifi_recv_handler</span><span class="params">(wifi_recv_handler h)</span><span class="comment">//设置wifi接收到数据的回调函数</span></span><br><span class="line">&#123;</span><br><span class="line">	wifi_handler = h;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">dataHandler</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> c)</span><span class="comment">//处理接收到的数据</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">static</span> <span class="type">char</span> len_buf[<span class="number">5</span>];<span class="comment">//接收到数据的字节数</span></span><br><span class="line">	<span class="type">static</span> <span class="type">int</span> i = <span class="number">0</span>;<span class="comment">//循环变量</span></span><br><span class="line">	<span class="type">static</span> <span class="type">char</span> data_buf[<span class="number">512</span>];<span class="comment">//存储接收到的数据</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">switch</span>(data_flag)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> ADD_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;+&#x27;</span>)</span><br><span class="line">										data_flag = I_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> I_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;I&#x27;</span>)</span><br><span class="line">										data_flag = P_S;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> P_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;P&#x27;</span>)</span><br><span class="line">										data_flag = D_S;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> D_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;D&#x27;</span>)</span><br><span class="line">										data_flag = H_S;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> H_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">										data_flag = LEN_S;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> LEN_S :<span class="comment">//+IPD,13:1234567890ABC</span></span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;:&#x27;</span>)</span><br><span class="line">									&#123;</span><br><span class="line">										len_buf[i] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">										len = atoi(len_buf);</span><br><span class="line">										data_flag = DATA_S;</span><br><span class="line">										i = <span class="number">0</span>;</span><br><span class="line">										<span class="keyword">break</span>;</span><br><span class="line">									&#125;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										len_buf[i] = c;</span><br><span class="line">									i++;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> DATA_S:</span><br><span class="line">									data_buf[i] = c;</span><br><span class="line">									i++;</span><br><span class="line">									<span class="keyword">if</span>(i == len)</span><br><span class="line">									&#123;</span><br><span class="line">										i = <span class="number">0</span>;</span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">										<span class="keyword">if</span>(wifi_handler)</span><br><span class="line">											wifi_handler(data_buf, len);</span><br><span class="line">										<span class="keyword">break</span>;</span><br><span class="line">									&#125;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(c == <span class="string">&#x27;&gt;&#x27;</span>)</span><br><span class="line">		ok_flag = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(ok_flag == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">switch</span>(flag)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> O_F : </span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;O&#x27;</span>)</span><br><span class="line">										flag = K_F;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> K_F : </span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;K&#x27;</span>)</span><br><span class="line">									&#123;</span><br><span class="line">										flag = O_F;</span><br><span class="line">										ok_flag = <span class="number">1</span>;</span><br><span class="line">									&#125;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										flag = O_F;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_init</span><span class="params">(<span class="type">void</span>)</span><span class="comment">//初始化的函数(初始化串口)</span></span><br><span class="line">&#123;</span><br><span class="line">	usart_2_init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_link_wifi</span><span class="params">(<span class="type">char</span> *ssid, <span class="type">char</span> *passwd)</span><span class="comment">//连接路由(需要路由的名称和路由的密码)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//AT+RST\r\n 重启无线模块</span></span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+RST\r\n&quot;</span>);</span><br><span class="line">	delay_ms(<span class="number">2000</span>);<span class="comment">//重启之后延时两秒</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//AT+CWMODE=1\r\n 选择wifi模式</span></span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CWMODE=1\r\n&quot;</span>);<span class="comment">//选择模式</span></span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);<span class="comment">//等待esp8266的OK</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//AT+CWJAP=&quot;SSID&quot;,&quot;password&quot;\r\n 连接路由</span></span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CWJAP=&quot;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(ssid);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(passwd);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//AT+CIFSR\r\n 查询分配到的IP地址(必须要查一下,否则无法建立连接)</span></span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CIFSR\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_connect</span><span class="params">(<span class="type">char</span> *ip, <span class="type">char</span> *port)</span><span class="comment">//连接TCP server</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//AT+CIPSTART=&quot;TCP&quot;,&quot;192.168.3.116&quot;,8080\r\n 建立TCP连接</span></span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CIPSTART=&quot;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;TCP&quot;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(ip);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">	usart_2_send_data(port);</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_disconnect</span><span class="params">(<span class="type">void</span>)</span><span class="comment">//断开TCP连接</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//AT+CIPCLOSE\r\n 断开TCP连接</span></span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CIPCLOSE\r\n&quot;</span>);</span><br><span class="line">	<span class="comment">//注意:有可能回复有可能不回复,所以不检测closed ok</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_send</span><span class="params">(<span class="type">char</span> *msg, <span class="type">char</span> *len)</span><span class="comment">//发送数据</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//AT+CIPSEND=4\r\n 发送数据</span></span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CIPSEND=&quot;</span>);</span><br><span class="line">	usart_2_send_data(len);</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);<span class="comment">//等待 OK</span></span><br><span class="line">	</span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);<span class="comment">//等待 &gt;</span></span><br><span class="line">	</span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(msg);</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);<span class="comment">//等待 SEND OK</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_19day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/STM32/stm32_19day/" class="post-title-link" itemprop="url">stm32_note_19day</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-09 22:02:25" itemprop="dateModified" datetime="2022-09-09T22:02:25+08:00">2022-09-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>345</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-8<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="这一天没有看到老师发布日记"><a href="#这一天没有看到老师发布日记" class="headerlink" title="这一天没有看到老师发布日记"></a>这一天没有看到老师发布日记</h1>
       
     </div>
 
