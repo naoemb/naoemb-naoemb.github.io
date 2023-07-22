@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"naoemb.cf","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="naoemb">
+<meta property="og:url" content="https://naoemb.cf/index.html">
+<meta property="og:site_name" content="naoemb">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="naoemb">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://naoemb.cf/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>naoemb</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">naoemb</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">65</span></a>
+
+  </li>
+        <li class="menu-item menu-item-笔记">
+
+    <a href="/%E7%AC%94%E8%AE%B0" rel="section"><i class="fa fa-sticky-note fa-fw"></i>笔记</a>
+
+  </li>
+        <li class="menu-item menu-item-c练习题">
+
+    <a href="/C%E7%BB%83%E4%B9%A0%E9%A2%98/" rel="section"><i class="fa fa-code fa-fw"></i>C练习题</a>
+
+  </li>
+        <li class="menu-item menu-item-unix">
+
+    <a href="/UNIX/" rel="section"><i class="fa fa-file-code-o fa-fw"></i>UNIX</a>
+
+  </li>
+        <li class="menu-item menu-item-每天英语">
+
+    <a href="/%E6%AF%8F%E5%A4%A9%E8%8B%B1%E8%AF%AD" rel="section"><i class=" fa-fw"></i>每天英语</a>
+
+  </li>
+        <li class="menu-item menu-item-musiclist">
+
+    <a href="/musiclist/" rel="section"><i class="fa fa-volume-up fa-fw"></i>歌单</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/%E9%9D%A2%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/%E9%9D%A2%E8%AF%95/" class="post-title-link" itemprop="url">面试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-03 22:39:00" itemprop="dateModified" datetime="2022-11-03T22:39:00+08:00">2022-11-03</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>39</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="/images/%E5%B0%B1%E4%B8%9A%E6%8C%87%E5%AF%BC%E8%AF%BE--%E7%AE%80%E5%8E%86%E5%88%B6%E4%BD%9C--20211119.pdf">点击浏览 就业指导课–简历制作–20211119.pdf</a></p>
+<p><a href="/images/%E4%BA%BA%E4%BA%8B%E8%AF%9D%E6%9C%AF.pdf">点击浏览 人事话术.pdf</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/%E6%B5%8B%E8%AF%95/%E9%98%B6%E6%AE%B5%E6%B5%8B%E8%AF%95%E4%B8%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/%E6%B5%8B%E8%AF%95/%E9%98%B6%E6%AE%B5%E6%B5%8B%E8%AF%95%E4%B8%80/" class="post-title-link" itemprop="url">阶段测试一</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-14 01:21:12" itemprop="dateModified" datetime="2022-08-14T01:21:12+08:00">2022-08-14</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>阶段测试一</p>
+<p>1.本套测试题内容为各大公司中<strong>真实的测试题</strong>，并且这是大家第一次做希望大家认真对待，没有什么好嘱咐的就是<strong>仔细仔细再仔细</strong>。<br>2.做题时题目的内容可能会引起某些童鞋的身体不适，请<strong>自备风油精</strong>。<br>3.还有就是请自信你是可以的，<strong>士别三日当刮目相待</strong>。<br>4.我要的不是用这套题打败你，而是用这套题告诉你以后的道路有多少坑，<strong>我们帮你渡过这些</strong>。<br>5.不要怕被击倒，所有的坑都会使你更加强大，我要的是<strong>你要对自己自信</strong>。</p>
+<p>1. 为判断字符变量c的值不是数字也不是字母时，应采用下述表达式（D）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、c&lt;&#x3D;48 || c&gt;&#x3D;57 &amp;&amp; c&lt;&#x3D;65 || c&gt;&#x3D;90 &amp;&amp; c&lt;&#x3D;97 || c&gt;&#x3D;122</p>
+<p><a href="javascript:;"></a></p>
+<p>B、!(c&lt;&#x3D;48 || c&gt;&#x3D;57 &amp;&amp; c&lt;&#x3D;65 || c&gt;&#x3D;90 &amp;&amp; c&lt;&#x3D;97 || c&gt;&#x3D;122)</p>
+<p><a href="javascript:;"></a></p>
+<p>C、c&gt;&#x3D;48 &amp;&amp; c&lt;&#x3D;57 || c&gt;&#x3D;65 &amp;&amp; c&lt;&#x3D;90 || c&gt;&#x3D;97 &amp;&amp; c&lt;&#x3D;122</p>
+<p><a href="javascript:;"></a></p>
+<p>D、!(c&gt;&#x3D;48 &amp;&amp; c&lt;&#x3D;57 || c&gt;&#x3D;65 &amp;&amp; c&lt;&#x3D;90 || c&gt;&#x3D;97 &amp;&amp; c&lt;&#x3D;122)</p>
+<p>2. 一个C语言的源程序中（A）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、必须有一个主函数</p>
+<p><a href="javascript:;"></a></p>
+<p>B、可以有多个主函数</p>
+<p><a href="javascript:;"></a></p>
+<p>C、必须有除主函数外其它函数</p>
+<p><a href="javascript:;"></a></p>
+<p>D、可以没有主函数</p>
+<p>3. 以下不能定义为用户标识符的是（D）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、itoa</p>
+<p><a href="javascript:;"></a></p>
+<p>B、Void</p>
+<p><a href="javascript:;"></a></p>
+<p>C、_3com</p>
+<p><a href="javascript:;"></a></p>
+<p>D、int</p>
+<p>4. 若以下选项中的变量已正确定义，则正确的赋值语句是（C）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、x1&#x3D;26.8%3;</p>
+<p><a href="javascript:;"></a></p>
+<p>B、1+2&#x3D;x2;</p>
+<p><a href="javascript:;"></a></p>
+<p>C、x3&#x3D;0x12;</p>
+<p><a href="javascript:;"></a></p>
+<p>D、x4&#x3D;1+2&#x3D;3;</p>
+<p>5. 以下叙述中正确的是（C）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、C语言是低级编程语言</p>
+<p><a href="javascript:;"></a></p>
+<p>B、C语言可以不用编译就能被计算机识别执行</p>
+<p><a href="javascript:;"></a></p>
+<p>C、C语言以接近英语国家的自然语言和数学语言作为语言的表达形式</p>
+<p><a href="javascript:;"></a></p>
+<p>D、C语言出现的最晚，具有其他语言的一切优点</p>
+<p>6. C语言中用于结构化程序设计的3种基本结构是（A）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、顺序结构、选择结构、循环结构</p>
+<p><a href="javascript:;"></a></p>
+<p>B、if、switch、break</p>
+<p><a href="javascript:;"></a></p>
+<p>C、for、while、do-while</p>
+<p><a href="javascript:;"></a></p>
+<p>D、if、for、continue</p>
+<p>7. 在while（!x）语句中的!x与下面条件表达式等价的是（D）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、x!&#x3D;0</p>
+<p><a href="javascript:;"></a></p>
+<p>B、x&#x3D;&#x3D;1</p>
+<p><a href="javascript:;"></a></p>
+<p>C、x&#x3D;&#x3D;2</p>
+<p><a href="javascript:;"></a></p>
+<p>D、x&#x3D;&#x3D;0</p>
+<p>8. 有以下程序：<br>int i&#x3D;1,j&#x3D;1,k&#x3D;2;<br>if((j++||k++)&amp;&amp;i++)<br>    printf(“%d,%d,%d\n”,i,j,k);<br>执行后的输出结果是（C）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、1,1,2</p>
+<p><a href="javascript:;"></a></p>
+<p>B、2,2,1</p>
+<p><a href="javascript:;"></a></p>
+<p>C、2,2,2</p>
+<p><a href="javascript:;"></a></p>
+<p>D、2,2,3</p>
+<p>9. 有以下程序：<br>int i,s&#x3D;0;<br>for(i&#x3D;1;i&lt;10;i+&#x3D;2)<br>    s+&#x3D;i+1;<br>printf(“%d\n”,s);<br>程序执行后的输出结果是（D）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、自然数1～9的累加和</p>
+<p><a href="javascript:;"></a></p>
+<p>B、自然数1～10的累加和</p>
+<p><a href="javascript:;"></a></p>
+<p>C、自然数1～9中奇数之和</p>
+<p><a href="javascript:;"></a></p>
+<p>D、自然数1～10中偶数之和</p>
+<p>10. 下列运算表达式中哪个选项的含义不同（B）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、a+&#x3D;1;</p>
+<p><a href="javascript:;"></a></p>
+<p>B、a+1;</p>
+<p><a href="javascript:;"></a></p>
+<p>C、a++;</p>
+<p><a href="javascript:;"></a></p>
+<p>D、++a;</p>
+<p>11. 以下说法正确的是（C）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、C语言程序总是从第一个函数开始执行</p>
+<p><a href="javascript:;"></a></p>
+<p>B、在C语言程序中，要调用函数必须在main()函数中定义</p>
+<p><a href="javascript:;"></a></p>
+<p>C、C语言程序总是从main()函数开始执行</p>
+<p><a href="javascript:;"></a></p>
+<p>D、C语言程序中的main()函数必须放在程序的开始部分</p>
+<p>12. C语言中不合法的字符串常量是（B）？</p>
+<p><a href="javascript:;"></a></p>
+<p>A、”\121”</p>
+<p><a href="javascript:;"></a></p>
+<p>B、’y’</p>
+<p><a href="javascript:;"></a></p>
+<p>C、”\n\n”</p>
+<p><a href="javascript:;"></a></p>
+<p>D、”ABCD\x6d”</p>
+<p>13. 下述关于break语句的描述中，（C）是不正确的。</p>
+<p><a href="javascript:;"></a></p>
+<p>A、break语句可用于循环体内，它将退出该循环</p>
+<p><a href="javascript:;"></a></p>
+<p>B、break语句可用于switch语句中，它将退出switch语句</p>
+<p><a href="javascript:;"></a></p>
+<p>C、break语句可用于if体内，它将退出if语句</p>
+<p><a href="javascript:;"></a></p>
+<p>D、break语句在一个循环体内可以出现多次</p>
+<p>14. 下面有关for循环的正确描述是（D）。</p>
+<p><a href="javascript:;"></a></p>
+<p>A、for循环只能用于循环次数己经确定的情况</p>
+<p><a href="javascript:;"></a></p>
+<p>B、for循环是先执行循环体语句，后判定表达式</p>
+<p><a href="javascript:;"></a></p>
+<p>C、在for循环中，不能用break语句跳出循环体</p>
+<p><a href="javascript:;"></a></p>
+<p>D、for循环体语句中，可以包含多条语句，但要用花括号括起来</p>
+<p>15. 如执行以下语句,for (I&#x3D;1;I&lt;&#x3D;100;I++){sum&#x3D;sum+I;}循环结束后I值是（C）。</p>
+<p><a href="javascript:;"></a></p>
+<p>A、99</p>
+<p><a href="javascript:;"></a></p>
+<p>B、100</p>
+<p><a href="javascript:;"></a></p>
+<p>C、101</p>
+<p><a href="javascript:;"></a></p>
+<p>D、102</p>
+<p>16. 在下面的函数声明中运行的结果是（AD）？<br>int i &#x3D; 10, j &#x3D; 10;  </p>
+<p>while(–i &amp;&amp; j–);  </p>
+<p>printf(“i &#x3D; %d j &#x3D; %d\n”, i, j);【多选题】</p>
+<p><a href="javascript:;"></a></p>
+<p>A、i &#x3D; 0</p>
+<p><a href="javascript:;"></a></p>
+<p>B、i &#x3D; 1</p>
+<p><a href="javascript:;"></a></p>
+<p>C、j &#x3D; 0</p>
+<p><a href="javascript:;"></a></p>
+<p>D、j &#x3D; 1</p>
+<p>17. 在下列定义中，哪种定义符合C语言标准（ACD）？【多选题】</p>
+<p><a href="javascript:;"></a></p>
+<p>A、_A</p>
+<p><a href="javascript:;"></a></p>
+<p>B、case</p>
+<p><a href="javascript:;"></a></p>
+<p>C、_1A</p>
+<p><a href="javascript:;"></a></p>
+<p>D、Int</p>
+<p>18. 若有以下语句,则求偶数的表达式正确的是（BCD）？【多选题】</p>
+<p><a href="javascript:;"></a></p>
+<p>A、x % 2 !&#x3D; 0</p>
+<p><a href="javascript:;"></a></p>
+<p>B、!(x%2)</p>
+<p><a href="javascript:;"></a></p>
+<p>C、x%2&#x3D;&#x3D;0</p>
+<p><a href="javascript:;"></a></p>
+<p>D、!(x&amp;0x01)</p>
+<p>19. 以下描述正确的选项是（ABD）？【多选题】</p>
+<p><a href="javascript:;"></a></p>
+<p>A、十进制整数13的八进制是15</p>
+<p><a href="javascript:;"></a></p>
+<p>B、十六进制数字0x14的八进制是24</p>
+<p><a href="javascript:;"></a></p>
+<p>C、二进制1100100的八进制是145</p>
+<p><a href="javascript:;"></a></p>
+<p>D、八进制数字64的十进制数是52</p>
+<p>20. 若有下列程序<br>int a &#x3D; 10, b &#x3D; 20;  </p>
+<p>while(a–)<br>{<br>b -&#x3D; –a;<br>}  </p>
+<p>printf(“a &#x3D; %d b &#x3D; %d\n”, a ,b);则执行结果是（AD）？【多选题】</p>
+<p><a href="javascript:;"></a></p>
+<p>A、a &#x3D; -1</p>
+<p><a href="javascript:;"></a></p>
+<p>B、a &#x3D; 0</p>
+<p><a href="javascript:;"></a></p>
+<p>C、b &#x3D; -1</p>
+<p><a href="javascript:;"></a></p>
+<p>D、b &#x3D; 0</p>
+<p>21. C语言描述“x和y都大于或等于z”的表达式是：</p>
+<p>x &gt;&#x3D; z &amp;&amp; y &gt;&#x3D; z</p>
+<p>22. sizeof关键字是一个？</p>
+<p>运算符</p>
+<p>23. 专门用于测试数据类型所占用的字节数的运算符是？</p>
+<p>sizeof</p>
+<p>24. C语言用来实现循环的结构化语句除了for、while、do…while以外还有哪个关键字？</p>
+<p>goto</p>
+<p>25. 若x和n都是int型变量，且x和n的初值都是6，则计算表达式x+&#x3D;n++后，x的值为？</p>
+<p>12</p>
+<p>26. 若x和n都是int型变量，且x和n的初值都是7，则计算表达式x+&#x3D;n++后，n的值为？</p>
+<p>8</p>
+<p>27. 在C语言中唯一的一个三目运算符是（写出中文名字）</p>
+<p>条件运算符</p>
+<p>28. char ch &#x3D; ‘a’ + ‘8’ - ‘3’；printf（“%d”, ch）；打印出的结果是多少？</p>
+<p>102</p>
+<p>29. int a，b，d &#x3D; 241；a &#x3D; d &#x2F; 100 % 9；b &#x3D; (-1)；printf(“%d，%d\n”，b，a)；程序的输出结果是多少？</p>
+<p>-1,2</p>
+<p>30. 已知有定义char c &#x3D; -100;请表示在内存中是如何存储的c变量？</p>
+<p>10011100</p>
+<p>31. 设x为int型变量,则执行以下语句后x &#x3D; 10；x +&#x3D; x -&#x3D; x - x；x的值为？</p>
+<p>20</p>
+<p>32. 已知int x&#x3D;5，y&#x3D;5，z&#x3D;5；执行语句x %&#x3D; y + z；之后x的值是？</p>
+<p>5</p>
+<p>33. 下列程序执行后的输出结果是int x &#x3D; ‘f’；printf(“%d\n”，’A’+ ( x - ‘a’ +1))；</p>
+<p>71</p>
+<p>34. 有以下程序int x &#x3D; 0，y &#x3D; 0，z &#x3D; 0；++x || ++y || ++z；printf(“%d %d %d\n”，x，y，z)；执行后输出结果是</p>
+<p>1 0 0</p>
+<p>35. 已知int i &#x3D; 10；执行表达式i &gt;&#x3D; 20 - i；之后，i的值是？</p>
+<p>10</p>
+<p>36. 已知int x &#x3D; 1，y；执行下述语句后打印输出的是？y &#x3D; (++x &gt; 5) &amp;&amp; (++x &lt; 10)；printf（“x &#x3D; %d y &#x3D; %d\n”, x, y）；</p>
+<p>x &#x3D; 2, y &#x3D; 0</p>
+<p>37. int x &#x3D; 0，y &#x3D; 1；执行表达式(!x || y–)之后再执行printf（“x &#x3D; %d y &#x3D; %d\n”, x, y）；打印输出的结果是？</p>
+<p>x &#x3D; 0, y &#x3D; 1</p>
+<p>38. 有以下程序int a &#x3D; -1，b &#x3D; 1；if((++a &lt; 0) &amp;&amp; !(b– &lt;&#x3D; 0)) printf(“%d %d\n”，a，b)；else printf(“%d %d\n”，b，a)；执行后输出结果是？</p>
+<p>1 0</p>
+<p>39. 有以下程序<br>int m &#x3D; 5；<br>if(m++ &gt; 5)<br>    printf(“1 %d\n”，m)；<br>else<br>     printf(“2 %d\n”，m–)；<br>执行后输出结果是？</p>
+<p>2 6</p>
+<p>40. 以下程序的输出结果是i<br>nt a &#x3D; 0，b &#x3D; 1，c &#x3D; 0，d&#x3D;20；<br>if(a)<br>    d &#x3D; d - 10；<br>else if(!b)<br>    if(!c)<br>        d &#x3D; 15；<br>    else<br>        d &#x3D; 25；<br>printf(“d &#x3D; %d\n”，d)；</p>
+<p>答案：20</p>
+<p>41. C语言的变量必须先定义再使用。对</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>42. _ya是不合法的C语言标识符。错</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>43. C语言是一种结构化程序设计语言。对</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>44. 在C语言中，数据类型的长度排列顺序为:char&lt;int&lt;long。对</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>45. while语句构成的循环不能用其他语句构成的循环来代替。错</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>46. C语言的数组是在内存中分配连续的存储单元。对</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>47. 运算符&#x2F;和%要求参加运算的对象均为整型变量。错</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>48. C语言认为名为Student和student的变量是不同变量。对</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>49. do-while语句构成的循环只能用break语句退出。错</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>50. int类型的变量可以存储浮点类型的数据。错</p>
+<p><a href="javascript:;"></a></p>
+<p>对</p>
+<p><a href="javascript:;"></a></p>
+<p>错</p>
+<p>51. 大家都知道在linux下一切皆文件，那么在linux中文件类型都有哪些？请尽可能的详细描述都有哪些文件？</p>
+<p>普通文件 链接文件 目录文件 管道文件 网络套接字文件 字符设备文件 块设备文件</p>
+<p>52. 请描述suid sgid 和 sticky的特点</p>
+<p>给命令加权限，所有用户执行命令以所有者执行，sgid修改文件所属组，sticky使用户在目录中只能删除自己创建的文件，不能删除其它文件</p>
+<p>53. 在无符号16位的环境中计算表达式0xF8 &lt;&lt; 3得到的结果通过不同的进制表示（二进制 八进制 十进制 十六进制）</p>
+<p>11111000000 3700 1984 7c0</p>
+<p>54. 已知有一32bit的寄存器GPIOA_BASE，如果想要把该寄存器的第18 19位清零其他位保持不变如何操作？</p>
+<p>GPIOA_BASE &amp;&#x3D; ~(3 &lt;&lt; 18);</p>
+<p>55. 已知有一32bit的寄存器GPIOA_BASE，如果想要把该寄存器的第15-12位赋值成1010其他位保持不变应该如何操作？</p>
+<p>GPIOA_BASE &amp;&#x3D; ~(15 &lt;&lt; 12);&#x2F;&#x2F;清零<br>GPIOA_BASE |&#x3D; (10 &lt;&lt; 12);</p>
+<p>56. 设计一套程序求1000000-1001000以内的所有素数</p>
+<p>#include &lt;stdio.h&gt;<br>int main (void)<br>{<br>    int i &#x3D; 0, j &#x3D; 0;</p>
+<pre><code>for(i = 1000000; i &lt; 1001000; i++)
+&#123;
+    for(j = 2; j &lt; i; j++)
+    &#123;
+        if(i % j == 0)
+        &#123;
+            break;
+        &#125;
+    &#125;
+    if(i == j)
+    &#123;
+        printf (&quot;%d\n&quot;,i);
+    &#125;
+&#125;
+return 0;
+</code></pre>
+<p>}</p>
+<p>57. 假设有一个池塘，里面有无穷多的水。现在有2个空水壶，容积分别为5升和6升，如何只用这2个空水壶从池塘里取出3升的水。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%94%A8%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%94%A8%E6%B3%95/" class="post-title-link" itemprop="url">函数指针操作实例</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-14 01:21:12" itemprop="dateModified" datetime="2022-08-14T01:21:12+08:00">2022-08-14</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>564</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="第一种用法"><a href="#第一种用法" class="headerlink" title="第一种用法"></a>第一种用法</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">void</span> (*pfun)(<span class="type">int</span> data);</span><br><span class="line"><span class="type">void</span> <span class="title function_">myfun</span><span class="params">(<span class="type">int</span> data)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;get data:%d\n&quot;</span>,data);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">	pfun = myfun;</span><br><span class="line">	(*pfun)(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="第二种用法"><a href="#第二种用法" class="headerlink" title="第二种用法"></a>第二种用法</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">typedef</span> <span class="title function_">void</span> <span class="params">(*pfun)</span><span class="params">(<span class="type">int</span> data)</span>;</span><br><span class="line"><span class="comment">/*typedef的功能是定义新的类型。第一句就是定义了一种 pfun 的类型，并定义这种类型为指向某种函数的指针，这种函数以一个 int 为参数并返回 void 类型。*/</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">myfun</span><span class="params">(<span class="type">int</span> data)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;get data:%d\n&quot;</span>,data);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">	pfun p= myfun;      <span class="comment">//函数指针指向执行函数的地址</span></span><br><span class="line">	p(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_22day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/STM32/stm32_22day/" class="post-title-link" itemprop="url">stm32_note_22day</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-15 20:38:32" itemprop="dateModified" datetime="2022-09-15T20:38:32+08:00">2022-09-15</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>578</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-15<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="一-物联网云服务器"><a href="#一-物联网云服务器" class="headerlink" title="一.物联网云服务器"></a>一.物联网云服务器</h1><pre><code>    短距无线通信的模块-&gt;nRF模块、WiFi
+    华为物联网中-&gt;云、管、端
+    物联网云服务器
+        YeeLink		出现比较早的物联网云服务器
+        ESLink		东方瑞通自己的物联网云服务器
+            企业用户(各大公司、医院、高校)
+        Ocean Connect	华为物联网云服务器
+        小米IoT		小米物联网云服务器
+        AIoT		阿里物联网云服务器
+        百度天工		百度物联网云服务器
+         		移动物联网云服务器
+        ...
+    ESLink
+</code></pre>
+<p>ESLink<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/23day/ESLink.png"></p>
+<p><a href="images/2022-8-15_STM32/2022-8-15_STM32/note/23day/mqtt.apk">点击下载 mqtt.apk</a></p>
+<pre><code>    私有的物联网云服务器
+    iot.embsky.com
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_%E9%98%8E%E5%90%8C%E5%AD%A6%E7%9A%84%E7%AA%97%E5%8F%A3%E7%9C%8B%E9%97%A8%E7%8B%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/STM32/stm32_%E9%98%8E%E5%90%8C%E5%AD%A6%E7%9A%84%E7%AA%97%E5%8F%A3%E7%9C%8B%E9%97%A8%E7%8B%97/" class="post-title-link" itemprop="url">stm32_note_阎同学的窗口看门狗</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-09 22:33:31" itemprop="dateModified" datetime="2022-09-09T22:33:31+08:00">2022-09-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>除非递减计数器的值在T6位变成0前被刷新，看门狗电路在达到预置的时间周期时，
+会产生一个MCU复位。在递减计数器达到窗口寄存器数值之前，如果7位的递减计
+数器数值(在控制寄存器中)被刷新， 那么也将产生一个MCU复位。这表明递减计数器需要在一
+个有限的时间窗口中被刷新
+========================================================
+递减计数器T6位变成0前刷新——当递减计数器的值小于 0x40产生复位。
+递减计数器达到窗口寄存器数值之前不能被刷新
+如果启动了看门狗并且允许中断，当递减计数器等于0x40时产生早期唤醒中断(EWI)，
+    它可以被用于重装载计数器以避免WWDG复位
+========================================================
+
+
+如果看门狗被启动(WWDG_CR寄存器中的WDGA位被置’1’)， 并且当7位(T[6:0])递减计数器从
+0x40翻转到0x3F(T6位清零)时，则产生一个复位。如果软件在计数器值大于窗口寄存器中的数
+值时重新装载计数器，将产生一个复位。
+==========================================================
+WWDG_CR寄存器中的WDGA位被置’1’启动看门狗
+递减计数器从0100 0000--&gt;0011 1111会产生一个复位
+计数器值大于窗口寄存器中的数值时重新装载计数器会产生一个复位
+必须定期地写入WWDG_CR寄存器,必须在1111 1111(0XFF)和1100 0000(0XC0)之间
+只有当计数器值小于窗口寄存器的值时，才能进行写操作。
+==========================================================
+
+
+递减计数器处于自由运行状态，即使看门狗被禁止，递减计数器仍继续递减计数。当看门
+狗被启用时，T6位必须被设置，以防止立即产生一个复位。
+T[5:0]位包含了看门狗产生复位之前的计时数目；复位前的延时时间在一个最小值和一个最
+大值之间变化，这是因为写入WWDG_CR寄存器时，预分频值是未知的。
+配置寄存器(WWDG_CFR) 中包含窗口的上限值：要避免产生复位，递减计数器必须在其值
+小于窗口寄存器的数值并且大于0x3F时被重新装载，图155描述了窗口寄存器的工作过程。
+另一个重装载计数器的方法是利用早期唤醒中断(EWI)。设置WWDG_CFR寄存器中的WEI
+位开启该中断。当递减计数器到达0x40时，则产生此中断，相应的中断服务程序(ISR)可以
+用来加载计数器以防止WWDG复位。在WWDG_SR寄存器中写’0’可以清除该中断。
+注： T6位可以被用来产生一个软件复位(WDGA位被置位，T6位清零)
+==========================================================
+看门狗被启用时，T6位必须被设置
+寄存器(WWDG_CFR) 中包含窗口的上限值递减计数器必须在
+    其值小于窗口寄存器的数值并且大于0x3F时被重新装载
+WWDG_CFR寄存器中的WEI位开启该中断，到达0x40时产生中断(ISR)可以用来加载计数器
+    在WWDG_SR寄存器中写’0’可以清除该中断。
+控制寄存器(WWDG_CR) 
+    0~7位有效
+    7号位控制看门狗的开启与关闭
+        0：禁止看门狗
+        1：启用看门狗
+    6号位至0时产生中断
+配置寄存器(WWDG_CFR) 
+    0~9位有效
+    9: 提前唤醒中断
+        此位若置1，则当计数器值达到40h，即产生中断。
+        此中断只能由硬件在复位后清除。
+    7、8；时基预分频器的时基可根据如下修改：
+        00: CK计时器时钟(PCLK1除以4096)除以1 
+        01: CK计时器时钟(PCLK1除以4096)除以2 
+        10: CK计时器时钟(PCLK1除以4096)除以4 
+        11: CK计时器时钟(PCLK1除以4096)除以8 
+    0~6: 7位窗口值
+        这些位包含了用来与递减计数器进行比较用的窗口值。
+状态寄存器(WWDG_SR) 
+    0位有效
+    0: 提前唤醒中断标志
+        当计数器值达到40h时，此位由硬件置1。
+        它必须通过软件写’0’来清除。对此位写’1’无效。
+        若中断未被使能，此位也会被置’1’。
+
+在总线图里知WWDG的时钟频率位36MHz
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_18day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/STM32/stm32_18day/" class="post-title-link" itemprop="url">stm32_note_18day</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-07 17:56:08" itemprop="dateModified" datetime="2022-09-07T17:56:08+08:00">2022-09-07</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-7<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<pre><code>一.RTC
+    1.RTC的简介
+    RTC叫做Real Time Clock,也叫做实时时钟
+    在市面上的芯片中,有些芯片内部集成了RTC的外设功能,有些芯片没有集成
+    我们使用的STM32F103RBT6芯片中集成了RTC的外设功能
+    (STM32F407ZGT6芯片中集成了RTC的外设功能)
+    
+    RTC在STM32F103RBT6芯片中属于定时器的外设资源(属于其他定时器)
+    RTC可以为程序员提供万年历的功能(可以提供年 月 日 星期 时 分 秒的数据)
+    
+    既然RTC属于定时器的资源
+    无论何种定时器,都是由 时钟频率 和 计数值 决定定时长短的
+
+    2.查找RTC的时钟频率
+    1)通过时钟树的分析可以了解到
+        可以为RTC提供时钟频率的时钟源一共有三种
+        (LSE LSI 和 HSE/128)
+        但是已知LSI是给独立看门狗(IWDG)提供时钟频率的
+        HSE是给锁相环(PLL)提供基础时钟频率的
+        所以会选择LSE为RTC提供时钟频率的
+    2)通过芯片手册中有关RTC的介绍
+        RTC选择了有LSE提供时钟频率,会把LSE先进过分频再进行使用
+        需要经过0x7FFF(32767)分频
+        ---------------------------------------------------------------
+        问题 : 为什么不是32768分频
+        因为硬件默认会把分频系数加1,目的是为了防止程序员写0分频
+        ---------------------------------------------------------------
+    
+    3.查找RTC的计数值范围
+    1)通过芯片手册中有关RTC的介绍
+        RTC使用了两个16位的寄存器来存储RTC的计数值
+        存储的计数值是从当前时间到基准时间的秒数
+        ----------------------------------------------------
+        例如 : 当前时间是2022年9月7日 星期三 10:05:20
+        RTC的计数值是
+            从1970年1月1日 00:00:00到当前时间的秒数
+        从1970年 - 2021年所有的秒数(平年 闰年)
+        从2022年1月 - 2022年8月所有的秒数(平年 闰年)
+        2022年9月1日 - 2022年9月6日所有的秒数
+        2022年9月7日00时 - 2022年9月7日10时所有的秒数
+        2022年9月7日10时0分 - 2022年9月7日10时5分所有的秒数
+        2022年9月7日10时5分0秒-2022年9月7日10时5分20秒所有秒数
+        ----------------------------------------------------
+        STM32F103的官方固件只提供了
+        RTC_SetCounter : 设置计数值(秒数)
+            需要先把当前时间到基准时间的秒数求出
+        RTC_GetCounter : 获取计数值(秒数)
+            需要把读出的计数值根据基准时间转换成年月日时分秒
+        ----------------------------------------------------
+        struct time_st
+        &#123;
+            int Y;
+            int M;
+            int D;
+            int W;
+            int h;
+            int m;
+            int s;
+        &#125;;
+
+    4)通过芯片的手册了解RTC
+        为了保证RTC在主设备断电的情况下仍然可以正常工作
+            需要连接纽扣电池
+        问题1.怎么判断是第一次操作RTC?
+        可以在备份寄存器中存储特定的数据进行判断
+
+============================
+作业
+1.把今天讲过的内容完整的复习一遍
+2.把STM32F407开发板的RTC搞定
+3.推进STM32F407开发板的项目工程
+4.推进最终项目
+============================
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_19day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/STM32/stm32_19day/" class="post-title-link" itemprop="url">stm32_note_19day</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-09 22:02:25" itemprop="dateModified" datetime="2022-09-09T22:02:25+08:00">2022-09-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>345</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-8<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="这一天没有看到老师发布日记"><a href="#这一天没有看到老师发布日记" class="headerlink" title="这一天没有看到老师发布日记"></a>这一天没有看到老师发布日记</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_20day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/STM32/stm32_20day/" class="post-title-link" itemprop="url">stm32_note_20day</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-09 21:35:28" itemprop="dateModified" datetime="2022-09-09T21:35:28+08:00">2022-09-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>382</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-9<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<p>开发板俯视图<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/20day/01.%E5%BC%80%E5%8F%91%E6%9D%BF%E4%BF%AF%E8%A7%86%E5%9B%BE.PNG"></p>
+<p>Nrf通信框架<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/20day/02.Nrf%E9%80%9A%E4%BF%A1%E6%A1%86%E6%9E%B6.png"></p>
+<p>Nrf硬件图<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/20day/03Nrf%E7%A1%AC%E4%BB%B6%E5%9B%BE.png"></p>
+<p>Nrf的工作模式<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/20day/04.Nrf%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F.png"></p>
+<p>SPI协议<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/20day/05.SPI%E5%8D%8F%E8%AE%AE.png"></p>
+<p>Nrf硬件原理图<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/20day/06.Nrf%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86%E5%9B%BE.png"></p>
+<p>带边缘计算的项目框架<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/20day/%E5%B8%A6%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_21day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/STM32/stm32_21day/" class="post-title-link" itemprop="url">stm32_note_21day</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-13 18:53:22" itemprop="dateModified" datetime="2022-09-13T18:53:22+08:00">2022-09-13</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-13<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="一-温故知新"><a href="#一-温故知新" class="headerlink" title="一.温故知新"></a>一.温故知新</h1><pre><code>    短距无线通信模块-&gt;nRF24L01
+    接口-&gt;SPI接口
+    SPI一共有4条线
+    (CSN&lt;片选&gt;\SCK&lt;时钟线&gt;\MOSI&lt;主出从入&gt;\MISO&lt;主入从出&gt;)
+    全双工的工作模式
+    nRF可以实现一对一的通信,也可以实现一对多的通信
+    最多是一对六的通信-&gt;有6个接收数据的通道
+    在不同的频道下可以实现多对多的通信
+</code></pre>
+<h1 id="二-短距无线通信模块"><a href="#二-短距无线通信模块" class="headerlink" title="二.短距无线通信模块"></a>二.短距无线通信模块</h1><pre><code>    WiFi模块-&gt;使用的芯片型号是ESP8266(是乐鑫公司的芯片)
+    本身也是一个32bit的单片机芯片
+    只不过乐鑫公司在生产ESP8266芯片时在内部已经烧写了TCP/UDP的协议栈
+    ESP8266的接口是USART/UART的接口需要连接到我们开发板的USART2上
+    USART2_TX	PA2
+    USART2_RX	PA3
+需要通过STM32的USART2为ESP8266模块发送AT指令(WiFi\GPRS\NB-IoT)
+</code></pre>
+<p>AT指令集<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/21day/01AT%E6%8C%87%E4%BB%A4%E9%9B%8601.png"></p>
+<p><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/21day/01AT%E6%8C%87%E4%BB%A4%E9%9B%8602.png"></p>
+<p>AT指令使用示例<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/21day/02AT%E6%8C%87%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B.png">		</p>
+<h2 id="单连接-TCP-Client"><a href="#单连接-TCP-Client" class="headerlink" title="单连接 TCP Client"></a>单连接 TCP Client</h2><p>ESP8266单连接<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/21day/03ESP8266%E5%8D%95%E8%BF%9E%E6%8E%A501.png"></p>
+<p><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/21day/03ESP8266%E5%8D%95%E8%BF%9E%E6%8E%A502.png"></p>
+<pre><code>        1.设置WiFi模式
+            &quot;AT+CWMODE=1\r\n&quot;
+            需要接收&quot;OK&quot;
+        如果设置成单连接 TCP Client可以修改成=1
+            注意 :
+            =1	softAP模式
+            =2	station模式
+            =3	softAP+station模式
+        
+        2.连接路由
+            &quot;AT+CWJAP=&quot;SSID&quot;,&quot;password&quot;\r\n&quot;
+            需要接收&quot;OK&quot;
+            注意 :
+            1)
+            SSID	是路由器的名称
+            password	是路由器的密码
+            2)
+            路由器的名称不能是中文,也不能有空格
+            尽量是大小写英文字母
+            3)
+            路由器的密码必须要有
+            4)
+            在小范围之内WiFi信号会有干扰,有可能会影响实验
+
+        3.查询设备 IP 地址
+            &quot;AT+CIFSR\r\n&quot;
+            注意 :
+            1)只需要有查询的指令发送即可,不需要接收查询的结果
+
+        4.ESP8266 作为 client 连接到 TCP server
+            &quot;AT+CIPSTART=&quot;TCP&quot;,&quot;IP&quot;,PORT\r\n&quot;
+            需要接收&quot;OK&quot;
+            注意 :
+            1)
+            IP	指的是Server端的IP地址(PC机获取的IP)
+            PORT	指的是Server端的端口号(可以自己设置)
+
+        5.发送数据
+            &quot;AT+CIPSEND=4\r\n&quot;
+            首先需要接收&quot;OK&quot;
+            然后需要接收&#39;&gt;&#39;
+            在&#39;&gt;&#39;之后写上你要发送的数据
+            发送完数据之后,需要接收&quot;SEND OK&quot;
+            注意 :
+            1)
+            =4	代表将来要发送4bytes数据(不算&#39;\0&#39;)
+            2)
+            如果算上&#39;\0&#39;
+            =6	&quot;Hello&quot;会造成忙等
+
+        6.接收数据
+            &quot;+IPD,n:xxxxxxxxxx&quot;
+            注意 : 
+            1)
+            n	代表的是接收到数据的字节数
+            2)
+            xxxx	代表的是接收到的数据
+
+        7.断开 TCP 连接
+            &quot;AT+CIPCLOSE\r\n&quot;
+            注意 :
+            1)只需要发送断开连接的指令,不需要接收应答
+</code></pre>
+<h2 id="透传模式"><a href="#透传模式" class="headerlink" title="透传模式"></a>透传模式</h2><p>ESP8266透传<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/21day/04ESP8266%E9%80%8F%E4%BC%A0.png"></p>
+<pre><code>        1.在连接完TCP Server端之后需要使能透传模式
+            &quot;AT+CIPMODE=1\r\n&quot;
+            需要接收&quot;OK&quot;
+        
+        2.发送数据
+            &quot;AT+CIPSEND\r\n&quot;
+            首先需要接收&quot;OK&quot;
+            然后需要接收&#39;&gt;&#39;
+            在&#39;&gt;&#39;之后写上你要发送的数据
+            注意 : 
+            1)在透传模式下不需要指定发送数据的字节数
+        
+        3.退出发送数据
+            &quot;+++&quot;
+            代表要退出发送数据
+
+        4.断开 TCP 连接
+            &quot;AT+CIPCLOSE\r\n&quot;
+            注意 :
+            1)只需要发送断开连接的指令,不需要接收应答
+
+=============================
+任务
+1.把STM32F103开发板上的TCP client连接调通
+2.组内找同学把STM32F103开发板上的固定远端的UDP通信调通
+3.组内找同学把STM32F407开发板上的TCP client连接调通
+=============================
+</code></pre>
+<h1 id="esp8266-h"><a href="#esp8266-h" class="headerlink" title="esp8266.h"></a>esp8266.h</h1><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __ESP8266_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __ESP8266_H</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">ESP8266模块是WIFI无线通讯模块,该模块是串口接口</span></span><br><span class="line"><span class="comment">连接到了我们开发板上的USART2</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stm32f10x_conf.h&quot;</span><span class="comment">//包含该头文件所有的外设头文件均已包含</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="title function_">void</span> <span class="params">(*wifi_recv_handler)</span><span class="params">(<span class="type">char</span> *buf, <span class="type">int</span> len)</span>;<span class="comment">//通过typedef定义函数指针类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">set_wifi_recv_handler</span><span class="params">(wifi_recv_handler h)</span>;<span class="comment">//设置wifi接收到数据的回调函数</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">esp8266_init</span><span class="params">(<span class="type">void</span>)</span>;<span class="comment">//初始化的函数(初始化串口)</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">esp8266_link_wifi</span><span class="params">(<span class="type">char</span> *ssid, <span class="type">char</span> *passwd)</span>;<span class="comment">//连接路由(需要路由的名称和路由的密码)</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">esp8266_connect</span><span class="params">(<span class="type">char</span> *ip, <span class="type">char</span> *port)</span>;<span class="comment">//连接TCP server</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">esp8266_disconnect</span><span class="params">(<span class="type">void</span>)</span>;<span class="comment">//断开TCP连接</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">esp8266_send</span><span class="params">(<span class="type">char</span> *msg, <span class="type">char</span> *len)</span>;<span class="comment">//发送数据</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">dataHandler</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> c)</span>;<span class="comment">//处理接收到的数据</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+</code></pre>
+<h1 id="esp8966-c"><a href="#esp8966-c" class="headerlink" title="esp8966.c"></a>esp8966.c</h1><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp8266.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;usart2.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;delay.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdlib.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> O_F	1<span class="comment">//O的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> K_F	2<span class="comment">//K的状态</span></span></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> flag = O_F;</span><br><span class="line"><span class="type">static</span> <span class="type">int</span> ok_flag = <span class="number">0</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">int</span> len = <span class="number">0</span>;<span class="comment">//保存数据长度的整数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//&quot;+IPD,13:1234567890ABC&quot;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ADD_S 	0<span class="comment">//+的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> I_S			1<span class="comment">//I的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P_S			2<span class="comment">//P的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> D_S			3<span class="comment">//D的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> H_S			4<span class="comment">//,的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LEN_S		5<span class="comment">//长度的状态</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> DATA_S	6<span class="comment">//数据的状态</span></span></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> data_flag = ADD_S;<span class="comment">//默认是+的状态</span></span><br><span class="line">wifi_recv_handler wifi_handler = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">set_wifi_recv_handler</span><span class="params">(wifi_recv_handler h)</span><span class="comment">//设置wifi接收到数据的回调函数</span></span><br><span class="line">&#123;</span><br><span class="line">	wifi_handler = h;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">dataHandler</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> c)</span><span class="comment">//处理接收到的数据</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">static</span> <span class="type">char</span> len_buf[<span class="number">5</span>];<span class="comment">//接收到数据的字节数</span></span><br><span class="line">	<span class="type">static</span> <span class="type">int</span> i = <span class="number">0</span>;<span class="comment">//循环变量</span></span><br><span class="line">	<span class="type">static</span> <span class="type">char</span> data_buf[<span class="number">512</span>];<span class="comment">//存储接收到的数据</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">switch</span>(data_flag)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> ADD_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;+&#x27;</span>)</span><br><span class="line">										data_flag = I_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> I_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;I&#x27;</span>)</span><br><span class="line">										data_flag = P_S;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> P_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;P&#x27;</span>)</span><br><span class="line">										data_flag = D_S;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> D_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;D&#x27;</span>)</span><br><span class="line">										data_flag = H_S;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> H_S :</span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">										data_flag = LEN_S;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> LEN_S :<span class="comment">//+IPD,13:1234567890ABC</span></span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;:&#x27;</span>)</span><br><span class="line">									&#123;</span><br><span class="line">										len_buf[i] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">										len = atoi(len_buf);</span><br><span class="line">										data_flag = DATA_S;</span><br><span class="line">										i = <span class="number">0</span>;</span><br><span class="line">										<span class="keyword">break</span>;</span><br><span class="line">									&#125;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										len_buf[i] = c;</span><br><span class="line">									i++;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> DATA_S:</span><br><span class="line">									data_buf[i] = c;</span><br><span class="line">									i++;</span><br><span class="line">									<span class="keyword">if</span>(i == len)</span><br><span class="line">									&#123;</span><br><span class="line">										i = <span class="number">0</span>;</span><br><span class="line">										data_flag = ADD_S;</span><br><span class="line">										<span class="keyword">if</span>(wifi_handler)</span><br><span class="line">											wifi_handler(data_buf, len);</span><br><span class="line">										<span class="keyword">break</span>;</span><br><span class="line">									&#125;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(c == <span class="string">&#x27;&gt;&#x27;</span>)</span><br><span class="line">		ok_flag = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(ok_flag == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">switch</span>(flag)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> O_F : </span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;O&#x27;</span>)</span><br><span class="line">										flag = K_F;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> K_F : </span><br><span class="line">									<span class="keyword">if</span>(c == <span class="string">&#x27;K&#x27;</span>)</span><br><span class="line">									&#123;</span><br><span class="line">										flag = O_F;</span><br><span class="line">										ok_flag = <span class="number">1</span>;</span><br><span class="line">									&#125;</span><br><span class="line">									<span class="keyword">else</span></span><br><span class="line">										flag = O_F;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_init</span><span class="params">(<span class="type">void</span>)</span><span class="comment">//初始化的函数(初始化串口)</span></span><br><span class="line">&#123;</span><br><span class="line">	usart_2_init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_link_wifi</span><span class="params">(<span class="type">char</span> *ssid, <span class="type">char</span> *passwd)</span><span class="comment">//连接路由(需要路由的名称和路由的密码)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//AT+RST\r\n 重启无线模块</span></span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+RST\r\n&quot;</span>);</span><br><span class="line">	delay_ms(<span class="number">2000</span>);<span class="comment">//重启之后延时两秒</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//AT+CWMODE=1\r\n 选择wifi模式</span></span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CWMODE=1\r\n&quot;</span>);<span class="comment">//选择模式</span></span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);<span class="comment">//等待esp8266的OK</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//AT+CWJAP=&quot;SSID&quot;,&quot;password&quot;\r\n 连接路由</span></span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CWJAP=&quot;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(ssid);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(passwd);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//AT+CIFSR\r\n 查询分配到的IP地址(必须要查一下,否则无法建立连接)</span></span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CIFSR\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_connect</span><span class="params">(<span class="type">char</span> *ip, <span class="type">char</span> *port)</span><span class="comment">//连接TCP server</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//AT+CIPSTART=&quot;TCP&quot;,&quot;192.168.3.116&quot;,8080\r\n 建立TCP连接</span></span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CIPSTART=&quot;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;TCP&quot;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_data(ip);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;&quot;&#x27;</span>);</span><br><span class="line">	usart_2_send_byte(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">	usart_2_send_data(port);</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_disconnect</span><span class="params">(<span class="type">void</span>)</span><span class="comment">//断开TCP连接</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//AT+CIPCLOSE\r\n 断开TCP连接</span></span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CIPCLOSE\r\n&quot;</span>);</span><br><span class="line">	<span class="comment">//注意:有可能回复有可能不回复,所以不检测closed ok</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">esp8266_send</span><span class="params">(<span class="type">char</span> *msg, <span class="type">char</span> *len)</span><span class="comment">//发送数据</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//AT+CIPSEND=4\r\n 发送数据</span></span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;AT+CIPSEND=&quot;</span>);</span><br><span class="line">	usart_2_send_data(len);</span><br><span class="line">	usart_2_send_data(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);<span class="comment">//等待 OK</span></span><br><span class="line">	</span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);<span class="comment">//等待 &gt;</span></span><br><span class="line">	</span><br><span class="line">	ok_flag = <span class="number">0</span>;</span><br><span class="line">	usart_2_send_data(msg);</span><br><span class="line">	<span class="keyword">while</span>(ok_flag == <span class="number">0</span>);<span class="comment">//等待 SEND OK</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_16day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/STM32/stm32_16day/" class="post-title-link" itemprop="url">stm32_note_16day</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-05 20:52:56" itemprop="dateModified" datetime="2022-09-05T20:52:56+08:00">2022-09-05</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-5<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="一-温故知新"><a href="#一-温故知新" class="headerlink" title="一.温故知新"></a>一.温故知新</h1><pre><code>    串行的接口
+    USART/UART
+        USART:通用的同步异步收发器
+        UART:通用的异步收发器
+        STM32F103RBT6中有3个USART/UART
+        目标 : 
+        1.把USART1的所有项目实验调通
+            USART1的发送一个字节
+            USART1的发送多个字节
+            USART1接收(轮询和中断)一个字节数据
+            USART1解析接收到的字符串数据
+            把标准输入和标准输出重定向到USART1中
+            1)使用Micro Lib 2)禁用半主机模式
+        2.举一反三
+            把USART1的项目实验移植到USART2/USART3
+    I²C
+        1.分析I²C的协议
+        2. 驱动E²PROM OLED SHT30
+        3.带着大家把E²PROM驱动起来
+        4.大家把官方提供的OLED的案例移植到项目工程中
+        5.大家自己搞定SHT30
+================================
+任务
+1.把USART1的项目实验移植到USART3上
+2.工业物联网的控制终端的发送器(把相应的指令发送给设备,设备进行解析)
+3.所有同学以组为单位,两两之间串一遍I²C的协议
+4.系统中的界面
+    1)公司的LoGo
+    2)DHT11的数据(客厅的数据).
+    3)SHT30的数据(卧室的数据)
+    4)高精度可调电阻-&gt;虚拟成任意类型的传感器-&gt;可燃气的含量(厨房的数据)
+    5)额外的传感器
+    6)日历
+    7)时间
+    -------------------------------------------
+    计秒表 + 看门狗监测系统 + 界面可以通过按键切换
+================================
+</code></pre>
+<h1 id="二-ADC"><a href="#二-ADC" class="headerlink" title="二.ADC"></a>二.ADC</h1><pre><code>    1.ADC的实验
+    1)STM32F103RBT6开发板-&gt;高精度可调电阻-&gt;可以当做任意类似的传感器
+        -&gt;在扩展IO中可以连接其他的模拟型传感器
+    2)STM32F407ZGT6开发板-&gt;PM2.5-&gt;CO传感器
+        -&gt;在扩展IO中可以连接其他的模拟型传感器
+    3)在STM32F407开发板上查找扩展IO中有没有DAC功能的管脚,尝试驱动DAC
+    
+    2.ADC的简介
+    在市面上有很多种类的传感器,可以分为数字型的传感器和模拟型的传感器
+    数字型的传感器:采集到的就是数字量,可以直接交给CPU来处理
+    模拟型的传感器:采集到的是模拟量,需要通过AD转换,
+        转换成了数字量,再交给CPU来处理
+    ADC : 模数转换器(可以把模拟量转换成数字量)
+    很多的工程师会把ADC当作电压表进行使用
+    
+    3.了解STM32F103RBT6芯片上的ADC
+    打开&lt;STM32RBT6\DataSheet\STM32&gt;目录下
+        &lt;ST_MCU最新选型手册.pdf&gt;	P22
+        通过最新选型手册的了解
+        1)STM32F103RBT6芯片内部已经集成了ADC
+        2)ADC的资源	16 x 12bit
+    打开&lt;STM32RBT6\DataSheet\STM32&gt;目录下
+        &lt;STM32F103RB.pdf&gt;	P19
+        通过讲硬件的手册了解
+        1)STM32F103RBT6芯片中只有2个ADC的外设(ADC1和ADC2)
+        2)这两个ADC都连接到了APB2总线上
+        3)这两个ADC都可以使用这16个转换通道
+    ※打开&lt;STM32课程SDK\DataSheet\STM32&gt;目录下
+&lt;STM32F405OE_STM32F405OEY6TR_STM32F405OG_STM32F405OGY6TR_to_STM32F407ZGT7.pdf&gt;			P18
+        通过讲硬件的手册了解
+        1)STM32F407芯片中只有3个ADC的外设(ADC1 ADC2 ADC3)
+        2)这三个ADC都连接到了APB2总线上
+        3)24个通道中其中有8个通道是ADC1 ADC2 ADC3共用
+        4)24个通道中其中有8个通道是ADC1 ADC2共用
+        5)24个通道中其中有8个通道是ADC3使用
+    12bit指的是量化位
+        把模拟量转换成数字量所占用的位数就是量化位
+        将来转换之后最小值是 : 0000 0000 0000	0
+        将来转换之后最大值是 : 1111 1111 1111	4095
+    ※在ADC中也有LSB的概念
+        LSB-&gt;指的是一个量化位代表的模拟量
+        ----------------------------------------
+        例子
+        4bit的量化位可以转换0V - 3.3V
+        0000	代表	0V
+        1111	代表	3.3V
+        LSB(一个量化位)0001,代表的电压值是多少?
+        LSB = 0.22V
+        ----------------------------------------
+
+    4.通过芯片的手册了解ADC
+    打开&lt;STM32RBT6\DataSheet\STM32&gt;目录下
+        &lt;STM32F10x中文参考手册.pdf&gt;	P113
+    
+    5.开发板原理图中高精度可调电阻的连接
+    ADC_VOL		PC0/ADC_IN10
+    PC0管脚将来配置为模拟输入功能
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="naoemb"
+      src="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+  <p class="site-author-name" itemprop="name">naoemb</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hexgio" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hexgio@outlook.com" title="E-Mail → mailto:hexgio@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/hexgio" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ynblog.cf/" title="关联博客 → https:&#x2F;&#x2F;ynblog.cf" rel="noopener" target="_blank"><i class=" fa-fw"></i>关联博客</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">naoemb</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">355k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:22</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}
+	siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

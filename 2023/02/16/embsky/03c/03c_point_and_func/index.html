@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"naoemb.cf","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;2022-8-1&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03c_point_and_func">
+<meta property="og:url" content="https://naoemb.cf/2023/02/16/embsky/03c/03c_point_and_func/index.html">
+<meta property="og:site_name" content="naoemb">
+<meta property="og:description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;2022-8-1&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-16T00:03:05.805Z">
+<meta property="article:modified_time" content="2022-09-01T17:52:22.000Z">
+<meta property="article:author" content="naoemb">
+<meta property="article:tag" content="03c">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://naoemb.cf/2023/02/16/embsky/03c/03c_point_and_func/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>03c_point_and_func | naoemb</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">naoemb</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">65</span></a>
+
+  </li>
+        <li class="menu-item menu-item-笔记">
+
+    <a href="/%E7%AC%94%E8%AE%B0" rel="section"><i class="fa fa-sticky-note fa-fw"></i>笔记</a>
+
+  </li>
+        <li class="menu-item menu-item-c练习题">
+
+    <a href="/C%E7%BB%83%E4%B9%A0%E9%A2%98/" rel="section"><i class="fa fa-code fa-fw"></i>C练习题</a>
+
+  </li>
+        <li class="menu-item menu-item-unix">
+
+    <a href="/UNIX/" rel="section"><i class="fa fa-file-code-o fa-fw"></i>UNIX</a>
+
+  </li>
+        <li class="menu-item menu-item-每天英语">
+
+    <a href="/%E6%AF%8F%E5%A4%A9%E8%8B%B1%E8%AF%AD" rel="section"><i class=" fa-fw"></i>每天英语</a>
+
+  </li>
+        <li class="menu-item menu-item-musiclist">
+
+    <a href="/musiclist/" rel="section"><i class="fa fa-volume-up fa-fw"></i>歌单</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/03c/03c_point_and_func/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          03c_point_and_func
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-02 01:52:22" itemprop="dateModified" datetime="2022-09-02T01:52:22+08:00">2022-09-02</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-8-1<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="1-指针"><a href="#1-指针" class="headerlink" title="1.指针"></a>1.指针</h1><h2 id="使用指针的用处"><a href="#使用指针的用处" class="headerlink" title="使用指针的用处"></a>使用指针的用处</h2><pre><code>        程序员通过指针,可以简化一些 C 语言编程任务的执行,还有一些任务,如动态内存分配
+        大家都知道每一个变量都在内存中占用相应的存储空间,
+动态内存分配的函数	malloc calloc realloc free
+编程人员来讲
+1.谁打开,谁关闭	文件IO
+2.谁开辟,谁释放	动态内存
+3.谁创建,谁销毁	链表
+4.谁加锁,谁解锁	线程
+
+        每一个内存位置都可以使用连字号（&amp;）运算符访问的地址,它表示了在内存中的一个地址
+    什么是指针
+        其实指针从某种意义上来讲是一个变量,其值为另一个变量的地址,即内存位置的直接地址.
+        就像普通的变量一样,必须在使用指针之前,对其进行定义.
+        指针的定义一般形式为:type *pointer-name;
+        无论何种类型的指针在内存中都占用8个字节空间(相对于64bit操作系统而言)
+        不同数据类型的指针之间的相同点是都是用来存储地址的.
+        不同数据类型的指针之间唯一的不同是,指针所指向的变量的数据类型不同.
+</code></pre>
+<h2 id="如何使用指针？"><a href="#如何使用指针？" class="headerlink" title="如何使用指针？"></a>如何使用指针？</h2><pre><code>        使用指针时会频繁进行以下几个操作:
+int a;
+        定义一个指针变量					int *p;
+        把变量地址赋值给指针				p = &amp;a;
+        访问指针变量中可用地址的值			printf(“p = %p\n”, p);
+        这些操作是需要通过使用运算符 * 来访问的
+</code></pre>
+<h3 id="指向NULL的指针-空指针-int-p-x3D-NULL-x2F-x2F-NULL-ASCII-0-0x0"><a href="#指向NULL的指针-空指针-int-p-x3D-NULL-x2F-x2F-NULL-ASCII-0-0x0" class="headerlink" title="指向NULL的指针(空指针)		int *p &#x3D; NULL;&#x2F;&#x2F;NULL ASCII 0 0x0"></a>指向NULL的指针(空指针)		int *p &#x3D; NULL;&#x2F;&#x2F;NULL ASCII 0 0x0</h3><pre><code>        在指针初始化的时候,如果没有确切的地址可以赋值,为指针赋一个 NULL 值
+        是一个良好的编程习惯.赋为 NULL 值的指针被称为空指针.
+        在写C语言程序时不允许访问地址为 NULL 的内存,因为该内存是操作系统保留的
+        然而,内存地址 NULL 有特别重要的意义,它表明该指针不指向一个可操作的内存位置.
+int a;
+int *p = NULL;
+p = &amp;a;
+*p = 100;
+程序编译时不会报错报警告,但是程序执行时会报段错误(编译器不检查段错误)
+if(p == NULL)
+printf(“p是一个空指针!\n”);
+</code></pre>
+<h3 id="野指针-没有对象"><a href="#野指针-没有对象" class="headerlink" title="野指针(没有对象)"></a>野指针(没有对象)</h3><pre><code>        野指针指向一个已删除的对象或申请访问受限内存区域的指针.
+        与空指针不同,野指针无法通过简单地判断是否为 NULL 避免,
+        而只能通过养成良好的编程习惯来尽力减少.
+        对野指针进行操作很容易造成程序错误.
+        程序编译时不会报错报警告,程序执行时也不会报段错误
+        int *p = NULL;
+        p = malloc(sizeof(int));
+        使用
+        free(p);
+        p = NULL;//可以先把野指针变成空指针,然后可以避免程序执行时不会报错
+</code></pre>
+<h3 id="万能指针"><a href="#万能指针" class="headerlink" title="万能指针"></a>万能指针</h3><pre><code>    可以保存任意类型的地址
+</code></pre>
+<h1 id="2-函数"><a href="#2-函数" class="headerlink" title="2.函数"></a>2.函数</h1><h2 id="什么是函数"><a href="#什么是函数" class="headerlink" title="什么是函数"></a>什么是函数</h2><pre><code>        函数是一组一起执行一个任务的语句.每个 C 程序都至少有一个函数,
+        即主函数 main() 所有简单的程序都可以定义其他额外的函数.
+        程序员可以把代码划分到不同的函数中.
+        如何划分代码到不同的函数中是程序员自己来决定的,但在逻辑上,
+        划分通常是根据每个函数执行一个特定的任务来进行的.
+        函数声明告诉编译器函数的名称\返回类型和参数.函数定义提供了函数的实际主体。
+    
+</code></pre>
+<h2 id="函数的声明"><a href="#函数的声明" class="headerlink" title="函数的声明"></a>函数的声明</h2><pre><code>        函数声明会告诉编译器函数名称及如何调用函数.
+        函数声明包括以下几个部分:
+        return_type		function_name	(parameter list)	;//形式参数 形参
+        int				max			(int a, int b)		;
+int				add				(int a, int b)		;
+Void			swap			(int *a, int *b)	;
+        在函数声明中,参数的名称并不重要,只有参数的类型是必需的
+        int max(int, int);
+</code></pre>
+<h2 id="函数的实现"><a href="#函数的实现" class="headerlink" title="函数的实现"></a>函数的实现</h2><pre><code>        return_type		function_name	(parameter list)//形式参数 形参
+        &#123;
+   			body of the function
+        &#125;
+int				max			(int a, int b)
+&#123;
+return a &gt; b ? a : b;
+&#125;
+int				add				(int a, int b)
+&#123;
+return a + b;
+&#125;
+
+
+
+
+void		swap	(int *a, int * b)
+&#123;
+int c;
+c = *a;
+*a = *b;
+*b = c;
+&#125;
+</code></pre>
+<h2 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h2><pre><code>        当实现函数的功能时,会写出函数要做什么,然后通过调用函数来执行已写好的功能.
+        当程序调用函数时,程序控制权会转移给被调用的函数.
+        被调用的函数执行函数主体的内容,当函数的返回语句被执行时,
+        或到达函数的结束括号时,会把程序控制权交还给主程序.
+        调用函数时,传递所需参数,如果函数返回一个值,则可以在调用时用变量来存储返回值.
+        function_name	(parameter list);//实际参数 实参
+max			(13, 7);
+add				(13, 7);		
+swap			(&amp;a, &amp;b);
+    在 C 语言中,函数由一个函数头和一个函数主体组成.下面列出一个函数的所有组成部分:
+        返回类型 : 一个函数可以返回一个值.return_type 是函数返回的值的数据类型.
+            有些函数执行所需的操作而不返回值,在这种情况下,return_type 是关键字 void.
+        
+        函数名称 : 这是函数的实际名称.也是函数的入口
+    	
+        参数 : 参数就像是占位符.当函数被调用时,程序员需要向参数传递一个值,
+            这个值被称为实际参数.参数列表包括函数参数的类型\顺序\数量.
+            参数是可选的,也就是说,有些功能函数可能不需要参数.
+    	
+        函数主体 : 函数主体包含一组定义函数执行任务的语句.
+    
+    函数参数
+        如果函数要使用参数,则必须在函数声明时定义参数变量,这些变量称为函数的形式参数.
+        形式参数就像函数内的其他局部变量,在进入函数时被创建,退出函数时被销毁.
+    
+    当调用函数时,有两种向函数传递参数的方式:
+        值传递 : 该方法把参数的实际值复制给函数的形式参数,在这种情况下
+                修改函数内的形式参数不会影响实际参数。
+swap(a, b)
+        地址传递 : 通过指针传递方式,形参为指向实参地址的指针,
+                当对形参的指向操作时,就相当于对实参本身进行的操作。
+swap(&amp;a, &amp;b)
+        如果使用值传递来传递参数,这意味着函数内的代码不能改变用于调用函数的实际参数.
+    
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/03c/" rel="tag"># 03c</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/03c/03c_13day/" rel="prev" title="03c_13day">
+      <i class="fa fa-chevron-left"></i> 03c_13day
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/03c/03c_C%E6%88%AA%E5%9B%BE/" rel="next" title="03c_C截图">
+      03c_C截图 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%8C%87%E9%92%88"><span class="nav-number">1.</span> <span class="nav-text">1.指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E7%9A%84%E7%94%A8%E5%A4%84"><span class="nav-number">1.1.</span> <span class="nav-text">使用指针的用处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">如何使用指针？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%90%91NULL%E7%9A%84%E6%8C%87%E9%92%88-%E7%A9%BA%E6%8C%87%E9%92%88-int-p-x3D-NULL-x2F-x2F-NULL-ASCII-0-0x0"><span class="nav-number">1.2.1.</span> <span class="nav-text">指向NULL的指针(空指针)		int *p &#x3D; NULL;&#x2F;&#x2F;NULL ASCII 0 0x0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8E%E6%8C%87%E9%92%88-%E6%B2%A1%E6%9C%89%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.2.</span> <span class="nav-text">野指针(没有对象)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%87%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.2.3.</span> <span class="nav-text">万能指针</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">2.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">什么是函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="nav-number">2.2.</span> <span class="nav-text">函数的声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.3.</span> <span class="nav-text">函数的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8"><span class="nav-number">2.4.</span> <span class="nav-text">函数的调用</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="naoemb"
+      src="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+  <p class="site-author-name" itemprop="name">naoemb</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hexgio" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hexgio@outlook.com" title="E-Mail → mailto:hexgio@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/hexgio" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ynblog.cf/" title="关联博客 → https:&#x2F;&#x2F;ynblog.cf" rel="noopener" target="_blank"><i class=" fa-fw"></i>关联博客</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">naoemb</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">355k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:22</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}
+	siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

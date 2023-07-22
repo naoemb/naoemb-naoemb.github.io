@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"naoemb.cf","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;2022-8-23&#x3D;&#x3D;&#x3D;&amp;#x3D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stm32_note_07day">
+<meta property="og:url" content="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_07day/index.html">
+<meta property="og:site_name" content="naoemb">
+<meta property="og:description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;2022-8-23&#x3D;&#x3D;&#x3D;&amp;#x3D">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/07day/%E4%B8%8A%E6%8B%89%E7%94%B5%E9%98%BB.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/07day/%E4%B8%8B%E6%8B%89%E7%94%B5%E9%98%BB.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/07day/%E4%B8%B2%E8%A1%8C%E4%BC%A0%E8%BE%93.png">
+<meta property="article:published_time" content="2023-02-16T00:03:05.813Z">
+<meta property="article:modified_time" content="2022-09-01T17:55:14.000Z">
+<meta property="article:author" content="naoemb">
+<meta property="article:tag" content="stm32_note">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/07day/%E4%B8%8A%E6%8B%89%E7%94%B5%E9%98%BB.png">
+
+<link rel="canonical" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_07day/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>stm32_note_07day | naoemb</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">naoemb</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">65</span></a>
+
+  </li>
+        <li class="menu-item menu-item-笔记">
+
+    <a href="/%E7%AC%94%E8%AE%B0" rel="section"><i class="fa fa-sticky-note fa-fw"></i>笔记</a>
+
+  </li>
+        <li class="menu-item menu-item-c练习题">
+
+    <a href="/C%E7%BB%83%E4%B9%A0%E9%A2%98/" rel="section"><i class="fa fa-code fa-fw"></i>C练习题</a>
+
+  </li>
+        <li class="menu-item menu-item-unix">
+
+    <a href="/UNIX/" rel="section"><i class="fa fa-file-code-o fa-fw"></i>UNIX</a>
+
+  </li>
+        <li class="menu-item menu-item-每天英语">
+
+    <a href="/%E6%AF%8F%E5%A4%A9%E8%8B%B1%E8%AF%AD" rel="section"><i class=" fa-fw"></i>每天英语</a>
+
+  </li>
+        <li class="menu-item menu-item-musiclist">
+
+    <a href="/musiclist/" rel="section"><i class="fa fa-volume-up fa-fw"></i>歌单</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_07day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          stm32_note_07day
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-02 01:55:14" itemprop="dateModified" datetime="2022-09-02T01:55:14+08:00">2022-09-02</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-8-23<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="一-温故知新"><a href="#一-温故知新" class="headerlink" title="一.温故知新"></a>一.温故知新</h1><pre><code>    1.目的
+    之前写过检测按键是否被按下的程序-&gt;使用的是轮询的方式检测-&gt;CPU很忙
+    是把轮询检测的程序修改成了中断的方式-&gt;需要使用中断控制器
+    2.介绍芯片中常见的中断控制器
+    VIC	向量中断控制器		单片机芯片中常用
+    NVIC	可嵌套的向量中断控制器	单片机芯片中常用
+    GIC	通用的中断控制器		高端芯片中常用
+    3.在STM32F103RBT6芯片中使用的是NVIC中断控制器
+    NVIC中断控制器会处理两个事情
+        1)为每一个连接到NVIC上的中断源分配一个中断号
+        2)处理优先级(组优先级 和 子优先级)
+    异常向量表中存储的是异常处理函数的函数名(异常处理函数的入口地址)
+    异常向量表中异常处理函数的顺序和中断号是一一对应
+    4.GPIO需要借助EXTI来触发中断
+    EXTI叫做外部中断
+    每一组GPIO的0号管脚都可以触发EXTI0
+    每一组GPIO的1号管脚都可以触发EXTI1
+    ...
+    每一组GPIO的15号管脚都可以触发EXTI15
+    需要通过AFIO外设为外部中断选择触发的GPIO管脚
+    
+</code></pre>
+<h1 id="二-看门狗"><a href="#二-看门狗" class="headerlink" title="二.看门狗"></a>二.看门狗</h1><pre><code>    STM32F103RBT6芯片使用的核心是ARM-CORTEX-M3的核心
+    在工控领域中经常会使用到看门狗外设,所以今天主要讲看门狗外设
+    1.从最新选型手册中了解看门狗信息
+打开&lt;STM32RBT6\DataSheet\STM32&gt;目录下&lt;ST_MCU最新选型手册.pdf&gt;
+    P21
+    看门狗属于定时器的资源,在STM32芯片中属于其他定时器资源
+    在STM32芯片中有两个看门狗,分别是独立看门狗 和 窗口看门狗
+
+    2.产生的问题
+    1)查找看门狗的时钟频率?		40KHz
+    2)查找看门狗的计数值范围?		[0 - 4095]
+    3)看门狗提供的其他功能是什么?		重启系统
+
+    3.看门狗的使用环境
+    在工业的工作环境中,嵌入式设备经常会面临一些恶劣的工作环境:超高温、
+    超低温、非常湿润、非常干燥、强烈的电磁干扰,这些环境都会影响嵌入式设备
+    的正常工作,有可能会造成设备死机 或者 设备中运行的程序直接跑飞
+    所以可以使用看门狗帮助程序员监测嵌入式设备是否死机或者程序跑飞
+    一旦设备死机了或者程序跑飞了,看门狗可以帮助程序员重启系统
+
+    4.看门狗的简介
+    既然看门狗属于定时器的资源,那么决定定时长短是由时钟频率和计数值范围
+    来决定的,
+    和普通定时器不同,普通定时器定时到了之后,去处理程序员指定要做的事情
+    看门狗定时到了之后,直接重启系统(效果和按下reset按键一样)
+    如果设备死机了,看门狗可以帮助程序员重启系统
+    如果设备没有死机,看门狗不需要重启系统
+    (只要让看门狗的计数器永远计不到0,看门狗就不会重启系统了)
+
+    5.喂狗(feed dog)
+    需要每隔一段时间,往看门狗的计数器中重新写入计数值,让看门狗永远计不到0
+
+    6.介绍STM32芯片内部的看门狗
+    在STM32芯片中有两种看门狗
+    独立看门狗 : (IWDG)
+    窗口看门狗 : (WWDG)
+    注意 : 一般来说高端的芯片中只有一个看门狗,更像是独立看门狗
+
+    7.独立看门狗和窗口看门狗的区别
+    相同点
+        1)IWDG和WWDG都是由STM32芯片提供的外设资源
+        2)IWDG和WWDG功能一样,都会因为设备死机或者程序跑飞,
+            重启系统
+        3)IWDG和WWDG都可以自行调节喂狗时间
+    不同点
+        1)时钟源不同
+            IWDG使用的是独立RC(LSI&lt;40KHz&gt;)提供的时钟
+            不需要使用总线使能时钟
+            WWDG使用是APB1总线提供的时钟
+            需要通过APB1总线使能WWDG的时钟
+        2)产生中断不同
+            IWDG是没有中断的,只要IWDG计到0,直接重启系统
+            WWDG是有中断,只要计数器超时,可以触发中断
+        3)计数的方式不同
+            IWDG使用的是12bit的计数器
+            WWDG使用的是7bit的计数器
+        4)喂狗的时间范围不同
+            IWDG只要计数器计到0之前,任意时间喂狗都可以
+            WWDG会有一个上阙值和下阙值
+</code></pre>
+<h1 id="三-独立看门狗"><a href="#三-独立看门狗" class="headerlink" title="三.独立看门狗"></a>三.独立看门狗</h1><pre><code>    打开&lt;STM32RBT6\DataSheet\STM32&gt;目录下
+    &lt;STM32F10x中文参考手册.pdf&gt;
+    P276
+    IWDG使用的是LSI(40KHz)的时钟源
+    IWDG是一个递减的计数器(向下计数)
+    IWDG的计数器计数到0时会产生系统复位
+    
+    IWDG_KR(键寄存器)&lt;写入特定的值会有特定的操作&gt;
+    0xAAAA		喂狗的操作
+    0x5555		开启IWDG_PR和OWDG_RLR寄存器的写访问
+    0xCCCC		开启看门狗
+    
+    IWDG_PR(预分频寄存器)&lt;给IWDG的时钟频率进行分频的&gt;
+    注意 : 在操作IWDG_PR寄存器之前需要先给IWDG_KR寄存器写入0x5555
+    开启IWDG_PR寄存器的写访问(关闭写保护)
+    000 4分频		100 64分频
+    001 8分频		101 128分频
+    010 16分频	110 256分频
+    011 32分频	111 256分频
+
+    IWDG_RLR(重装载值寄存器)&lt;是用来存储计数值的&gt;
+    注意 : 在操作IWDG_RLR寄存器之前需要先给IWDG_KR寄存器写入0x5555
+    开启IWDG_RLR寄存器的写访问(关闭写保护)
+    该寄存器只有低12bit有效
+    可以存储的计数值是[12个0 - 12个1]&lt;0 - 4095&gt;
+</code></pre>
+<h1 id="四-传感器"><a href="#四-传感器" class="headerlink" title="四.传感器"></a>四.传感器</h1><pre><code>    1.传感器的简介
+    在物联网嵌入式的项目框架中,需要使用嵌入式设备采集感知周围的数据
+    那么需要使用传感器进行采集和感知,在市面上的传感器的种类有很多
+    检测气体 : 温度、湿度、空气中的微颗粒物(PM2.5、PM1.0)
+        稀有气体的含量(一氧化碳、二氧化碳、氧气、甲烷、乙醇、甲醛)
+    检测液体 : 温度、浑浊度、PH值、液位
+    检测固体 : 土壤湿度、微量元素的含量
+    检测人体 : 体温、血压、血糖、心率
+    ...
+    本身市面上的传感器的种类有很多很多种
+    2.传感器接口的简介
+    GPIO接口、串口接口(USART/UART、IIC、SPI...)、并口接口
+    数字型的传感器 : 可以直接采集到数字量,可以直接交给CPU去处理
+    模拟型的传感器 : 采集到的是模拟量,需要经过AD转换,
+        转换成了数字量再交给CPU去处理
+</code></pre>
+<h1 id="五-DHT11传感器"><a href="#五-DHT11传感器" class="headerlink" title="五.DHT11传感器"></a>五.DHT11传感器</h1><pre><code>    DHT11传感器是一个温湿度的传感器(是专门用来检测温度和湿度的)
+    外观上来看是4引脚的封装形式
+    打开&lt;STM32RBT6\DataSheet\传感器&gt;目录下
+    &lt;DHT11说明书.pdf&gt;和&lt;DHT22.pdf&gt;
+    1.DHT11是一个数字型的传感器
+    2.DHT11是用来采集温湿度的数据
+    3.DHT11是4引脚的封装形式
+    4.测量范围		湿度:20%-90%	温度:0℃-50℃
+    5.误差范围		湿度:±5%		温度:±2℃
+    6.分辨力为1	DHT11只能检测到整数数据
+    7.1pin连接电源 2pin连接MCU 3pinNC(悬空&lt;没有连接&gt;) 4pin连接地
+</code></pre>
+<p>上拉电阻<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/07day/%E4%B8%8A%E6%8B%89%E7%94%B5%E9%98%BB.png"><br>下拉电阻<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/07day/%E4%B8%8B%E6%8B%89%E7%94%B5%E9%98%BB.png"></p>
+<pre><code>    8.DHT11是串行接口 : 指的是数据以串行的方式进行传输
+         串行的方式 : 指的是按顺序一位一位的传输数据
+    9.单线双向指的是半双工工作模式(发送的同时不能接收,接收的同时不能发送)
+</code></pre>
+<p>串行传输<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/07day/%E4%B8%B2%E8%A1%8C%E4%BC%A0%E8%BE%93.png"></p>
+<pre><code>    A.一次完整的数据传输为40bit,高位先出.
+    
+    例子 : DHT11的数据管脚连接到了STM32的PC10管脚
+    需要通过PC10管脚发送数据或者接收数据
+    1)通过PC10管脚发送数据(高位先出)
+    data = 10110100;
+    data		&amp;		PCOut(10)
+第1次循环	10110100	10000000	1
+第2次循环	01101000	10000000	0
+第3次循环	11010000	10000000	1
+第4次循环	10100000	10000000	1
+第5次循环	01000000	10000000	0
+第6次循环	10000000	10000000	1
+第7次循环	00000000	10000000	0
+第8次循环	00000000	10000000	0
+        void func(u8 data)//通过PC10管脚把形参data存储的数据发送
+        &#123;
+            u8 i = 0;//循环变量
+            for(i =0 ; i &lt; 8; i++)
+            &#123;
+                if(data &amp; 0x80)
+                    PCOut(10) = 1;
+                else
+                    PCOut(10) = 0;
+                data &lt;&lt;= 1;
+            &#125;	
+        &#125;
+
+    2)通过PC10管脚发送数据(低位先出)
+    data		&amp;		PCOut(10)
+第1次循环	10110100	00000001	0
+第2次循环	01011010	00000001	0
+第3次循环	00101101	00000001	1
+第4次循环	00010110	00000001	0
+第5次循环	00001011	00000001	1
+第6次循环	00000101	00000001	1
+第7次循环	00000010	00000001	0
+第8次循环	00000001	00000001	1
+        void func(u8 data)
+        &#123;
+            u8 i = 0;//循环变量
+            for(i = 0; i &lt; 8; i++)
+            &#123;
+                if(data &amp; 0x01)
+                    PCOut(10) = 1;
+                else
+                    PCOut(10) = 0;
+                data &gt;&gt;= 1;
+            &#125;
+        &#125;
+    3)通过PC10管脚读取数据(高位先出)
+    DHT11要发送10110100
+    PCIn(10)	data &lt;&lt;=1	data
+第1次循环	1	00000000	00000001
+第2次循环	0	00000010	00000010
+第3次循环	1	00000100	00000101
+第4次循环	1	00001010	00001011
+第5次循环	0	00010110	00010110
+第6次循环	1	00101100	00101101
+第7次循环	0	01011010	01011010
+第8次循环	0	10110100	10110100
+        u8 func(void)
+        &#123;
+            u8 data = 0;//保存读取到的数据
+            u8 i = 0;//循环变量
+            
+            for(i = 0; i &lt; 8; i++)
+            &#123;
+                data &lt;&lt;= 1;
+                if(PCIn(10) == 1)
+                    data |= 1;
+            &#125;
+            
+            return data;
+        &#125;
+    4))通过PC10管脚读取数据(低位先出)
+    DHT11要发送10110100
+    PCIn(10)	data &gt;&gt;=1	data
+第1次循环	0	00000000	00000000
+第2次循环	0	00000000	00000000
+第3次循环	1	00000000	10000000
+第4次循环	0	01000000	01000000
+第5次循环	1	00100000	10100000
+第6次循环	1	01010000	11010000
+第7次循环	0	01101000	01101000
+第8次循环	1	00110100	10110100
+        u8 func(void)
+        &#123;
+            u8 data = 0;//保存读取到的数据
+            u8 i = 0;//循环变量
+            
+            for(i = 0; i &lt; 8; i++)
+            &#123;
+                data &gt;&gt;= 1;
+                if(PCIn(10) == 1)
+                    data |= 0x80;
+            &#125;
+            
+            return data;
+        &#125;
+
+===========================
+作业
+1.把今天讲过的内容完完整整的复习一遍
+2.可以使用操作寄存器的方法驱动一下独立看门狗
+3.根据手册操作一下窗口看门狗
+4.在纸上写一遍串行接口发送数据和接收数据(高位先出和低位先出)
+===========================
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/stm32-note/" rel="tag"># stm32_note</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/STM32/stm32_01day/" rel="prev" title="stm32_note_01day">
+      <i class="fa fa-chevron-left"></i> stm32_note_01day
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/STM32/stm32_06day/" rel="next" title="stm32_note_06day">
+      stm32_note_06day <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E6%B8%A9%E6%95%85%E7%9F%A5%E6%96%B0"><span class="nav-number">1.</span> <span class="nav-text">一.温故知新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-%E7%9C%8B%E9%97%A8%E7%8B%97"><span class="nav-number">2.</span> <span class="nav-text">二.看门狗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89-%E7%8B%AC%E7%AB%8B%E7%9C%8B%E9%97%A8%E7%8B%97"><span class="nav-number">3.</span> <span class="nav-text">三.独立看门狗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B-%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">四.传感器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94-DHT11%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">五.DHT11传感器</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="naoemb"
+      src="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+  <p class="site-author-name" itemprop="name">naoemb</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hexgio" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hexgio@outlook.com" title="E-Mail → mailto:hexgio@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/hexgio" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ynblog.cf/" title="关联博客 → https:&#x2F;&#x2F;ynblog.cf" rel="noopener" target="_blank"><i class=" fa-fw"></i>关联博客</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">naoemb</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">355k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:22</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}
+	siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"naoemb.cf","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02linux_01day">
+<meta property="og:url" content="https://naoemb.cf/2023/02/16/embsky/02linux/02linux_01day/index.html">
+<meta property="og:site_name" content="naoemb">
+<meta property="og:description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;20">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-16T00:03:05.795Z">
+<meta property="article:modified_time" content="2023-02-27T03:00:29.724Z">
+<meta property="article:author" content="naoemb">
+<meta property="article:tag" content="02linux">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://naoemb.cf/2023/02/16/embsky/02linux/02linux_01day/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>02linux_01day | naoemb</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">naoemb</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">65</span></a>
+
+  </li>
+        <li class="menu-item menu-item-笔记">
+
+    <a href="/%E7%AC%94%E8%AE%B0" rel="section"><i class="fa fa-sticky-note fa-fw"></i>笔记</a>
+
+  </li>
+        <li class="menu-item menu-item-c练习题">
+
+    <a href="/C%E7%BB%83%E4%B9%A0%E9%A2%98/" rel="section"><i class="fa fa-code fa-fw"></i>C练习题</a>
+
+  </li>
+        <li class="menu-item menu-item-unix">
+
+    <a href="/UNIX/" rel="section"><i class="fa fa-file-code-o fa-fw"></i>UNIX</a>
+
+  </li>
+        <li class="menu-item menu-item-每天英语">
+
+    <a href="/%E6%AF%8F%E5%A4%A9%E8%8B%B1%E8%AF%AD" rel="section"><i class=" fa-fw"></i>每天英语</a>
+
+  </li>
+        <li class="menu-item menu-item-musiclist">
+
+    <a href="/musiclist/" rel="section"><i class="fa fa-volume-up fa-fw"></i>歌单</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/02linux/02linux_01day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          02linux_01day
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-27 11:00:29" itemprop="dateModified" datetime="2023-02-27T11:00:29+08:00">2023-02-27</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-7-11<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="一-介绍"><a href="#一-介绍" class="headerlink" title="一.介绍"></a>一.介绍</h1><pre><code>    上课时间(课前阅读单词 | 随机抽取学生复述昨天讲过的内容)
+    09:00 - 12:00
+    13:30 - 17:30
+    18:30 - 20:30
+
+    周一 到 周五
+    节假日以及周六周日休息(周六有自习室)
+
+    课程安排
+    预科		通过预科时间把大家的基础拉平
+    --------------------------------
+    Linux基础	(环境安装\命令\软件安装\权限管理\用户管理\服务搭建)
+    Linux下C语言	(变量\运算符\分支语句\循环\跳转\数组\函数\指针\)
+                (复合型数据类型\预处理\文件IO)
+    数据结构		(链表\栈式存储结构\队列式存储结构\树存储结构\哈希表)
+    ---------考试以及项目-------------	
+    APUE		(标准IO\系统调用IO\信号\进程\线程\进程间通信)
+                (网络套接字TCP/UDP)
+    C++/QT		()
+    ---------考试以及项目-------------
+    智能终端		单片机开发(裸板驱动)
+    ---------------项目--------------
+    边缘计算		高端芯片的开发(带操作系统的驱动)
+    ---------------项目--------------
+    就业环节		压力面试\压力笔试
+</code></pre>
+<h1 id="二-Linux环境的安装"><a href="#二-Linux环境的安装" class="headerlink" title="二.Linux环境的安装"></a>二.Linux环境的安装</h1><pre><code>    环境的安装
+    1.双系统
+        准备
+        1)把笔记本的硬盘分出空白的空间(100G)
+        2)系统盘
+            (光盘安装\U盘安装\网络安装)
+    2.虚拟机
+        准备
+        1)虚拟机软件(vmware\vboxs)
+        2)镜像(开源的镜像网站)
+    3.注意:无论是双系统的安装还是虚拟操作系统的安装,分区需要选择手动分区
+        例如:分了100G的空间
+        8192Mb			交换空间
+        剩余的一半空间		/home
+        剩余的所有空间		/
+</code></pre>
+<h1 id="三-Linux的历史"><a href="#三-Linux的历史" class="headerlink" title="三.Linux的历史"></a>三.Linux的历史</h1><pre><code>    在市面上的电子产品的万年历的功能
+    1.RTC的功能可以查找基准时间
+        1)1900年1月1日	这一天是星期一
+        2)1970年1月1日	计算机元年
+        3)2000年1月1日	千禧年(千年虫)
+    2.计算机元年
+        在美国一家通讯公司,AT&amp;T公司(马刺队)
+        AT&amp;T公司里面有个实验室叫做贝尔实验室
+        丹尼斯.里奇(C语言之父)用闲置的电脑写了一个游戏--太空旅行
+        丹尼斯.里奇和肯.汤姆逊使用BSPL语言(B语言)在机器上写通用程序
+        觉得B语言不好用,所以创立了C语言
+        
+        丹尼斯.里奇和肯.汤姆逊写了系统,叫做UNIX
+        
+        美国加州学院伯克利分院一个教授通过UNIX写了一个minix,用于教学
+        这个教授的学生林纳斯,写了Linux
+
+    3.可以在电脑上查询信息
+        uname -a	查询内核版本以及操作系统版本
+</code></pre>
+<h1 id="四-Linux系统的认知"><a href="#四-Linux系统的认知" class="headerlink" title="四.Linux系统的认知"></a>四.Linux系统的认知</h1><pre><code>    windows			Linux
+            500G
+    C D E F			/(根目录)
+    4棵树			1棵树
+    /(根目录)
+        bin			存放的是二进制的文件(命令)
+        boot		存放的是用来引导内核的文件
+        dev			存放的是各种设备文件
+        etc			存放的是配置文件
+        home		存放的是普通用户的家目录
+        lib			存放的是各种库文件(动态库和静态库)
+        media		用来挂载存储介质或者媒体介质的文件
+        mnt			系统默认可以使用的挂载的目录
+        proc		动态的目录(不能用于存储文件)
+                    (系统内核的信息\进程的信息\内存映射的信息)
+        root		超级用户的家目录
+        sbin		存放系统的二进制文件
+        sys			存放系统的文件
+        usr			存放的是应用程序\头文件
+</code></pre>
+<h1 id="五-终端的使用"><a href="#五-终端的使用" class="headerlink" title="五.终端的使用"></a>五.终端的使用</h1><pre><code>    1.终端的打开
+        1)通过鼠标右键-&gt;打开终端
+        2)在Ubuntu左下角有显示应用程序-&gt;全部-&gt;终端
+        3)快捷键ctrl + alt + t
+        4)打开终端之后打开终端的标签页
+            ctrl + shift+ t		//打开标签页
+            ctrl + pgup/pgdn	//切换标签页
+            注意 : 有同学电脑的键盘上的pgup和pgdn和别的按键在一起
+            有可能在切换标签页的时候需要使用shift或者fn
+    2.终端提示符
+    zack@zack-CSTG:~/桌面/2022-6-29_UEA/02linux$ 
+        在@之前		当前登陆这个终端的用户名
+        @			分割符号
+        在@之后,:之前	主机名
+        :			分割符号
+        在:之后		当前终端所在目录的路径
+            路径分为绝对路径和相对路径
+            绝对路径 : 从根目录出发.一层一层递进的目录就是绝对路径
+            相对路径 : 除了绝对路径都是相对路径
+            在路径中 ~ 指的是家目录的意思
+            每个用户都会有家目录
+            root用户		/root
+            zack用户		/home/zack
+            tom用户		/home/tom
+        #或者$		用户的身份识别
+            #		代表的是超级用户
+            $		代表的是普通用户
+    3.修改终端提示符的长度
+        1)需要修改配置文件
+            注意:
+                如果修改/etc/下边的配置文件,会影响所有用户
+                如果修改家目录下边的配置文件,会影响当前用户
+        2)把原有的配置文件拷贝一个备份
+            cp ~/.bashrc ~/bashrctest
+        3)修改配置文件
+            vim ~/.bashrc
+            -------------------------
+            1&gt;找到要修改的位置,大约在60行左右
+            2&gt;PS1=&#39;$&#123;debian_chroot:+($debian_chroot)&#125;\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;
+            3&gt;把 \h\[\033[00m\]: 删掉		代表不再显示主机名
+            4&gt;把 \w 修改成 \W				代表目录路径只显示最后一级
+            5&gt;保存退出
+            6&gt;sync						代表同步一下信息
+</code></pre>
+<h1 id="六-命令"><a href="#六-命令" class="headerlink" title="六.命令"></a>六.命令</h1><pre><code>    在Linux下一切皆文件,任何东西在Linux环境中都是以文件形式存在的
+
+    在终端提示符之后可以录入命令 或者 可执行文件 或者 程序
+    终端提示符	命令
+    终端提示符	命令 + 选项
+    终端提示符	命令 + 参数
+    终端提示符	命令 + 选项 + 参数
+    注意 : 命令 选项 参数之间需要用空格隔开
+    命令 --help	可以查看命令的帮助手册
+
+    cd		(切换目录/改变目录/进入目录)
+        1.cd + 目录		//可以切换到该目录中
+            如果目录不存在,会提示报错
+        2.cd + 路径		//可以切换到该路径中
+            可以是绝对路径或者相对路径,但是必须是一个正确的路径
+        3.cd 直接回车		//可以直接回到家目录
+        4.cd + ..		//可以切换到上一级目录
+    ls		(显示当前目录下的文件名)
+        1.ls 直接回车		//显示当前目录下的文件名
+        2.ls + 文件名		//显示当前目录下该文件的文件名
+        3.ls + 目录名		//显示该目录下的文件名
+        4.ls + -a		//显示所有文件包括隐藏文件
+                        //在Linux环境下以.开头的文件都是隐藏文件
+                        //任何目录都有来两个默认的隐藏文件
+                        //. 代表当前目录	.. 代表上一级目录
+        5.ls + -i		//显示文件inode号
+                        //文件是存储在硬盘中的,在Linux文件系统中
+                        //是通过inode号来管理文件的
+                        //在硬盘的同一分区中,文件inode号不会重复
+        6.ls + -l		//使用较长格式显示文件信息
+-rw-r--r-- 1 zack zack 8980 7月   9 15:51 examples.desktop
+drwxr-xr-x 2 zack zack 4096 7月   9 16:26 公共的
+        part.1			文件的类型(在Linux环境中一共有7种文件类型)
+            -		普通文件
+            d		目录文件
+            c		字符设备文件
+            b		块设备文件
+            p		管道文件
+            s		网络套接字文件
+            l		链接文件(符号链接文件)
+        part.2			文件的权限(分为基本权限和特殊权限)
+            rw-			r--			r--
+            文件所属者	文件所属组	其他用户
+            字符表示		数字表示		含义
+            r			4			可读
+            w			2			可写
+            x			1			可执行
+            -			0			该处无权限
+        part.3			文件链接数
+        part.4			文件所属者
+        part.5			文件所属组
+        part.6			文件的字节数
+        part.7			文件最后修改时间
+        part.8			文件名
+    pwd		(可以显示当前目录所在的绝对路径)
+    touch	(创建普通文件)
+        1.touch + 文件名			//创建以文件名命名的普通文件
+        如果文件名已经存在,不会修改文件内容,只会修改文件最后修改时间
+        如果加已存在的目录名,不会修改文件内容,只会修改文件最后修改时间
+        2.touch + 文件名 + 文件名	//可以创建多个文件
+        注意 : 文件名与文件名之间用空格隔开
+        3.touch + &#123;1..20&#125;.c		//可以创建1.c ... 20.c
+            touch + &#123;a..z&#125;.c	//可以创建a.c ... z.c
+            touch + &#123;A..Z&#125;.c	//可以创建A.c ... Z.c
+        4.touch + 路径/文件		//在该路径下创建新的文件
+        注意 : 路径可以是相对路径或者绝对路径,但是必须是正确的路径
+    mkdir	(创建目录文件)
+        1.mkdir + 目录名				//创建以目录名命名的目录
+            注意 : 不能加已有的目录名,会报错
+        2.mkdir + 目录名 + 目录名		//创建多个目录
+            注意 : 目录名与目录名之间用空格隔开
+        3.mkdir + &#123;a..z&#125;dir			//创建adir ... zdir
+        4.mkdir + 路径/目录名			//可以在该路径下创建目录文件
+            注意 : 可以是绝对路径或者相对路径,但是必须是正确的路径
+    rm		(删除文件)
+        1.rm + 文件名				//删除文件(普通文件)
+        2.rm + -r + 目录名		//删除目录文件
+            -r	代表递归的操作
+        3.rm *.c				//删除当前目录下所有以.c结尾的文件
+            rm file*			//删除当前目录下以file开头的文件
+            rm -r dir*			//删除当前目录下以dir开头的文件
+        4.rm + 路径/目录名		//删除该目录下的该文件
+            注意 : 路径可以是绝对路径或者相对路径,但是必须是正确的路径
+        注意 : 在根目录中千万不要执行 sudo rm -rf *
+    cat		(查看普通文件的文件内容)
+        1.cat + 普通文件的文件名
+        2.cat + 路经/普通文件的文件名
+            注意 : 路径可以是绝对路径或者相对路径,但是必须是正确的路径
+    ----------------------------
+    cat		把所有的文件内容打印输出到终端中
+    less	从文件的起始位置开始显示,可以通过鼠标滚轮或者键盘上下键翻阅
+                按q退出
+    more	从文件的起始位置开始显示(显示百分比)
+                s向下翻阅		b向上翻阅		q退出
+    head	默认查看文件的前10行
+    tail	默认查看文件的末尾10行
+    ----------------------------
+    cp		（拷贝文件）
+    1.cp + 源文件名 + 目标文件名	//把源文件的文件内容拷贝到目标文件中
+    如果目标文件名已存在,源文件的文件内容会覆盖目标文件的文件内容
+    如果目标文件名不存在,会新建以目标文件名命名的文件,
+        然后把源文件的文件内容会覆盖目标文件的文件内容
+    2.cp + 源文件名 + 目录名		//会把源文件拷贝到目录中
+    3.cp + -r + 源目录 + 目标目录	//会把源目录拷贝到目标目录中
+    如果目标目录已存在,会把源目录拷贝到目标目录内
+    如果目标目录不存在,会新建目标目录,并且把源目录内的文件拷贝到目标目录中
+    
+    mv		(剪切文件\移动文件\改名字)
+    1.mv + 源文件名 + 目标文件名	//剪切文件内容
+    如果目标文件名不存在,就是把源文件改名字
+    如果目标文件名已存在,也是把源文件改名字,不过会替代掉重名的文件
+    注意 : mv在操作目录文件时不需要加 -r 的操作
+
+    tar		(压缩与解压缩)
+    1.tar cvf 最终生成的压缩包的名字.tar 要压缩的文件		//用来压缩的
+    2.tar xvf 压缩包的名字.tar		//会把压缩包默认解压缩到当前目录下
+    3.tar xvf 压缩包的名字.tar -C 路径
+                                //会把压缩包解压缩到指定目录中
+--------------------------------
+作业 : 
+1.把今天讲过的内容完完整整的复习一遍
+2.抽时间自己安装一遍虚拟操作系统
+3.查找ls加什么选项可以查看目录名
+--------------------------------
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/02linux/" rel="tag"># 02linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/01test/01test_06day/" rel="prev" title="01test_06day">
+      <i class="fa fa-chevron-left"></i> 01test_06day
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/01test/01test_07day/" rel="next" title="01test_07day">
+      01test_07day <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">一.介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-Linux%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">二.Linux环境的安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89-Linux%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="nav-number">3.</span> <span class="nav-text">三.Linux的历史</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B-Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%A4%E7%9F%A5"><span class="nav-number">4.</span> <span class="nav-text">四.Linux系统的认知</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94-%E7%BB%88%E7%AB%AF%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">五.终端的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD-%E5%91%BD%E4%BB%A4"><span class="nav-number">6.</span> <span class="nav-text">六.命令</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="naoemb"
+      src="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+  <p class="site-author-name" itemprop="name">naoemb</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hexgio" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hexgio@outlook.com" title="E-Mail → mailto:hexgio@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/hexgio" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ynblog.cf/" title="关联博客 → https:&#x2F;&#x2F;ynblog.cf" rel="noopener" target="_blank"><i class=" fa-fw"></i>关联博客</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">naoemb</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">355k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:22</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}
+	siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

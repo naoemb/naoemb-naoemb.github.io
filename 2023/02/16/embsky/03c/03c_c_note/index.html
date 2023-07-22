@@ -1,0 +1,2593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"naoemb.cf","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 2022-7-15&#x3D;&#x3D;&amp;#x3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03c_c_note">
+<meta property="og:url" content="https://naoemb.cf/2023/02/16/embsky/03c/03c_c_note/index.html">
+<meta property="og:site_name" content="naoemb">
+<meta property="og:description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 2022-7-15&#x3D;&#x3D;&amp;#x3">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-16T00:03:05.804Z">
+<meta property="article:modified_time" content="2022-09-01T17:52:13.000Z">
+<meta property="article:author" content="naoemb">
+<meta property="article:tag" content="03c">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://naoemb.cf/2023/02/16/embsky/03c/03c_c_note/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>03c_c_note | naoemb</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">naoemb</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">65</span></a>
+
+  </li>
+        <li class="menu-item menu-item-笔记">
+
+    <a href="/%E7%AC%94%E8%AE%B0" rel="section"><i class="fa fa-sticky-note fa-fw"></i>笔记</a>
+
+  </li>
+        <li class="menu-item menu-item-c练习题">
+
+    <a href="/C%E7%BB%83%E4%B9%A0%E9%A2%98/" rel="section"><i class="fa fa-code fa-fw"></i>C练习题</a>
+
+  </li>
+        <li class="menu-item menu-item-unix">
+
+    <a href="/UNIX/" rel="section"><i class="fa fa-file-code-o fa-fw"></i>UNIX</a>
+
+  </li>
+        <li class="menu-item menu-item-每天英语">
+
+    <a href="/%E6%AF%8F%E5%A4%A9%E8%8B%B1%E8%AF%AD" rel="section"><i class=" fa-fw"></i>每天英语</a>
+
+  </li>
+        <li class="menu-item menu-item-musiclist">
+
+    <a href="/musiclist/" rel="section"><i class="fa fa-volume-up fa-fw"></i>歌单</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/03c/03c_c_note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          03c_c_note
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-02 01:52:13" itemprop="dateModified" datetime="2022-09-02T01:52:13+08:00">2022-09-02</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>33k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>30 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="2022-7-15"><a href="#2022-7-15" class="headerlink" title="2022-7-15"></a>2022-7-15</h1><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h2 id="一-编辑器"><a href="#一-编辑器" class="headerlink" title="一.编辑器"></a>一.编辑器</h2><pre><code>    vi
+    gedit
+    emacs
+    ...
+    我们主要使用vim
+</code></pre>
+<h2 id="二-编译器"><a href="#二-编译器" class="headerlink" title="二.编译器"></a>二.编译器</h2><pre><code>    gcc -&gt; cc
+虽然我们称gcc是C语言的编译器,但使用gcc编译C语言源代码文件不仅仅是编译的过程,而是要经历四个相互关联的步骤∶预处理(也称预编译)-&gt;编译-&gt;汇编-&gt;链接.
+        1.从一个.c文件编译成可执行文件需要经历4个阶段
+            预处理器
+            编译器
+            汇编器
+            链接器
+        2.预处理时需要哪些操作
+            文件包含
+            宏定义
+            条件编译
+
+        gcc
+        gcc 文件名	编译.c程序
+        
+        gcc hello.c
+        什么也没有提示	证明程序没有问题(语法),编译通过
+                        并不代表程序执行完全正确
+        报出警告			会生成可执行文件,有可能执行成功	
+        报出错误			100%程序有问题,不会生成可执行文件
+
+        gcc -Wall 1.c
+            W	警告
+            all	所有
+        gcc -o hello hello.c
+            指定编译之后生成的可执行文件的名字
+        编译生成 二进制可执行文件a.out
+        执行./a.out
+</code></pre>
+<h2 id="三-代码实例"><a href="#三-代码实例" class="headerlink" title="三.代码实例"></a>三.代码实例</h2><pre><code>    #include &lt;stdio.h&gt;
+        /*
+            #include	文件包含
+            在C语言中以#开头是预处理的内容
+            预处理阶段包括	文件包含	宏定义	条件编译
+            stdio.h		头文件(.h结尾)标准的输入输出
+            &lt;...&gt;		默认从/usr/include找头文件
+            &quot;...&quot;		默认从本地目录中找头文件
+        */
+
+    int main(void)//void	空
+    &#123;
+        printf(&quot;hello world!&quot;);
+        /*
+            printf是一个功能函数(打印输出的函数	终端中)
+            在C语言中双引号引起来的表示为 字符串
+            在C语言中单引号引起来的表示为 字符
+            字符串 是由 一个一个字符组成的
+            默认字符串最后有尾0 &#39;\0&#39;
+            &quot;hello&quot; = &#39;h&#39; + &#39;e&#39; + &#39;l&#39; + &#39;l&#39; + &#39;o&#39; + &#39;\0&#39;
+        */
+
+        return 0;
+        /*
+            return 也属于跳转语句,默认函数中碰到return函数就结束了
+                return之后的值会返回给调用者
+                返回值
+                    1.返回的是结算结果
+                    2.返回函数执行状态
+                        0		函数正常结束
+                        正值	函数有异常
+                        负值	函数有错误
+        */
+    &#125;
+            main函数(主函数)	
+            当执行程序时是从主函数进入,从上往下逐条逐条执行,程序结束时从主函数退出
+            1.函数的声明
+                函数的返回值类型 函数名(参数);//形参
+            2.函数的实现
+                函数的返回值类型 函数名(参数)//形参
+                &#123;
+                    函数功能;
+                &#125;
+            3.函数的调用
+                函数名(参数);//实参
+</code></pre>
+<h2 id="四-printf打印之转义字符-见C截图"><a href="#四-printf打印之转义字符-见C截图" class="headerlink" title="四.printf打印之转义字符(见C截图)"></a>四.printf打印之转义字符(见C截图)</h2><pre><code>    注意虽然在写转义字符时是 \ + X,但是是一个字符
+
+    转义字符		意义								ASCII码值（十进制）
+    \a			响铃(BEL)						007
+    \b			退格(BS) ，将当前位置移到前一列		008
+    \f			换页(FF)，将当前位置移到下页开头	012
+    \n			换行(LF) ，将当前位置移到下一行开头	010
+    \r			回车(CR) ，将当前位置移到本行开头	013
+    \t			水平制表(HT) （跳到下一个TAB位置）	009
+    \v			垂直制表(VT)						011
+    \\			代表一个反斜线字符&#39;&#39;\&#39;				092
+    \&#39;			代表一个单引号（撇号）字符			039
+    \&quot;			代表一个双引号字符					034
+    \?			代表一个问号						063
+    \0			空字符(NULL)						000
+    \ddd		1到3位八进制数所代表的任意字符		三位八进制
+    \xhh		1到2位十六进制所代表的任意字符		二位十六进制
+</code></pre>
+<h2 id="五-printf打印之标准化输出格式-见C截图"><a href="#五-printf打印之标准化输出格式-见C截图" class="headerlink" title="五.printf打印之标准化输出格式(见C截图)"></a>五.printf打印之标准化输出格式(见C截图)</h2><pre><code>    字符		对应数据类型		含义
+    d / i	int				接受整数值并将它表示为有符号的十进制整数，i是老式写法
+    o		unsigned int	无符号8进制整数(不输出前缀0)
+    u		unsigned int	无符号10进制整数
+    x / X	unsigned int	无符号16进制整数,x对应的是abcdef,X对应的是ABCDEF（不输出前缀0x)
+    f(lf)	float(double)	单精度浮点数用f,双精度浮点数用lf(尤其scanf不能混用)
+    e / E	double			科学计数法表示的数,此处&quot;e&quot;的大小写代表在输出时用的&quot;e&quot;的大小写
+    g / G	double			使用以上两种中最短的形式，大小写的使用同%e和%E
+    c		char			字符型。可以把输入的数字按照ASCII码相应转换为对应的字符
+    s / S	char *			字符串。输出字符串中的字符直至字符串中的空字符
+                                (字符串以&#39;\0‘结尾，这个&#39;\0&#39;即空字符)
+    p		void *			以16进制形式输出指针
+    n		int *			到此字符之前为止，一共输出的字符个数，不输出文本
+    %		无输入			不进行转换，输出字符‘%’（百分号）本身
+    m		无				打印errno值对应的出错内容,(例: printf(&quot;%m\n&quot;); )
+
+    注：%g、%G在小数点位数四位或指数大于等于精度时用%e、%E，否则用%f。
+    ---------------------
+        标准化输出格式
+        是由 % + * 组成,不是字符
+        %		是占位符号
+        %.2f	输出小数点后两位
+        %.1f	输出小数点后一位
+        %3d		输出的十进制数字最少占用3个字符位置
+        %03d	空出的补0
+</code></pre>
+<h2 id="六-变量"><a href="#六-变量" class="headerlink" title="六.变量"></a>六.变量</h2><pre><code>    1.变量是用来存储数据(在内存中进行存储)
+    2.变量的定义
+        数据类型	变量名;
+        int			a;
+        1&gt;	数据类型分类
+            整型		有/无符号		short int long
+            实型		有符号		float double
+            字符型	有/无符号		char
+        2&gt;	测试自己所用机器的类型所占字节数
+            sizeof()是一个运算符,单位是字节
+            sizeof(变量名/数据类型)
+            1字节 = 8位
+        3&gt;	变量名的要求
+            1)	变量名是区分大小写的
+            2)	变量名不能与C语言的关键字重复
+            3)	变量名可以由数字 字母 下划线组成,但是不能以数字开头
+            4)	变量名尽量见名生义
+        4&gt;	在使用变量时需要注意的点
+            1)	先定义再使用
+            2)	便于编译时检查错误,不同类型的变量有不同的运算要求
+            3)	定义变量之后,类型确定了,将来所占用的存储空间就确定了
+    3.变量的赋值
+        变量名	=	数值;
+        a		=	1000;
+        在复制时,赋值运算符需要把右边的项经过计算复制给左边的项(左值)
+    4.变量的初始化
+        数据类型	变量名	=	数值;
+        int			a	=	1000;
+
+    char
+        char存储形式,1字节8位
+        有符号类型的char可以存储的数的范围是(-128~127)
+        char c = 13;//0000 1101
+        XYYY YYYY
+        第7位	为最高位,是符号位
+        第6~0位	为数据位
+        char c = 127;//1111 1111
+        char c = -128;//1000 0000
+    
+    float
+        float存储形式,4字节32位
+
+        第31位		符号位	0代表正数，1代表负数
+        第30~23位	阶位		转化成规格化的二进制之后与127做和
+        第22~0位		尾数
+
+        例:
+        3.2
+        正的所以最高位符号位为	0
+        3	转化成二进制为11
+        0.2	小数部分乘2取整,然后从前往后读
+            0.2 * 2 = 0.4	0
+            0.4 * 2 = 0.8	0
+            0.8 * 2 = 1.6	1
+            0.6 * 2 = 1.2	1
+            0.2 * 2 = 0.4	0
+        11.001100110011...
+        然后将11.001100110011...的小数点向左移至小数点前只有一个1,即左移1位.
+        阶码就是1+127 = 128  即:1000 0000
+        尾数:因为小数点前必为1,所以记录小数点后面的数即可 100110011001...
+
+       0100 0000 0100 1100 1100 1100 1100 1100
+</code></pre>
+<h2 id="七-引入scanf概念"><a href="#七-引入scanf概念" class="headerlink" title="七.引入scanf概念"></a>七.引入scanf概念</h2><pre><code>        int a = 0;
+        int b = 0;
+
+        scanf(&quot;%d-%d&quot;, &amp;a, &amp;b);//接收键盘上录入的数值
+        1.	scanf中只写标准化输出格式就可以了,不要写其他的
+        2.	scanf中后面的变量必须要加 &amp;(取地址)
+        3.	scanf中的双引号内不要写 &#39;\n&#39;
+        printf(&quot;a = %d\nb = %d\n&quot;, a, b);//打印到屏幕上
+
+        return 0;
+==================================
+作业
+    1.把今天讲过的内容完完整整的复习一遍
+        明天会提问,回答不上来的同学,罚在纸上抄写10遍
+    2.可以找一些编程的问题做一做
+==================================
+</code></pre>
+<h2 id="八-运算符"><a href="#八-运算符" class="headerlink" title="八.运算符"></a>八.运算符</h2><pre><code>    1.算术运算符：* - + / %
+    
+    2.关系运算符： &gt; &lt; == != &gt;= &lt;=
+
+    3.逻辑运算符：! &amp;&amp; ||
+    
+    4.位运算符：&lt;&lt; &gt;&gt; ~ | ^ &amp;(异或相同为0,不同为1)
+    
+    5.赋值运算符：= += -= *= /= %= &gt;&gt;= &lt;&lt;= &amp;= |= ^=
+    
+    6.条件运算符：?:    max = (a &gt; b) ? a : b
+    
+    8.指针运算符：*和&amp;
+        *	取值
+        &amp;	取地址
+        是可逆的
+    
+    9.求字节数运算符：sizeof()
+        sizeof()	放变量/数据类型
+    
+    10.强制类型转换运算符：(类型)
+    
+    11.分量运算符：. -&gt; (结构体)
+        结构体
+        共用体
+    
+    12.下标运算符：[ ]
+        int arr[5];	//	5个成员
+        arr[0] ~ arr[4]//	1.数组名 + 下标
+    
+    13.自增自减运算符：++ --
+            6 / 2 * (2 + 1)
+    
+    14.其他：如函数调用运算符:()
+    
+    注意：条件运算符是C语言中惟一一个三目(三元)运算符
+
+    凡是位运算都需要把操作数变成补码形式
+    操作数为正数,那么补码是它的本身(原码 = 补码)
+    操作数为负数,无论 原码转补码 还是 补码转原码,都是除了符号位不变,其他位按位取反再加1
+               char a = 13;    ~a;
+               二进制(原码)
+               0   0   0   0   1   1   0   1
+               因为是个正数,所以补码 = 原码
+               补码(取反操作之前)
+               0   0   0   0   1   1   0   1
+               ~
+               1   1   1   1   0   0   1   0
+               补码(取反操作之后)
+               1   1   1   1   0   0   1   0
+               反码
+               1   1   1   1   0   0   0   1
+               原码
+               1   0   0   0   1   1   1   0
+
+               char a = -13;   ~a;
+               原码
+               1   0   0   0   1   1   0   1
+               反码
+               1   1   1   1   0   0   1   0
+               补码(取反之前)
+               1   1   1   1   0   0   1   1
+               ~a
+               0   0   0   0   1   1   0   0
+               补码(取反之后)
+               0   0   0   0   1   1   0   0
+               原码
+               0   0   0   0   1   1   0   0
+=================================
+作业
+1.把今天讲过的内容完完整整的复习一遍
+2.如果复习完之后,可以找一些编程题目做一做
+=================================
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="2022-7-18"><a href="#2022-7-18" class="headerlink" title="2022-7-18"></a>2022-7-18</h1><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>##	分支语句<br>###	if<br>    int main()<br>    {<br>        语句1;<br>        if(条件)&#x2F;&#x2F; 真假<br>        {<br>            语句2;<br>        }<br>        语句3;<br>    }<br>    语句1–&gt;判断if条件(真)–&gt;语句2–&gt;语句3–&gt;结束<br>                        |<br>                        假–&gt;语句3–&gt;结束</p>
+<h3 id="if…else"><a href="#if…else" class="headerlink" title="if…else"></a>if…else</h3><pre><code>int main(void)
+&#123;
+    语句1
+        if(条件)
+        &#123;
+            语句2
+        &#125;
+        else
+        &#123;
+            语句3
+        &#125;
+    语句4
+&#125;
+语句1--&gt;条件判断(真)--&gt;语句2--&gt;语句4
+                 |
+                 假--&gt;语句3--&gt;语句4
+</code></pre>
+<h3 id="if…else-if…else-if…"><a href="#if…else-if…else-if…" class="headerlink" title="if…else if…else if…"></a>if…else if…else if…</h3><pre><code>int main(void)
+&#123;
+    语句1
+        if(条件1)
+        &#123;
+            语句2
+        &#125;
+        else if(条件2)
+        &#123;
+            语句3
+        &#125;
+        else
+        &#123;
+            语句4
+        &#125;
+    语句5
+&#125;
+语句1--&gt;判断条件1(真)--&gt;语句2--&gt;语句5
+                  |
+                  假--&gt;判断条件2(真)--&gt;语句3--&gt;语句5
+                                 |
+                                 假--&gt;语句4--&gt;语句5
+
+//比较两个值是否相等一定要用 ==
+//if 里的大括号一定不要丢
+</code></pre>
+<h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><pre><code>语句1
+switch(变量)
+&#123;
+    case 条件1 ://条件是整常量 可以是 数字 或者 字符
+        语句2
+            break;
+    case 条件2 :
+        语句3
+            break;
+    default:
+        语句4
+            break;
+&#125;
+语句5
+语句1-&gt;(变量匹配)条件1(真)-&gt;语句2-&gt;break-&gt;语句5
+                    |
+                    假-&gt;条件2(真)-&gt;语句3-&gt;break-&gt;语句5
+                            |
+                            假-&gt;语句4-&gt;break-&gt;语句5
+
+***************
+注意:
+switch里加break,
+匹配完条件-&gt;执行完语句-&gt;直接跳出switch
+
+如果不加break
+匹配条件-&gt;执行语句-&gt;顺序往下执行
+
+如果case里加return
+执行到return语句直接退出程序
+***************
+break(可以在switch和循环中用)
+跳出switch
+break 和 return区别
+break 是跳出 switch体
+return是跳出这个函数
+(main函数也是函数,如果main()函数里
+ 执行到return,代表程序的结束)
+------------------
+练习
+键入一个整数x,
+如果小于3则执行x+3操作,
+如果大于等于3则执行3*x+9
+如果大于9则执行9*x-10
+------------------
+homework
+1.输入三个值判断这三个值是否构成三角形
+(是否是直角 等腰 等边 普通 不能)	
+
+2.输入三个整数x,y,z,请把这三个数由从小到大输出
+
+3.学习成绩&gt;=90分的同学用A表示,60-89分之间的用B表示，小于60用C表示
+
+4.输入成绩
+0-59    不及格
+60-69   及格
+70-79   中
+80-89   良
+90-100  优
+(考虑哪个阶段的人多-&gt;程序效率上考虑)
+20000学生	其中15000个学生	都是80-89
+
+5.停车场收费系统,3小时以内,收费每小时30元,超出部分每小时50元
+
+6.输入相应的字符打印相应的语句(默认不区分大小写)
+输入a,打印	钟薛高18块钱
+输入b,打印	梦龙8块钱
+输入c,打印	老冰棒1块钱
+输入d,打印	雪莲0.5块钱
+
+7.判断输入的4位数是否是回文数(1221是回文数, 1234不是)
+
+8.输入年份判断该年是否是闰年	RTC(实时时钟)
+//闰年
+//能被4 整除但是不能被100整除 能被400整除
+
+9.输入一个整数,判断是否既是3 也是5 又是7的倍数 (num % 105)
+==================================================
+10.输入年月日,打印出是该年的第几天
+//2015-9-25
+是2015年的第?天
+
+11.输入相应的字符打印相应的语句(默认不区分大小写)
+输入a,打印	钟薛高18块钱
+输入b,打印	梦龙8块钱
+输入c,打印	老冰棒1块钱
+输入d,打印	雪莲0.5块钱
+
+12.输入成绩
+0-59    不及格
+60-69   及格
+70-79   中
+80-89   良
+90-100  优
++++++++++
+1.定义变量a,通过键盘录入a的值,判断a的值是否是偶数
+2.定义变量year,通过键盘录入year的值,判断year是否是闰年
+    能被4整除但是不能被100整除的年份是闰年
+    或者能被400整除的年份是闰年
+3.定义三个变量a b c,通过键盘录入三个非零的正整数
+    判断是否可以构成三角形
+===================================
+作业:
+    1.把今天讲过的内容完完整整的复习一遍
+    2.复习之后,写上面的编程题目(1 - 9使用if来做)(10 - 12使用switch)
+注意:
+    1.千万不要忽略复习的重要性
+    2.千万不要眼高手低(程序再小,也是程序,一定要亲手写一遍,才能说自己会)
+===================================
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="2022-7-18-1"><a href="#2022-7-18-1" class="headerlink" title="2022-7-18"></a>2022-7-18</h1><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><pre><code>for(循环的初始化; 循环控制部分; 循环的修改部分)
+&#123;
+    循环主体;
+&#125;
+for
+循环初始部分……为循环变量附初值
+循环控制部分……按照循环条件控制循环正常进行
+循环的修改部分……循环执行中，循环变量按照一定规律变化
+循环体（工作部分）……要多次循环的代码部分
+#include &lt;stdio.h&gt;
+
+int main(void)
+&#123;
+    int i = 0;//循环变量
+    int sum = 0;
+    for(i = 0; i &lt;= 100; i++)
+        //i = 0循环的初始部分为循环变量赋初值
+        //i &lt;= 100循环的控制部分，控制循环的进行
+        //i++循环的修改部分，修改循环变量
+        //sum += i循环体，循环的主体
+    &#123;
+        sum += i;
+    &#125;
+    printf(&quot;sum = %d\n&quot;, sum);
+    return 0;
+&#125;
+
+流程图
+                for i = 1循环初始部分
+                    |
+                i &lt;= 100 循环控制部分&lt;---
+            否------|是                 |
+            |   sum = sum + i;循环体    |
+            |       |                   |
+            |   i++ 程序修改部分---------
+            |
+            |
+            |
+            |_______
+                    |
+                其他语句
+
+其他形态
+
+(1)
+    for(a = 0, b = 0; a != 3 &amp;&amp; b != 3; a++, b++)
+&#123;
+
+&#125;
+(2)
+    for(; ;)
+&#123;
+    需要循环的部分;
+&#125;
+死循环
+(3)
+    for(a = 0; a &lt; 10; a++)
+    &#123;
+        for(b = 0; b &lt; 10; b++)
+        &#123;
+    
+        &#125;
+    &#125;
+</code></pre>
+<h4 id="随机函数"><a href="#随机函数" class="headerlink" title="随机函数"></a>随机函数</h4><pre><code>    rand()//产生随机数
+    srand()//随机种子
+
+    int a = 0;
+    int b = 0;
+
+    srand(time(NULL));
+    //rand()     产生随机数
+    //srand()    随机种子
+    //time(NULL) 时间
+    //NULL       空
+    for(a = 0; a &lt; 10; a++)//随机取出10个(50~100以内的数)
+    &#123;
+        b = rand() % 50 + 50;
+        //rand() % 50       [0~49]范围
+        //rand() % 50 + 50  [50~99]范围
+        printf(&quot;b = %d\n&quot;, b);
+    &#125;
+</code></pre>
+<h4 id="break"><a href="#break" class="headerlink" title="break"></a>break</h4><pre><code>//break 应用于循环和switch中
+
+跳出 循环
+跳出 switch
+
+//如果遇到嵌套循环的话,break 只跳出最近的循环
+
+continue
+
+//continue 只应用于循环当中
+
+跳出本次循环
+
+//如果遇到嵌套循环的话,continue也只是跳出本次循环
+</code></pre>
+<h2 id="homework"><a href="#homework" class="headerlink" title="homework"></a>homework</h2><pre><code>1.
+(1)打印4 * 5 的 *
+例:
+*****
+*****
+*****
+*****
+(2).打印i * j 的 * (i j 键盘接收)
+    例:i = 4, j = 5
+    //4-5 5-6
+    *****
+    *****
+    *****
+    *****
+(3).打印i * j 的 * 边框(i j 键盘接收)
+    例: i = 4, j = 5
+    *****
+    *   *
+    *   *
+    *****
+2.打印99乘法表
+    1 * 1 = 1
+    1 * 2 = 2 2 * 2 = 4
+    *
+    **
+    ***
+    ****
+
+
+3.计算1+2+3+4+5+...+n, n是从键盘输入的自然数
+
+// 穷举
+4.要将5张100元的大钞票,换成等值的50 20 10 5小钞票,每种面值至少一张,要多少张,有多少种换法
+
+5.有1、2、3、4 4个数字,能组成多少个互不相同且无重复的三位数呢
+
+6.有这样的一个等式,xyz+yzz=532,编程求x y z的值
+
+7.计算1^2 + 2^2 + 3^2 + ... +10^2的结果
+(1的平方 + 2的平方)
+
+8.输入20个人的成绩,输出不及格的人数(0&lt;=score&lt;60 为不及格)
+
+9.随机产生100个三位随机数,找出其中能被 3 5 7整除的数
+
+10.打印0~100以内所有的质数
+(只能被1 和 本身整除的数)
+
+11.猜数游戏(随机产生一个1000以内的数,去猜,
+        如果大了打印猜的大了,
+        如果小了打印猜的小了,
+        如果正确打印对的
+        直到猜对了再结束,每次打印必须打印出猜的次数)
+
+12. 把11修改成,程序开始时,先输入需要猜的数的范围n
+例:(想要猜数的范围是(0~10000) 那么变量n接收键盘上10000
+        范围都是从0开始)
+
+13.
+----------------------------
+a + b - 9 = 4
++	-	-	
+c -	d * e = 4
+/	*	-
+f + g - h = 4
+=	=	=
+4	4	4
+求a b c d e f g h (0 ～ 12范围内)//除法指的是整除 c % f == 0
+只有一种答案
+===================================
+作业:
+1.把今天讲过的内容完完整整的复习一遍
+2.来做上述的编程题目
+3.如果还有时间可以自己再找一些题目来做
+4.有问题微信上直接找张老师
+===================================
+</code></pre>
+<h3 id="while"><a href="#while" class="headerlink" title="while()"></a>while()</h3><pre><code>语句1
+
+while(条件)
+&#123;
+    循环体
+&#125;
+
+语句2
+                            ---------------
+                            |             |
+        语句1 --&gt; 条件判断(真) --&gt; 循环体 ---|
+                            |(假)
+                            |---------------&gt;语句2
+
+    /*
+       while(条件)//必须要有条件
+       &#123;
+           主体
+       &#125;
+       当满足条件的时候,进入while循环,执行循环体
+     */
+
+while(1)//死循环
+
+=================================
+do...while
+//和while相比较 先执行在判断
+// do...while 至少循环一次
+
+do
+&#123;
+    需要循环的语句;
+&#125;while();
+
+n = 1;
+do
+&#123;
+    sum += n;
+    n++;
+&#125;while(n &lt;= 100);
+
+==============================
+break
+
+//break 应用于循环和switch中
+
+跳出 循环
+跳出 switch
+
+//如果遇到嵌套循环的话,break 只跳出最近的循环
+
+continue
+
+//continue 只应用于循环当中
+
+跳出本次循环
+
+//如果遇到嵌套循环的话,continue也只是跳出本次循环
+</code></pre>
+<h3 id="goto-x2F-x2F-跳转语句"><a href="#goto-x2F-x2F-跳转语句" class="headerlink" title="goto&#x2F;&#x2F;	跳转语句"></a>goto&#x2F;&#x2F;	跳转语句</h3><pre><code>i = 1;//循环变量的初始
+
+loop://标记
+
+if(i &lt;= 100)//循环变量的的控制
+&#123;
+    sum += i;//循环体
+    i++;//循环变量的变化
+    goto loop;//跳到标记处
+&#125;
+面试题:
+(1)从键盘上接收一个正整数,打印输出它的倒序
+例:
+12345
+    54321
+(2)
+如果是一个负数
+例:
+-1234
+
+-4321
+(3)
+    atoi()把字符串转换成十进制整数
+    &quot;123&quot;		-&gt;	123
+atox atoo
+&quot;0x40008000&quot;	-&gt;	0x40008000
+&quot;1234&quot;			-&gt;	1234
+实现一个 itoa() 函数
+
+12345
+&quot;12345&quot;
+=====================================
+</code></pre>
+<h2 id="homework-1"><a href="#homework-1" class="headerlink" title="homework"></a>homework</h2><pre><code>14.求1+12+123+...前N项之和,其中N是从键盘输入的数(N取值范围（1~9）)
+    n = 5;
+    sum = 1 + 12 + 123 + 1234 + 12345;
+
+15.爱因斯坦出了一道这样的数学题,有一条长阶梯,若每步跨2阶,则最后剩1阶,若每步跨3阶,则最后省2阶,若每步跨5阶,则最后剩4阶,若每步跨6阶，则最后剩5阶只有每次跨7阶,最后才正好1阶不剩,请问在这条阶梯最少多少阶
+
+16.设N是一个4位数,它的9倍恰好是它的反序数
+    例:1234 反序数是4321
+
+17.求s = a + aa + aaa + aaaa + ... + aa...a的值,其中a是1~9的一个数字(不超过十项)
+例:a = 3; s = 3 + 33 + 333;
+
+18.“百钱百鸡”问题,百钱买百鸡,公鸡1个3块钱,母鸡1个2块钱，小鸡3个一块钱,问公鸡,母鸡,小鸡各多少个
+
+19.打印三角形	(画8个三角形)
+* * * * *
+  * * * *
+    * * *
+      * *
+        *
+6_1.打印三角形
+    录入n,n是直角三角形的高
+    例:	n = 3
+      * 
+    * * * 
+  * * * * *
+    n = 4
+      * 
+    * * * 
+  * * * * * 
+* * * * * * * 
+
+
+20.猴子吃桃问题,有一天一只猴子摘了一些桃子,它吃掉一半,又吃了一个,第二天也是这样,到了第十天,只有一个桃子了,求猴子摘了多少桃子
+
+21. 4 5 6 7总共能组成多少个不能被4整除的4位数
+
+22.求n!(n的阶乘)
+====================================
+作业
+1.把今天讲过的内容完完整整的复习一遍
+2.整理笔记
+3.写编程题目
+====================================
+</code></pre>
+<h2 id="小项目"><a href="#小项目" class="headerlink" title="小项目"></a>小项目</h2><pre><code>                        电子版的口算卡
+随机生成10道100以内的 [加 减 乘 除 取余] 数学题 回答正确的加10分错误不加分(把正确结果打印出来) 然后显示最后成绩。(不用float类型)	
+1&gt;	操作数随机  2&gt;	运算符随机
+gcc 1.c		当执行./a.out之后,先清屏
+23 + 70 = 93
+Bingo!	+10分
+15 - 30 = -15
+Bingo!	+10分
+23 * 87 = 0
+Error!	====== 正确结果打印出来
+总分 70分
+====================================
+</code></pre>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><pre><code>机器
+CPU     内存    硬盘
+快      中      慢
+
+int a = 100;//初始化int类型变量
+int *p;//定义指针
+
+p = &amp;a;//把a的地址传给指针p
+//&amp; 取地址符
+
+printf(&quot;a = %d\n&quot;, a);
+
+*p = 200;//通过指针改变值
+
+printf(&quot;*p = %d\n&quot;, *p);
+//* 取指针所保存的地址所在的位置里的值
+// 可以简化成取值
+
+不同数据类型
+
+printf(&quot;char = %lu\n&quot;, sizeof(c));
+printf(&quot;short = %lu\n&quot;, sizeof(s));
+printf(&quot;int = %lu\n&quot;, sizeof(i));
+printf(&quot;float = %lu\n&quot;, sizeof(f));
+
+
+int *p; int代表以后在保存地址的时候变量的数据类型
+所有指针在内存中占8个字节(64位操作系统)
+
+
+int a = 100;
+
+变量名      值      址
+a           100     0x1000
+0x1001
+0x1002
+0x1003
+pa          0x1000  0x2000
+
+
+注意:
+1.指针所占字节数不分类型都是 8个字节(分操作系统)
+
+int *p;
+char *c;
+2.pa += 1//pa++改变了pa所存的地址值
+当指针自增p++改变的是指针保存的地址,改变的字节数
+和所存地址值的变量的类型有关p++ 改变了p所存的地址值
+p+1 没有改变p所保存的地址值
+
+3.如果想要操作指针,改变指针 用二级指针
+取地址符(&amp;)不管是变量还是指针只能加一个
+对于一级指针来说,取值符(*)只能加一个
+
+4.* 和 &amp; 是一个可逆的过程,可以中和
+
+printf(&quot;*(&amp;a) = %d\n&quot;, *(&amp;a));	对
+printf(&quot;&amp;(*a) = %d\n&quot;, &amp;(*a));	错
+
+/*一级指针 操作不了一级指针*/
+
+a           pa          pp
+值  100         &amp;a          &amp;pa
+
+址  0x1000      0x2000      0x3000
+
+a           pa          pp
+值  100         0x1000      0x2000
+
+址  0x1000      0x2000      0x3000
+
+======================================
+</code></pre>
+<h3 id="二级指针"><a href="#二级指针" class="headerlink" title="二级指针"></a>二级指针</h3><pre><code>注意:
+1.二级指针所占字节数不分类型都是 8个字节
+(分操作系统)
+
+int **p;
+char **c;
+2.
+二级指针也可以做加法运算
+int **p;
+p + 1;	p++;	p+=1;
+当二级指针偏移一个单位跨8个字节
+
+3.如果想要操作指针,改变指针 用二级指针
+取地址符(&amp;)不管是变量还是指针只能加一个
+对于一级指针来说,取值符(*)只能加一个
+
+4.* 和 &amp; 是一个可逆的过程,可以中和
+
+printf(&quot;*(&amp;a) = %d\n&quot;, *(&amp;a));	对
+printf(&quot;&amp;(*a) = %d\n&quot;, &amp;(*a));	错
+</code></pre>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><pre><code>    void    空
+返回值的类型 函数名(参数)
+&#123;
+    功能
+&#125;
+
+main()是程序的入口;
+
+
+函数之间的调用
+
+注意:
+2.调用的函数写到被调用函数的下面
+3.函数可以先定义,再写函数的实现
+
+//函数的定义
+void print(int c);
+
+void print(int c)//显示 函数的实现
+&#123;
+    printf(&quot;c = %d\n&quot;, c);
+&#125;
+参数传递
+
+值传递
+a = 3, b = 4;
+swap(a, b)
+    当main函数调用swap函数的时候,
+    只是把变量的值传过去
+    相当于swap(3, 4)
+
+地址传递
+a = 3, b = 4;
+swap(&amp;a, &amp;b)
+    当main函数调用swap函数的时候,
+    把a和b的地址传过去
+相当于swap(0x1000, 0x2000)
+/*
+   如果函数想要改变main函数的变量的话,
+   可以传变量的地址
+   如果函数只是想用main函数地变量的值的话,
+   可以传变量的值
+ */
+======================================
+
+猜数游戏(随机产生一个1000以内的数,去猜,
+        如果大了打印猜的大了,
+        如果小了打印猜的小了,
+        如果正确打印对的
+        每次打印必须打印出猜的次数)
+
+
+口算卡
+    随机10道口算卡题目
+
+        100 + 100 = 300
+        wrong! ========= 200
+    
+    1.操作数100以内随机
+    2.运算符 + - * / % 随机
+    3.不用float
+    4.多函数实现
+
+第一阶段
+    只写一个.c文件,.c文件中只有一个main函数
+第二阶段
+    只写一个.c文件,,c文件中有一个main函数,多个功能函数
+第三阶段
+    写多个文件
+    main.c		主函数和功能函数调用
+    func.c		功能函数的实现
+    func.h		功能函数的声明
+    makefile	编译规则
+第四阶段
+    把func.c做成库文件	动态库	静态库
+
+======================================
+作业
+    1.把今天讲过的内容从头到尾复习一遍
+    2.把之前打印8个三角形的程序整合一个程序,其中打印图形的功能封装成函数
+    3.猜数游戏(随机产生一个1000以内的数,去猜,
+        如果大了打印猜的大了,
+        如果小了打印猜的小了,
+        如果正确打印对的
+        每次打印必须打印出猜的次数)
+    4.口算卡
+    随机10道口算卡题目
+
+        100 + 100 = 300
+        wrong! ========= 200
+    
+    1.操作数100以内随机
+    2.运算符 + - * / % 随机
+    3.不用float
+    4.多函数实现
+</code></pre>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h3><pre><code>int a[5];
+
+a[0]		a[1]		a[2]
+1		2		3
+0x1000	0x1004	0x1008
+
+命名规则
+int a[5] = &#123;1, 2, 3, 4 ,5&#125;;
+int b[5] = &#123;0&#125;;
+waring!
+int c[]  = &#123;1, 2, 3, 4, 5&#125;;
+   int a[10];
+   int *p = a;
+
+   a[i];   数组+下标
+   p + i;  指针+偏移
+   a + i;  数组名+偏移
+ 	p[i]	指针+下标
+
+&amp;arr[0] = 0xbf8c97ec	1
+arr = 0xbf8c97ec		2
+&amp;arr = 0xbf8c97ec		3
+1 2 数组首元素的地址
+3	数组的地址
++++++++++++++++++++++
+&amp;arr[1] = 0xbf8c97f0	
+arr + 1 = 0xbf8c97f0
+&amp;arr + 1 = 0xbf8c9800
+
+
+一维数组特性
+1.数组名可以当指针来用,利用地址加法运算,计算出数组元素地址加*取出地址中的内容
+注:a[i] = *(a + i)
+
+2.sizeof(数组名) = 整个数组长度(整个数组所占字节数)
+
+3.数组名是常量，不能改变指向
+
+p = &amp;i;//指针可以保存别的地址
+a = &amp;i;//数组名不可以
+
+*(a + i);
+a += i;//a = a + i	a++;	数组名都不可以这样操作
+4.数组名可以当指针来用,但是,不是指针
+</code></pre>
+<h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><pre><code>   int a[15][15]
+   char a[15][15]
+int a[2][3] = &#123;0&#125; 
+a[0][0] a[0][1] a[0][2]
+a[1][0] a[1][1] a[1][2]
+
+内存
+a[0][0]         0x0
+a[0][1]         0x4
+.
+.
+.
+a[1][2]
+
+在内存中是顺序的存储
+
+命名规则
+int a[3][4] = &#123;&#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;&#125;;
+int a[3][4] = &#123;0&#125;;
+int a[3][4] = &#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;
+////!!!!!
+int a[][4] = &#123;&#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;&#125;;
+
+二维数组中行数可以省略,列数不可以
+
+二维数组特性
+1.数组名可以当指针来用,利用地址加法运算,计算出数组元素地址
+
+    加*取出地址中的内容
+    注: a[1][2] = *(*(a + 1) + 2)
+    a[2][3] = *(*(a + 2) + 3)
+    a[i][j] = *(*(a + i) + j)
+2.sizeof(数组名) = 整个数组长度(不是指针长度)
+
+    a[4][5];
+    sizeof(a) / sizeof(a[0])        算多少行
+    sizeof(a) / sizeof(a[0][0])     算数组成员个数
+    注: 算多少行sizeof(a)/sizeof(a[0])
+算多少列sizeof(a[0])/sizeof(a[0][0])
+    sizeof(a)是整个数组的大小
+sizeof(a[i]是第i行的大小)
+
+    3.数组名是常量,不能改变指向
+
+    4.数组名可以当指针使用,但不是指针
+
+    printf(&quot;&amp;a[0][0]    =   %p\n&quot;, &amp;a[0][0]);
+    //数组首元素的地址
+    printf(&quot;a[0]        =   %p\n&quot;, a[0]);
+    //首行第一个元素的地址
+    printf(&quot;a       =   %p\n&quot;, a);
+    //首行的地址
+    printf(&quot;*a      =   %p\n&quot;, *a);
+    //首行第一个元素的地址
+    printf(&quot;&amp;a      =   %p\n&quot;, &amp;a);
+    //数组的地址
+
+
+
+
+    三维数组    =&gt;  多个二维数组组成
+    int a[2][4][4] =&#123;&#123;&#123;0,0,,0&#125;,
+			&#123;0,0,0,0&#125;,
+			&#123;0,1,0,0&#125;,
+			&#123;0,1,1,1&#125;&#125;,
+        &#123;&#123;0,0,0,0&#125;,
+				&#123;0,0,0,1&#125;,
+				&#123;0,0,0,1&#125;,
+				&#123;0,0,1,1&#125;&#125;&#125;
+            指针与数组
+
+            在机器中都是用指针操作的
+
+a[0] = *(a + 0)
+a[1] = *(a + 1)
+    ...
+a[i] = *(a + i)
+</code></pre>
+<h2 id="二维数组与指针"><a href="#二维数组与指针" class="headerlink" title="二维数组与指针"></a>二维数组与指针</h2><pre><code>    二维数组的可以当一个指针使用
+a[1][2] = *(*(a + 1) + 2)
+a[2][3] = *(*(a + 2) + 3)
+    ...
+a[i][j] = *(*(a + i) + j)
+</code></pre>
+<h2 id="三维数组和指针"><a href="#三维数组和指针" class="headerlink" title="三维数组和指针"></a>三维数组和指针</h2><pre><code>    三维数组的可以当一个指针使用
+a[1][2][3] = *(*(*(a + 1) + 2) + 3)
+a[2][3][4] = *(*(*(a + 2) + 3) + 4)
+    ...
+a[i][j][k] = *(*(*(a + i) + j) + k)
+</code></pre>
+<h2 id="数组和函数"><a href="#数组和函数" class="headerlink" title="数组和函数"></a>数组和函数</h2><pre><code>/*
+   一维数组
+   int arr[5];
+   调用时: init(arr);直接传数组名
+   实现时: void init(int *p)   或  void init(int arr[5])   void init(int arr[])
+   二维数组
+   int arr[4][4]
+   调用时: init(arr);
+   实现时: void init(int p[][4]) 或 void init(int p[4][4])
+
+ */
+//当main函数中函数传参是数组名的时候,
+//函数中可以用数组形式或者指针形式
+
+//当main函数中函数传参是二维数组的数组名的时候,
+//函数中可以用数组形式
+=============================
+</code></pre>
+<h2 id="homework-2"><a href="#homework-2" class="headerlink" title="homework"></a>homework</h2><pre><code>(1)输入十个人的身高,求出平均值,并把小于平均值的打印出来	
+
+(2)输入十个人的身高,要求排序,从低到高打印
+
+    排序		(冒泡	选择)
+
+例:
+100   201    50   70   30
+
+(3)完成itob函数(十-&gt;八)
+十 -&gt; 二
+void itob(int num, int arr[8]);
+100
+01100100
+
+(4)
+    阅读
+    man strcpy	
+    man strcat
+    man strcmp
+    man strlen
+
+(5)
+有1000发子弹,要提前装到10个箱子里面，接收键盘输入，要取多少颗子弹数，只能显示整箱的个数，问这10个箱子怎么装,编程实现
+============================
+========================
+小项目:五子棋
+    1.player VS player
+要求
+    1&gt;最少完成p v p版本
+    2&gt;用多函数实现
+    3&gt;完成五子棋最基本功能即可
+    4&gt;要有适当的提示信息
+    5&gt;代码中要有注释
+    6&gt;完成后上传到邮箱中(402403579@qq.com)
+        2022-2-11_张三.c
+提示
+    1&gt;棋盘存储
+    2&gt;坐标的打印
+    3&gt;玩家的替换
+    4&gt;下到重复位置/下出边界以后的处理
+    5&gt;判断赢的条件
+
+
+字符数组初始化
+char a[6] = &#123;&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;,&#39;f&#39;&#125;;
+char b[6] = &#123;&#39;h&#39;,&#39;i&#39;,&#39;j&#39;,&#39;k&#39;,&#39;l&#39;,&#39;\0&#39;&#125;;
+char c[] = &#123;&#39;h&#39;,&#39;i&#39;,&#39;j&#39;,&#39;k&#39;,&#39;l&#39;,&#39;m&#39;&#125;;
+char d[] = &quot;hello world&quot;;
+
+    &quot;...&quot;	字符串,默认最后有\0
+
+如果碰到了 \0 表示结束,字符串, %s
+
+char arr[100] = &quot;hello world!&quot;;//字符数组   存储功能
+char *p = &quot;hello world!&quot;;//字符指针     只是保存地址
+//字符指针保存的是 常串 的地址
+
+
+================================
+    周末作业
+1.把这一周讲过的内容先完完整整的复习一遍,有问题直接问
+2.阅读man手册 strcpy strcat strcmp strlen
+3.调用系统实现的string函数的功能,实现自己写的功能
+    mystrcpy mystrcat mystrcmp mystrlen
+4.后续作业的1 - 5题
+
+5.剩余时间去做五子棋的项目
+</code></pre>
+<h2 id="work"><a href="#work" class="headerlink" title="work"></a>work</h2><pre><code>man string.h
+string一族的函数,strcpy strcmp strcat strlen
+
+char *mystrcpy(char *dst, const char *src);
+
+char *mystrcat(char *s1, const char *s2);
+
+int mystrcmp(const char *s1, const char *s2);
+
+size_t mystrlen(const char *s);	
+
+char *p = &quot;root:x:0:0:root:/root:/bin/bash&quot;;
+</code></pre>
+<h2 id="homework-3"><a href="#homework-3" class="headerlink" title="homework"></a>homework</h2><pre><code>1.输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。
+
+2.输入一个字串，判断它是否是对称串。如”abcdcba”是对称串，”123456789”不是。
+
+3.输入一行字符串，按如下规则加密：如果是英文字母则大写变小写、小写变大写，对非英文字符则保持不变。试写加密程序。
+
+4.输入一行小写英文字母，按如下规则加密：a→c、b→d、…、x→z、y→a、z→b，试写加密程序。
+
+5.输入一行英文，已知各单词之间用1个空格相隔（设第一个单词前没有空格），统计这行英文有多少个单词。
+
+6.完成atoi函数
+    int myatoi(const char *nptr);
+
+7.完成itoa函数
+    void itoa(int data, char str[]);
+</code></pre>
+<h2 id="如果不是自己开辟内存空间-当程序结束后自己释放掉"><a href="#如果不是自己开辟内存空间-当程序结束后自己释放掉" class="headerlink" title="如果不是自己开辟内存空间,当程序结束后自己释放掉"></a>如果不是自己开辟内存空间,当程序结束后自己释放掉</h2><pre><code>如果不是自己开辟内存空间,当程序结束后自己释放掉
+[不用程序员管理]
+*****************
+谁开辟,谁释放       [程序员自己开辟空间]/*内存耗尽 内存泄露*/
+谁创建,谁销毁       [链表]/*泄露*/
+谁加锁,谁解锁       [线程]/*防止Bug*/
+谁打开,谁关闭       [文件操作]/*泄露*/
+*****************
+
+代码区
+        管不了
+栈区
+        系统帮助程序员管理
+        不需要程序员自己开辟空间,释放空间
+        自动释放
+堆区
+        malloc-&gt;free
+        zalloc-&gt;free
+        程序员需要自己管理的内存空间
+        自己开辟,自己释放
+        申请和释放都是程序员管理
+        (忘记释放会使内存耗尽)
+全局区
+        全局变量
+常数区
+        程序结束才会释放
+        (char *p1 = NULL;)
+        (p1 = &quot;abc&quot;;)
+内存    真实存储    4G
+只用内存真实空间    4K
+虚拟内存            4G
+1G      kernel(内核)
+--------------------
+3G      environment/cmd环境变量(系统设定的全局变量)和命令-&gt;argc argv
+int main(int argc, char *argv[])
+栈向下     从高地址到低地址
+
+
+堆向上     从低地址到高地址
+.bss    静态存储区(全局变量,静态变量) !未初始化
+.date   初始化的 不为0                !已初始化
+RO date 只读数据段
+.text    代码段
+
+.bss存在可执行文件中
+.date不存在可执行文件中
+
+
+        char *p = &quot;abc&quot;;
+
+
+=====================================
+
+
+
+                                        printf.o
+                               				|	
+                               				V
+                                        可重定位	可执行
+        源程序	被修改的源程序	汇编程序	    目标程序	   目标程序
+        hello.c----&gt;hello.i----&gt;hello.s----&gt;hello.o----&gt;hello
+            预处理器(cpp)  编译器(ccl)  汇编器(as)   连接器(ld)
+
+    第一个阶段	只写一个main.c
+    第二个阶段	多函数
+    第三个阶段	多文件
+                func.c
+                func.h
+                main.c
+                makefile
+
+
+makefile
+一个工程中的源文件不计其数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为 makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。
+
+=====================================
+</code></pre>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><pre><code>存储区域        作用域          生命周期
+
+全局变量        局部变量
+
+==========================================================
+</code></pre>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><pre><code>1.尽量不使用全局变量
+2.使用时加static(静态)
+3.显示初始化
+
+main.c
+#include &lt;stdio.h&gt;
+
+    int xxx;
+
+int main(void)
+&#123;
+    printf(&quot;main.xxx = %d\n&quot;, xxx);
+    foo();
+    printf(&quot;main.xxx = %d\n&quot;, xxx);
+    return 0;
+&#125;
+foo.c
+#include &lt;stdio.h&gt;
+
+int xxx;
+int foo()
+&#123;
+    xxx++;
+    printf(&quot;foo.xxx = %d\n&quot;, xxx);
+&#125;
+全局变量中默认定义的变量值为0;
+
+变量与函数关系
+外部变量
+内部变量
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> x=<span class="number">1</span>;    <span class="comment">//外部变量  全局变量</span></span><br><span class="line"><span class="comment">//1、生命周期  整个程序</span></span><br><span class="line"><span class="comment">//2、作用域    整个程序</span></span><br><span class="line"><span class="comment">//3、存储区域  全局区</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">A</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> y=<span class="number">1</span>;<span class="comment">//内部变量   局部变量</span></span><br><span class="line">	<span class="comment">//1、生命周期  函数体内</span></span><br><span class="line">	<span class="comment">//2、作用域    函数体内</span></span><br><span class="line">	<span class="comment">//3、存储区域  栈区</span></span><br><span class="line">	x++;</span><br><span class="line">	<span class="keyword">if</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> z=<span class="number">0</span>;<span class="comment">//块级变量</span></span><br><span class="line">		<span class="comment">//1、生命周期  块内有效</span></span><br><span class="line">		<span class="comment">//2、作用域    块内有效</span></span><br><span class="line">		<span class="comment">//3、存储区域  栈区</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;z=%d\n&quot;</span>,z);</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> m=<span class="number">0</span>;<span class="comment">//块级变量</span></span><br><span class="line">		<span class="comment">//1、生命周期  块内有效</span></span><br><span class="line">		<span class="comment">//2、作用域    块内有效</span></span><br><span class="line">		<span class="comment">//3、存储区域  栈区</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;m=%d\n&quot;</span>,m);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;A中的x=%d\n&quot;</span>,x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;A中的y=%d\n&quot;</span>,y);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;A中的&amp;y=%p\n&quot;</span>,&amp;y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">B</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	x++;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="type">int</span> j;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">	<span class="type">int</span> k;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;B中x=%d\n&quot;</span>,x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;B中的y=%d\n&quot;</span>,y);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;B中的&amp;y=%p\n&quot;</span>,&amp;y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">C</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">100</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;C中的x=%d\n&quot;</span>,x);</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> x=<span class="number">1000</span>;<span class="comment">//(1)如果是x = 1000;</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;C块中的x=%d\n&quot;</span>,x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;C中的x=%d\n&quot;</span>,x);<span class="comment">//(1)x = 1000;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	A();</span><br><span class="line">	B();</span><br><span class="line">	C();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h3 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h3><pre><code>1.存储区域  全局静态区
+2.作用域        函数体内
+3.生命周期  整个程序
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">	<span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line">	<span class="type">static</span> <span class="type">int</span> z = <span class="number">1</span>;   <span class="comment">//静态外部变量限定作用</span></span><br><span class="line">	<span class="comment">//1.存储区域    全局区(静态区)</span></span><br><span class="line">	<span class="comment">//2.作用域      本文件</span></span><br><span class="line">	<span class="comment">//3.生命周期    整个程序</span></span><br><span class="line">	<span class="type">int</span> m = <span class="number">0</span>;<span class="comment">//外部变量</span></span><br><span class="line">	</span><br><span class="line">	<span class="type">void</span> <span class="title function_">A</span><span class="params">()</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">static</span> <span class="type">int</span> x = <span class="number">0</span>;<span class="comment">//静态内部变量</span></span><br><span class="line">		<span class="comment">//1.存储区域    全局区(静态区)</span></span><br><span class="line">		<span class="comment">//2.作用域      函数体内</span></span><br><span class="line">		<span class="comment">//3.生命周期    整个程序</span></span><br><span class="line">		<span class="type">int</span> y = <span class="number">1</span>;<span class="comment">//内部变量(栈区)</span></span><br><span class="line">		x++;</span><br><span class="line">		y++;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;x = %d\n&quot;</span>, x);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;y = %d\n&quot;</span>, y);</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">	 <span class="number">12</span>     <span class="keyword">if</span>(i == <span class="number">0</span>)</span><br><span class="line">	 <span class="number">13</span>         <span class="keyword">return</span> ;</span><br><span class="line">	 <span class="number">14</span>     <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, i % <span class="number">10</span>);</span><br><span class="line">	 <span class="number">15</span>     func(i / <span class="number">10</span>);</span><br><span class="line">	 <span class="number">16</span> &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">	&#123;</span><br><span class="line">		A();<span class="comment">//第一次调用x初始化一次,以后就不初始化了</span></span><br><span class="line">		A();</span><br><span class="line">		A();</span><br><span class="line">		A();</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	```		</span><br><span class="line">##	函数与函数之间的关系</span><br><span class="line">	<span class="comment">//函数与函数之间是外部关系(并列)</span></span><br><span class="line">	<span class="comment">//函数体内不能再写函数</span></span><br><span class="line">	<span class="comment">//静态函数(本函数只能在本文件使用)</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*函数与函数之间的关系*/</span></span><br><span class="line">	```C</span><br><span class="line">	<span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line">	<span class="type">void</span> <span class="title function_">A</span><span class="params">()</span>;<span class="comment">//声明函数</span></span><br><span class="line">	<span class="type">void</span> <span class="title function_">B</span><span class="params">()</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="type">void</span> <span class="title function_">A</span><span class="params">()</span><span class="comment">//函数与函数之间是外部关系(并列)</span></span><br><span class="line">		<span class="comment">//函数体内不能再写函数</span></span><br><span class="line">	&#123;</span><br><span class="line">		B();</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;A func()\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">void</span> <span class="title function_">B</span><span class="params">()</span><span class="comment">//静态函数(本函数只能在本文件使用)</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;B func()\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//A 不能调用B</span></span><br><span class="line">	<span class="comment">//B 可以调用A</span></span><br><span class="line">	<span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">	&#123;</span><br><span class="line">		A();</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+=====================================
+写C语言程序的四个阶段
+第一阶段	只写一个.c文件,在.c文件中只写一个main函数,把所有功能都放到main()中
+第二阶段	只写一个.c文件,在.c文件中除了main函数以外还有其他的功能函数
+            函数的声明
+            函数的返回值类型 函数名(参数列表);//该位置的参数叫做形式参数
+
+            函数的实现(函数的定义)
+            函数的返回值类型 函数名(参数列表)//该位置的参数叫做形式参数
+            &#123;
+                功能代码
+            &#125;
+
+            函数的调用
+            函数名(参数);//该位置的参数叫做实际参数
+
+            函数名是函数的入口地址,函数名就是地址
+            形式参数接收实际参数的值
+            值传递		
+            地址传递	
+第三阶段	多文件的方式实现项目
+            main.c				存放main函数,以及功能函数的调用
+            func.c				存放功能函数的实现
+            func.h				存放功能函数的声明,以及各种定义
+            makefile(Makefile)	存放编译规则
+第四阶段	把.c文件做成库文件
+            动态库
+            静态库
+</code></pre>
+<h2 id="二-makefile的简介"><a href="#二-makefile的简介" class="headerlink" title="二.makefile的简介"></a>二.makefile的简介</h2><pre><code>    一个项目工程中的源文件不计其数,这些源文件按类型、功能、模块分别放在若干个目录中.
+    makefile定义了一系列的规则来指定,哪些文件需要先编译,哪些文件需要后编译.
+    哪些文件需要重新编译,甚至于进行更复杂的功能操作.
+    因为 makefile 就像一个Shell脚本一样,其中也可以执行操作系统的命令.
+----------------------------------------
+    vim 打开多个文件
+        vim * -p	多文件以标签的形式打开
+        注意 : 不能打开过多的文件,否则vim会崩溃
+    用ctrl + alt + pgup / pgdn切换文件
+----------------------------------------
+</code></pre>
+<h2 id="三-C语言的作用域"><a href="#三-C语言的作用域" class="headerlink" title="三.C语言的作用域"></a>三.C语言的作用域</h2><pre><code>1.空间的分布
+    C语言会把内存分为5个区域(栈区 堆区 常量区 全局区 代码区)
+    --------------------------------------------------------
+    ./a.out-&gt;是由进程在执行可执行程序时分配存储空间
+    -&gt;4Kb(物理)-&gt;4Gb(虚拟空间)
+
+    1Gb		Kernel(内核)
+    --------------------
+    3Gb		命令行参数和环境变量int main(int argc, char *argv[])
+            栈区
+            👇
+            空白
+            ☝
+            堆区
+            静态区(全局区)未初始化的(系统默认会初始化成0)
+            静态区(全局区)已初始化的
+            常量区(RO DATA)只读的区域
+            代码区
+
+    栈区	不需要程序员来管理,自己开辟,自己释放
+    堆区	需要程序员来管理,手动开辟,手动释放(malloc realloc zalloc free)
+    静态区	全局变量/static关键字修饰的变量
+    常量区	read only(只读)
+    代码区	程序员没有办法管理
+
+2.全局变量和局部变量
+    
+    局部变量
+    在某个函数内部或者程序块内部定义的变量叫做局部变量
+    局部变量只能在该函数的内部 或者 该程序块的内部使用
+    局部变量在函数外部是不可知的
+
+    全局变量
+    全局变量是定义在函数外部的,通常写到程序的顶部
+    全局变量在整个程序中生命周期都是有效的
+    在任意函数的内部都可以访问全局变量
+
+    注意:
+    全局变量和局部变量可以同名
+    如果出现了同名的情况,那么在执行函数时优先使用局部变量,
+    在该函数中全局变量被屏蔽了
+
+    全局变量和局部变量在定义时的区别
+        当定义局部变量时,系统不会帮助初始化,局部变量内部存储的是垃圾值
+        当定义全局变量时,系统会帮助初始化
+            int -&gt; 0
+            char -&gt; &#39;\0&#39;
+            pointer -&gt; NULL
+
+    全局变量和局部变量存储空间的区别
+        全局变量 : 保存在内存的静态全局区,占用的是静态的存储单元
+            当程序运行时已经被创建了,当程序结束时被释放
+        局部变量 : 保存在内存的栈区中,只有在局部变量所在的函数被调用时,
+            系统才会帮助分配存储单元,当局部变量所在的函数结束时被释放
+</code></pre>
+<h2 id="四-存储类关键字"><a href="#四-存储类关键字" class="headerlink" title="四.存储类关键字"></a>四.存储类关键字</h2><pre><code>1.extern关键字
+    extern是C语言中的关键字
+    修饰的是外部的
+    可以修饰函数,也可以修饰变量			
+    1&gt;如果函数被extern关键字修饰了,证明其他文件也可以使用这个函数,
+        如果定义的函数不想被其他文件使用,可以使用static关键字修饰
+    2&gt;如果变量被extern关键字修饰了,需要注意不要初始化,在Linux gcc环境中会报Error
+    如果在本文件中函数或者变量使用extern关键字修饰了
+        说明该函数或者变量在别的文件中定义了,在当前文件中使用
+    当编译器在编译程序时,如果碰到了extern关键字,那么会从别的文件中查找相关的定义
+
+2.static关键字
+    static是C语言中的关键字
+    修饰的是静态的(内部的)
+    可以修饰函数,也可以修饰变量
+    为了使全局变量可以安全的使用,请在定义全局变量时,使用static关键字进行修饰
+    a.如果全局变量没有使用static关键字修饰,可以跨文件使用
+    A.如果全局变量使用了static关键字修饰,仅限于在当前文件内使用
+
+    b.如果局部变量没有使用static关键字修饰,该局部变量存储在栈区中,当函数结束后被释放
+    B.如果局部变量使用了static关键字修饰,该局部变量存储在静态区中,当程序结束后被释放
+
+    c.如果局部变量没有使用static关键字修饰,每次调用函数该局部变量都会被重新初始化
+    C.如果局部变量使用了static关键字修饰,只在第一次调用函数时进行初始化,也是唯一的一次初始化
+
+    d.被static关键字修饰的内容,系统会默认进行初始化
+
+    1&gt;如果函数被static修饰了,该函数只能在本文件内使用,不能跨文件使用
+        static void swap(....)
+        &#123;
+            
+        &#125;	
+        void pop_sort(....)
+        &#123;
+            
+        &#125;
+    2&gt;如果变量被static修饰了
+
+    3&gt;静态变量
+        静态变量所占用的存储空间是静态区
+        静态的全局变量 : 只能被变量所定义的文件中进行使用
+                        (其他文件即使加了extern关键字也使用不了)
+        静态的局部变量 : 只能被变量所在的代码块中进行使用
+    总结 : 
+        如果本文件内的函数和变量想要让别的.c文件使用,可以加extern
+        如果本文件内的函数和变量不想让别的.c文件使用,可以加static
+================================
+简答题
+1.C语言的关键字extern是用来修饰什么的?
+    答 : 
+    关键字的特点
+    extern修饰变量 :
+    extern修饰函数 : 
+2.C语言的关键字static是用来修饰什么的?
+    答 : 
+    关键字的特点
+    static修饰变量 :
+        全局变量
+        局部变量
+    static修饰函数 :
+3.C语言的关键字const是用来修饰什么的?
+    
+4.C语言的关键字volatile是用来修饰什么的?
+    答 :
+    防止编译器优化
+================================
+</code></pre>
+<h2 id="四-函数的关系"><a href="#四-函数的关系" class="headerlink" title="四.函数的关系"></a>四.函数的关系</h2><pre><code>    1.主函数调用功能函数
+    2.功能函数调用其他的功能函数
+    3.功能函数自己调用自己(递归函数)
+    
+    递归函数
+    C语言是支持函数的递归,递归其实就是自己调用自己
+    注意 : 
+    1.在写递归函数时最重要的就是退出条件
+    如果写的退出条件不清楚,那么递归函数肯定会出问题
+        
+    2.在看别人写的递归程序时,递归次数不要太多
+
+    3.在项目中尽量不去使用递归,因为递归函数占用空间
+
+    递归函数可以解决的问题
+    数学 : 
+            1.从1 + 2 + .. + 100
+            2.一个数的阶乘
+            3.斐波那契数列
+            4.杨辉三角
+
+    编程 : 
+            1.栈式存储结构的问题
+            2.树状存储
+            3.汉诺塔游戏(河内塔)
+===================================
+    指针常量 常量指针
+    指针函数 函数指针 函数指针数组
+    指针数组 数组指针
+
+    指针 函数 数组
+    容易混淆的声明
+    const关键字
+    const关键字是用来修饰只读的(常量)
+    
+    指针常量	: 指针是常量
+    定义		: int * const p;
+    特点		: 指针的指向不能通过指针名进行改变,可以通过该指针修改指向空间的数据
+                当在程序中定义了指针常量,必须要有初始化
+    用处		: 数组名
+
+    常量指针	: 指针指向常量
+    定义		: const int *p; const char *src; char const *src;
+    特点		: 指针的指向能通过指针名进行改变,不可以通过该指针修改指向空间的数据
+    用处		: 字符串操作
+    -------------------------------
+    const int *p;
+    int const *p;
+    int * const p;
+    const int * const p;
+    int const * const p;
+    -------------------------------
+
+    指针数组	: 是一个数组,数组中的每一个成员都是相同类型的指针
+    定义		: int *arr[4];   
+              char *str[10]; str是一个指针数组,一共有10个成员,str[0] - str[9]
+                             每个成员都是char *类型的指针
+    特点		: arr是一个指针数组,一共有4个成员,arr[0] - arr[3],每个成员都是int *类型的指针
+              str是一个指针数组,一共有10个成员,str[0] - str[9],每个成员都是char *类型的指针
+    用处		: 命令行参数
+
+    数组指针	: 是一个指针,指针指向一个数组
+    定义		: int(*p)[4];	p是一个指针,p指针指向一行有4个成员,每个成员都是int类型的数组
+    特点		:	int arr[3][4];
+                int brr[2][4];
+                int (*p)[4];
+                p = arr;
+                p = brr;
+    用处		: 用于和多维数组产生关系
+
+    指针函数	: 是一个函数,该函数的返回值是一个指针
+    定义		: char *strcpy(char *dest, const char *src);
+              char *strcat(char *dest, const char *src);
+              void *malloc(size_t size);
+              FILE *fopen(const char *pathname, const char *mode);
+    特点		: 返回值是一个指针
+    用处		: 可以返回地址
+
+    函数指针	: 是一个指针,该指针指向函数
+    定义		: int (*p)(int ,int);//定义了函数指针p,该指针指向
+                返回值为int类型,参数为int int,这样的函数
+    特点		: 用来和函数产生关系的指针
+    用处		: 可以保存函数的地址(函数的入口地址)
+
+    函数指针数组 : 是一个数组,数组中的每一个成员都是函数指针
+    定义		   : int (*arr[4])(int , int);
+-------------------------------------------------
+一.给了定义,用文字进行描述(注意 : 描述清楚)
+    int a;            		         
+    int a[4];                  
+    int *a;                    
+    int a(int ,int);           
+
+    int *a[4];                  
+    int (*a)[4];               
+    int *a(int, int);          
+    int (*a)(int, int);        
+    int (*a[4])(int, int);  
+
+二.给了文字描述,使用特定的变量名进行定义 (a)	(加 ; )
+
+三.给了英文描述,使用特定的变量名进行定义 (a)	(审题 + 代码标准)
+a) 一个整型数（An integer）
+
+b) 一个指向整型数的指针（A pointer to an integer）
+
+c) 一个指向指针的的指针，它指向的指针是指向一个整型数（A pointer to a pointer to an integer）
+
+d) 一个有10个整型数的数组（An array of 10 integers）
+
+e) 一个有10个指针的数组，该指针是指向一个整型数的（An array of 10 pointers to integers）
+
+f) 一个指向有10个整型数数组的指针（A pointer to an array of 10 integers）
+
+g) 一个指向函数的指针，该函数有一个整型参数并返回一个整型数（A pointer to a function that takes an integer as an argument and returns an integer）
+
+h) 一个有10个指针的数组，该指针指向一个函数，该函数有一个整型参数并返回一个整型数（ An array of ten pointers to functions that take an integer
+
+argument and return an integer ）
+
+ 
+
+答案是：
+
+a) int a; // An integer
+
+b) int *a; // A pointer to an integer
+
+c) int **a; // A pointer to a pointer to an integer
+
+d) int a[10]; // An array of 10 integers
+
+e) int *a[10]; // An array of 10 pointers to integers
+
+f) int (*a)[10]; // A pointer to an array of 10 integers
+
+g) int (*a)(int); // A pointer to a function a that takes an integer argument and returns an integer
+
+h) int (*a[10])(int); // An array of 10 pointers to functions that take an integer argument and return an integer
+-------------------------------------------------
+===================================
+今日测验
+
+1.完成最少两种排序方法
+2.完成atoi函数
+    int myatoi(const char *nptr);
+3.求30000000 - 30001000以内的素数
+===================================
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="2020-3-9"><a href="#2020-3-9" class="headerlink" title="2020-3-9"></a>2020-3-9</h1><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>##	结构体 联合 枚举 预处理</p>
+<pre><code>C语言是面向过程的编程语言
+
+=========结构体=============
+结构体指的是一种数据结构,是C语言中复杂数据类型的一类。
+结构体可以被声明为变量、指针或数组等,用以实现较复杂的数据结构.
+结构体同时也是一些元素的集合,这些元素称为结构体的成员,
+且这些成员可以为不同的类型,成员一般用名字访问.
+
+1.结构体的定义
+2.结构体类型的变量
+    1&gt;初始化
+    2&gt;简单赋值
+    3&gt;通过scanf()赋值
+    4&gt;查看所占字节数
+    5&gt;查看地址
+    6&gt;和指针关系
+    7&gt;和函数之间的传参
+3.结构体数组
+    1&gt;初始化
+    2&gt;简单赋值
+    3&gt;通过scanf()赋值
+    4&gt;查看所占字节数
+    5&gt;查看地址
+    6&gt;和指针关系
+    7&gt;和函数之间的传参
+-----------------------------------------
+</code></pre>
+<h3 id="一-结构体定义"><a href="#一-结构体定义" class="headerlink" title="一.结构体定义"></a>一.结构体定义</h3><pre><code>为了定义结构,必须使用 struct 关键字
+struct tag			//tag是结构体标签
+&#123;
+    member-list;	//member-list是结构体成员,一般来说写的是定义(变量 数组 指针)
+    member-list;
+    member-list;
+    ...
+&#125;variable-list;		//variable-list是结构体类型的变量,定义在结构体的末尾,可以定义多个结构体类型的变量
+
+注意 : 无论定义结构体还是定义了结构体类型的变量都需要在最后加分号 ;
+</code></pre>
+<h3 id="二-定义方式"><a href="#二-定义方式" class="headerlink" title="二.定义方式"></a>二.定义方式</h3><pre><code>1.
+struct
+&#123;
+    int a;
+    char b;
+    double c;
+&#125;s1;
+//上述定义了拥有3个成员的结构体,分别为int的a,char的b和double的c
+//同时又定义了结构体变量s1
+//这个结构体并没有标明其标签
+
+2.
+struct SIMPLE
+&#123;
+    int a;
+    char b;
+    double c;
+&#125;;
+//上述定义了拥有3个成员的结构体,分别为int的a,char的b和double的c
+//结构体的标签被命名为SIMPLE,没有定义结构体类型的变量
+
+struct SIMPLE t1, t2[20], *t3;
+//用SIMPLE标签的结构体定义了结构体类型的变量t1 结构体类型的数组t2 结构体类型的指针t3
+
+3.
+typedef struct
+&#123;
+    int a;
+    char b;
+    double c; 
+&#125;Simple2;
+//也可以用typedef创建新类型
+Simple2 u1, u2[20], *u3;
+
+注意 :
+在上面的结构体定义中&lt;第一种&gt;和&lt;第二种&gt;声明被编译器当作两个完全不同的类型,即使他们的成员列表是一样的,
+如果令 t3=&amp;s1 是违法的操作,编译器会报警告
+</code></pre>
+<h3 id="三-定义结构体时-结构体的成员"><a href="#三-定义结构体时-结构体的成员" class="headerlink" title="三.定义结构体时,结构体的成员"></a>三.定义结构体时,结构体的成员</h3><pre><code>1.
+struct SIMPLE
+&#123;
+    int a;
+    char b;
+    double c;
+&#125;;
+struct COMPLEX
+&#123;
+    char string[100];
+    struct SIMPLE a;//结构体的成员是其他结构体类型的变量(可以和其他结构体类型的成员同名)
+                    //因为struct COMPLEX结构体定义中存在struct SIMPLE结构体类型的成员
+                    //所以应该把struct SIMPLE定义放到struct COMPLEX之前
+&#125;;
+
+2.
+struct NODE
+&#123;
+    char string[100];
+    struct NODE *next_node;//结构体的成员是自己结构体类型的指针(一般来说在链表或者树中经常使用)
+&#125;;
+
+3.如果两个结构体互相包含,则需要对其中一个结构体进行不完整声明,如下所示:
+struct B;				//对结构体B进行不完整声明
+struct A
+&#123;
+    struct B *partner;	//结构体A中包含结构体B类型的指针
+    //other members;
+&#125;;
+struct B
+&#123;
+    struct A *partner;	//结构体B中包含结构体A类型的指针
+    //other members;
+&#125;;
+
+
+注意 :
+当定义结构体时结构体的成员可以是其他结构体类型的变量
+    结构体的成员也可以是自己结构体类型的指针
+    当然不可以是自己结构体类型的变量
+    而通常自己结构体类型的指针的应用是为了实现一些更高级的数据结构如链表和树等.
+
+位域(位段/位字段)
+有些信息在存储时,并不需要占用一个完整的字节,而只需占几个或一个二进制位.
+例如存放一个开关量时,只有 0 和 1 两种状态,用 1 位二进位即可.
+为了节省存储空间,并使处理简便,C 语言提供了&quot;位域&quot;或&quot;位段&quot;.
+
+其实&lt;位域&gt;是把一个字节中的二进制位划分为几个不同的区域,并说明每个区域的位数.
+每个域有一个域名,允许在程序中按域名进行操作.这样就可以把几个不同的对象用一个字节的二进制位域来表示.
+
+struct 位域结构名 
+&#123;
+    类型说明符 位域名: 位域长度;
+    ...//省略
+&#125;;
+
+例如:
+struct bs
+&#123;
+    char a:8;
+    char b:2;
+    char c:6;
+&#125;data;
+定义了struct bs类型的变量data,该变量共占两个字节,其中位域 a 占 8 位,位域 b 占 2 位,位域 c 占 6 位
+
+
+struct k&#123;
+    int a:1;
+    int  :2;    /* 该 2 位不能使用 */
+    int b:3;
+    int c:2;
+&#125;;
+
+-----------------------------------------
+</code></pre>
+<h4 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h4><pre><code>使用结构体类型的数组写一个管理系统(每个人管理的内容不要一样)
+    例子 : 学生管理系统
+        struct stu
+        &#123;
+            int id;
+            char name[20];
+            int age;
+            int score;
+            ...
+            int flag;//用来做标记
+        &#125;;
+    
+    1001	abc		29		99
+    1002	def		28		100
+    1003	xyz		46		59
+
+    struct stu arr[10];//如果定义了一个5个成员的数组,那么将来最多可以管理5个学生
+
+    规定管理10个东西
+
+    实现功能 增加成员 删除成员 修改成员	查找成员 打印数据 排序成员 保存数据 读取数据 退出程序
+
+    使用多文件的方式编写项目
+
+==============================================
+</code></pre>
+<h3 id="共用体-联合union"><a href="#共用体-联合union" class="headerlink" title="共用体    联合	union"></a>共用体    联合	union</h3><pre><code>使用单块内存空间，管理不同数据类型
+占用的内存空间以共用体当中最大的为准
+
+1.同一个内存段可以用来存放几种不同类型的成员,但是在每一瞬间只能存放其中的一种,而不是同时存放几种。
+换句话说,每一瞬间只有一个成员起作用,其他的成员不起作用.
+2.共用体变量中起作用的成员是最后一次存放的成员,在存入一个新成员后,原有成员就失去作用
+3.共用体变量的地址和它的各成员的地址都是同一地址.
+4.共用体变量的初始化
+（1）union data a=b; //把共用体变量初始化为另一个共用体
+（2）union data a=&#123;123&#125;; //初始化共用体为第一个成员
+（3）union data a=&#123;.ch=&#39;a&#39;&#125;; //指定初始化项目，按照C99标准
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="type">int</span> id;</span><br><span class="line">	<span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">	<span class="type">int</span> math;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="type">char</span> a;</span><br><span class="line">	<span class="type">short</span> b;</span><br><span class="line">	<span class="type">int</span> c;</span><br><span class="line">	<span class="type">float</span> d;</span><br><span class="line">	<span class="type">double</span> e;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stu</span> <span class="title">s</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> <span class="title">A</span> <span class="title">m</span>;</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sizeof(struct stu) = %d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> stu));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sizeof(union A) = %d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">union</span> A));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sizeof(s) = %d\n&quot;</span>, <span class="keyword">sizeof</span>(s));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sizeof(m) = %d\n&quot;</span>, <span class="keyword">sizeof</span>(m));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+===============================================
+sizeof(struct stu) = 28
+sizeof(union A) = 8
+sizeof(s) = 28
+sizeof(m) = 8
+===============================================
+大端格式
+    高字节存放低地址
+小端格式
+    低字节存放低地址
+</code></pre>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><pre><code>是一个被命名的整型常数的集合,枚举在日常生活中很常见。
+例如:
+    表示星期的
+    SUNDAY
+    MONDAY
+    TUESDAY
+    WEDNESDAY
+    THURSDAY
+    FRIDAY
+    SATURDAY
+    就是一个枚举。
+枚举的说明与结构和联合相似, 其形式为:
+enum 枚举名
+&#123;
+    标识符[=整型常数],
+    标识符[=整型常数],
+    ...
+    标识符[=整型常数]
+&#125;枚举变量;
+如果枚举没有初始化, 即省掉&quot;=整型常数&quot;时, 则从第一个标识符开始, 顺
+次赋给标识符0, 1, 2, ...。但当枚举中的某个成员赋值后, 其后的成员按依次
+加1的规则确定其值。
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	a,</span><br><span class="line">	b,</span><br><span class="line">	c = <span class="number">10</span>,</span><br><span class="line">	d</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a = %d\n&quot;</span>, a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;b = %d\n&quot;</span>, b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;c = %d\n&quot;</span>, c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;d = %d\n&quot;</span>, d);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+========================
+a = 0
+b = 1
+c = 10
+d = 11
+========================
+
+枚举类型变量的赋值和使用
+枚举类型在使用中有以下规定：
+1.枚举值是常量，不是变量。不能在程序中用赋值语句再对它赋值。例如对枚举weekday的元素再作以下赋值： sun=5;mon=2;sun=mon; 都是错误的。
+2. 枚举元素本身由系统定义了一个表示序号的数值，从0 开始顺序定义为0，1，2…。如在weekday中，sun值为0，mon值为1， …,sat值为6。
+3. 只能把枚举值赋予枚举变量，不能把元素的数值直接赋予枚举变量。如： a=sun;b=mon; 是正确的。而： a=0;b=1; 是错误的。如一定要把数值赋予枚举变量，则必须用强制类型转换，如： a=(enum weekday)2;其意义是将顺序号为2的枚举元素赋予枚举变量a，相当于： a=tue; 还应该说明的是枚举元素不是字符常量也不是字符串常量， 使用时不要加单、双引号。
+
+注意：
+1. 枚举中每个成员(标识符)结束符是&quot;,&quot; 不是&quot;;&quot;, 最后一个成员可省略&quot;,&quot;。
+2. 初始化时可以赋负数, 以后的标识符仍依次加1。
+3. 枚举变量只能取枚举说明结构中的某个标识符常量。
+</code></pre>
+<h3 id="预处理-替换"><a href="#预处理-替换" class="headerlink" title="预处理(替换)"></a>预处理(替换)</h3><pre><code>预处理阶段是程序在编译之前进行的处理,预处理器只不过是一个文本替换工具而已,
+它们会让编译器在实际编译之前完成所需的替换(预处理).
+
+C语言的预处理主要有三个方面的内容 : 1.宏定义 2.文件包含 3.条件编译.
+在C语言中以 &#39;#&#39; 开头的就是预处理的操作
+预处理命令以符号“#”开头。
+
+预处理指令	描述
+#define		定义宏
+#include	包含一个源代码文件
+#undef		取消已定义的宏
+#ifdef		如果宏已经定义，则返回真
+#ifndef		如果宏没有定义，则返回真
+#if			如果给定条件为真，则编译下面代码
+#else		#if 的替代方案
+#elif		如果前面的 #if 给定条件不为真，当前条件为真，则编译下面代码
+#endif		结束一个 #if……#else 条件编译块
+
+                                            printf.o
+                                                |	
+                                                V
+                                            可重定位		可执行
+        源程序	被修改的源程序	    汇编程序	    目标程序	   目标程序
+        hello.c----&gt;hello.i----&gt;hello.s----&gt;hello.o----&gt;hello
+            预处理器(cpp)  编译器(ccl)  汇编器(as)   链接器(ld)
+    
+</code></pre>
+<h3 id="x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-文件包含-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><a href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-文件包含-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;文件包含&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;"></a>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;文件包含&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</h3><pre><code>文件包含是指一个源文件可以将另一个源文件的全部内容包含进来.
+该命令的作用是在预编译时,将指定源文件的内容复制到当前文件中.
+
+文件包含有两种格式,分别是:#include &quot;file.h&quot; 和 #include &lt;file.h&gt;
+这两格式的区别在于:
+    1.使用双引号,系统首先到当前目录下查找被包含的文件,如果没找到,
+        再到系统指定的&quot;包含文件目录&quot;(由用户在配置环境时设置)去找.
+    2.使用尖括号,直接到系统指定的&quot;包含文件目录&quot;去查找。
+        在linux操作系统中默认从/usr/include
+    通常使用双引号比较保险
+
+文件包含需要注意的点
+1.一个#include只能包含一个头文件.
+2.文件1用到文件2,文件2用到文件3,则文件3的包含命令#include应放在文件1的头部第一行.
+3.文件包含可以是有路径的.
+4.被包含文件中的静态全局变量不用在包含文件中声明.
+</code></pre>
+<h3 id="x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-宏定义-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><a href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-宏定义-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;宏定义&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;"></a>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;宏定义&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</h3><pre><code>宏函数(能用函数就不用宏)
+
+宏定义是C程序提供的预处理功能之一.包括带参数的宏定义和不带参数的宏定义.
+具体是指用一个指定的标志符来进行简单的字符串替换或者进行阐述替换.
+
+1)不带参数的宏定义
+    格式：#define 宏名 替换内容
+    1.宏名一般用大写
+    2.提高程序的通用性和易读性，减少输入错误和便于修改。
+        例如：数组大小常用宏定义
+    3.可以用#undef命令终止宏定义的作用域
+    4.宏定义可以嵌套
+
+2)带参数的宏定义
+    格式：#define 宏名(参数表) 替换内容
+    注意：当使用宏定义时,实参如果是表达式,将来在替换时容易出问题
+
+3)带参数的宏定义和函数关系
+函数调用在编译后程序运行时进行,并且分配内存.
+宏替换在编译前进行,不分配内存.
+宏展开不占运行时间,只占编译时间,函数调用占运行时间(分配内存、保留现场、值传递、返回值)
+=======================================================
+
+#define Pal 3.1415926
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> add(A, B)A + B</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a, b, c;</span><br><span class="line"></span><br><span class="line">	a = <span class="number">3</span>, b = <span class="number">7</span>;</span><br><span class="line">	c = add(a, b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a = %d, b = %d, c = %d\n&quot;</span>, a, b, c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h3 id="x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-条件编译-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><a href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-条件编译-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;条件编译&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;"></a>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;条件编译&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</h3><pre><code>1.一般情况下,源程序中所有的行都参加编译.
+但有时希望对其中一部分内容只在满足一定条件下才进行编译,
+即对一部分内容指定编译条件,这就是&quot;条件编译&quot;。
+2.条件编译指令将决定哪些代码被编译,而哪些是不被编译的.
+可根据表达式的值或某个特定宏是否被定义来确定编译条件.
+
+    指令    
+    ▪ #if、#else、#elif和#endif指令
+    ▪ #ifdef和#ifndef
+    ▪ #line
+
+格式一:
+#ifdef 标识符
+    程序段1
+#else
+    程序段2
+#endif
+当标识符已经定义时，程序段1才参加编译
+
+格式二:
+#ifndef 标识符
+#define 标识1
+    程序段1
+#endif
+如果标识符没有被定义，则重定义标识1，且执行程序段1。
+
+格式三:
+#if 表达式1
+    程序段1
+#elif 表达式2
+    程序段2
+    ……
+#elif 表达式n
+    程序段n
+#else
+    程序段n+1
+#endif
+当表达式1成立时,编译程序段1,当不成立时,判断表达式2,成立时编译程序段2,不成立以此类推
+</code></pre>
+<h3 id="x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-附加预处理-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><a href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-附加预处理-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;附加预处理&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;"></a>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;附加预处理&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</h3><pre><code>我们使用的文件包含、条件编译、宏定义之外的一些预处理
+1)预定义宏
+宏			描述
+__DATE__	当前日期，一个以 &quot;MMM DD YYYY&quot; 格式表示的字符常量。
+__TIME__	当前时间，一个以 &quot;HH:MM:SS&quot; 格式表示的字符常量。
+__FILE__	这会包含当前文件名，一个字符串常量。
+__LINE__	这会包含当前行号，一个十进制常量。
+
+2)预处理器运算符
+
+宏延续运算符（\）
+一个宏定义或者表达式通常写在一行上，但是如果语句太长一行容纳不下，则使用宏延续运算符（\）。
+
+字符串常量化运算符（#）
+在宏定义中，当需要把一个宏的参数转换为字符串常量时，则使用字符串常量化运算符（#）。
+
+标记粘贴运算符（##）
+宏定义内的标记粘贴运算符（##）会合并两个参数。它允许在宏定义中两个独立的标记被合并为一个标记。
+
+defined() 运算符
+预处理器 defined 运算符是用在常量表达式中的，用来确定一个标识符是否已经使用 #define 定义过。如果指定的标识符已定义，则值为真（非零）。如果指定的标识符未定义，则值为假（零）。
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/03c/" rel="tag"># 03c</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/03c/03c_11day/" rel="prev" title="03c_11day">
+      <i class="fa fa-chevron-left"></i> 03c_11day
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/03c/03c_13day/" rel="next" title="03c_13day">
+      03c_13day <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2022-7-15"><span class="nav-number">1.</span> <span class="nav-text">2022-7-15</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">1.1.</span> <span class="nav-text">一.编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-number">1.2.</span> <span class="nav-text">二.编译器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.3.</span> <span class="nav-text">三.代码实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-printf%E6%89%93%E5%8D%B0%E4%B9%8B%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6-%E8%A7%81C%E6%88%AA%E5%9B%BE"><span class="nav-number">1.4.</span> <span class="nav-text">四.printf打印之转义字符(见C截图)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94-printf%E6%89%93%E5%8D%B0%E4%B9%8B%E6%A0%87%E5%87%86%E5%8C%96%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-%E8%A7%81C%E6%88%AA%E5%9B%BE"><span class="nav-number">1.5.</span> <span class="nav-text">五.printf打印之标准化输出格式(见C截图)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD-%E5%8F%98%E9%87%8F"><span class="nav-number">1.6.</span> <span class="nav-text">六.变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83-%E5%BC%95%E5%85%A5scanf%E6%A6%82%E5%BF%B5"><span class="nav-number">1.7.</span> <span class="nav-text">七.引入scanf概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.8.</span> <span class="nav-text">八.运算符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2022-7-18"><span class="nav-number">2.</span> <span class="nav-text">2022-7-18</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if%E2%80%A6else"><span class="nav-number">2.0.1.</span> <span class="nav-text">if…else</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if%E2%80%A6else-if%E2%80%A6else-if%E2%80%A6"><span class="nav-number">2.0.2.</span> <span class="nav-text">if…else if…else if…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch"><span class="nav-number">2.0.3.</span> <span class="nav-text">switch</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2022-7-18-1"><span class="nav-number">3.</span> <span class="nav-text">2022-7-18</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.1.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-number">3.1.1.</span> <span class="nav-text">for</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">随机函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#break"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">break</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homework"><span class="nav-number">3.2.</span> <span class="nav-text">homework</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while"><span class="nav-number">3.2.1.</span> <span class="nav-text">while()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#goto-x2F-x2F-%E8%B7%B3%E8%BD%AC%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.2.2.</span> <span class="nav-text">goto&#x2F;&#x2F;	跳转语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homework-1"><span class="nav-number">3.3.</span> <span class="nav-text">homework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.4.</span> <span class="nav-text">小项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-number">3.5.</span> <span class="nav-text">指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88"><span class="nav-number">3.5.1.</span> <span class="nav-text">二级指针</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">3.6.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">3.7.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">3.7.1.</span> <span class="nav-text">一维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">3.7.2.</span> <span class="nav-text">多维数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%8E%E6%8C%87%E9%92%88"><span class="nav-number">3.8.</span> <span class="nav-text">二维数组与指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84%E5%92%8C%E6%8C%87%E9%92%88"><span class="nav-number">3.9.</span> <span class="nav-text">三维数组和指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E5%87%BD%E6%95%B0"><span class="nav-number">3.10.</span> <span class="nav-text">数组和函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homework-2"><span class="nav-number">3.11.</span> <span class="nav-text">homework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#work"><span class="nav-number">3.12.</span> <span class="nav-text">work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homework-3"><span class="nav-number">3.13.</span> <span class="nav-text">homework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AF%E8%87%AA%E5%B7%B1%E5%BC%80%E8%BE%9F%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4-%E5%BD%93%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9D%9F%E5%90%8E%E8%87%AA%E5%B7%B1%E9%87%8A%E6%94%BE%E6%8E%89"><span class="nav-number">3.14.</span> <span class="nav-text">如果不是自己开辟内存空间,当程序结束后自己释放掉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">3.15.</span> <span class="nav-text">变量作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="nav-number">3.15.1.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="nav-number">3.15.2.</span> <span class="nav-text">静态变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-makefile%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="nav-number">3.16.</span> <span class="nav-text">二.makefile的简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-C%E8%AF%AD%E8%A8%80%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">3.17.</span> <span class="nav-text">三.C语言的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-%E5%AD%98%E5%82%A8%E7%B1%BB%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">3.18.</span> <span class="nav-text">四.存储类关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">3.19.</span> <span class="nav-text">四.函数的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2020-3-9"><span class="nav-number">4.</span> <span class="nav-text">2020-3-9</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80-%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89"><span class="nav-number">4.0.1.</span> <span class="nav-text">一.结构体定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C-%E5%AE%9A%E4%B9%89%E6%96%B9%E5%BC%8F"><span class="nav-number">4.0.2.</span> <span class="nav-text">二.定义方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89-%E5%AE%9A%E4%B9%89%E7%BB%93%E6%9E%84%E4%BD%93%E6%97%B6-%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E6%88%90%E5%91%98"><span class="nav-number">4.0.3.</span> <span class="nav-text">三.定义结构体时,结构体的成员</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE"><span class="nav-number">4.0.3.1.</span> <span class="nav-text">项目</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E7%94%A8%E4%BD%93-%E8%81%94%E5%90%88union"><span class="nav-number">4.0.4.</span> <span class="nav-text">共用体    联合	union</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-number">4.0.5.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86-%E6%9B%BF%E6%8D%A2"><span class="nav-number">4.0.6.</span> <span class="nav-text">预处理(替换)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><span class="nav-number">4.0.7.</span> <span class="nav-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;文件包含&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-%E5%AE%8F%E5%AE%9A%E4%B9%89-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><span class="nav-number">4.0.8.</span> <span class="nav-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;宏定义&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><span class="nav-number">4.0.9.</span> <span class="nav-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;条件编译&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-%E9%99%84%E5%8A%A0%E9%A2%84%E5%A4%84%E7%90%86-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><span class="nav-number">4.0.10.</span> <span class="nav-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;附加预处理&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="naoemb"
+      src="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+  <p class="site-author-name" itemprop="name">naoemb</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hexgio" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hexgio@outlook.com" title="E-Mail → mailto:hexgio@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/hexgio" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ynblog.cf/" title="关联博客 → https:&#x2F;&#x2F;ynblog.cf" rel="noopener" target="_blank"><i class=" fa-fw"></i>关联博客</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">naoemb</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">355k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:22</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}
+	siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

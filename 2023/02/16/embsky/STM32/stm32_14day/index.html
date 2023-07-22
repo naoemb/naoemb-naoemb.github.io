@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"naoemb.cf","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;2022-9-1&#x3D;&#x3D;&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stm32_note_14day">
+<meta property="og:url" content="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_14day/index.html">
+<meta property="og:site_name" content="naoemb">
+<meta property="og:description" content="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;2022-9-1&#x3D;&#x3D;&#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/01m4%E7%9A%84%E6%80%BB%E7%BA%BF%E5%92%8CSRAM%E7%9A%84%E6%80%BB%E7%BA%BF.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/02LCD%E7%94%B5%E8%B7%AF%E5%9B%BE.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/04%E7%89%87%E9%80%89%E7%AE%80%E4%BB%8B.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/03LCD%E8%B0%83%E8%8A%82%E4%BA%AE%E5%BA%A6.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/05lcd%E6%89%AB%E6%8F%8F.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/06%E5%BC%80%E5%8F%91%E6%9D%BF%E4%BF%AF%E8%A7%86%E5%9B%BE.PNG">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/cfont%E6%96%87%E4%BB%B6%E4%B8%AD%E6%98%BE%E7%A4%BAA.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/FSMC%E7%9A%84%E9%85%8D%E7%BD%AE.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/%E4%BF%AF%E8%A7%86%E5%9B%BE.png">
+<meta property="og:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/%E5%8F%96%E5%AD%97%E6%A8%A1.png">
+<meta property="article:published_time" content="2023-02-16T00:03:05.817Z">
+<meta property="article:modified_time" content="2022-09-12T07:22:21.000Z">
+<meta property="article:author" content="naoemb">
+<meta property="article:tag" content="stm32_note">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://naoemb.cf/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/01m4%E7%9A%84%E6%80%BB%E7%BA%BF%E5%92%8CSRAM%E7%9A%84%E6%80%BB%E7%BA%BF.png">
+
+<link rel="canonical" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_14day/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>stm32_note_14day | naoemb</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">naoemb</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">65</span></a>
+
+  </li>
+        <li class="menu-item menu-item-笔记">
+
+    <a href="/%E7%AC%94%E8%AE%B0" rel="section"><i class="fa fa-sticky-note fa-fw"></i>笔记</a>
+
+  </li>
+        <li class="menu-item menu-item-c练习题">
+
+    <a href="/C%E7%BB%83%E4%B9%A0%E9%A2%98/" rel="section"><i class="fa fa-code fa-fw"></i>C练习题</a>
+
+  </li>
+        <li class="menu-item menu-item-unix">
+
+    <a href="/UNIX/" rel="section"><i class="fa fa-file-code-o fa-fw"></i>UNIX</a>
+
+  </li>
+        <li class="menu-item menu-item-每天英语">
+
+    <a href="/%E6%AF%8F%E5%A4%A9%E8%8B%B1%E8%AF%AD" rel="section"><i class=" fa-fw"></i>每天英语</a>
+
+  </li>
+        <li class="menu-item menu-item-musiclist">
+
+    <a href="/musiclist/" rel="section"><i class="fa fa-volume-up fa-fw"></i>歌单</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.cf/2023/02/16/embsky/STM32/stm32_14day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          stm32_note_14day
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-12 15:22:21" itemprop="dateModified" datetime="2022-09-12T15:22:21+08:00">2022-09-12</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-1<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="一-温故知新"><a href="#一-温故知新" class="headerlink" title="一.温故知新"></a>一.温故知新</h1><pre><code>    串行的接口
+        分类 : USART/UART、I²C、SPI、I²S、CAN、USB、SDI0、Eth
+        USART/UART驱动起来了-&gt;WiFi模块是USART的接口
+        I²C总线-&gt;使用GPIO模拟I²C的协议-&gt;E²PROM、OLD、SHT30
+    E²PROM
+        电可擦除可编程的只读存储器
+        通过官方手册了解E²PROM
+        1)E²PROM使用的是两线串行的接口(I²C的接口)
+        2)比较常见的是8管脚的封装形式
+        (VCC&lt;接电源&gt; GND&lt;接地&gt; A2 A1 A0&lt;设备地址的输入&gt;)
+        (SDA&lt;数据线&gt; SCL&lt;时钟线&gt; WP&lt;写保护&gt;)
+        3)规格
+        型号	规格	存储大小	页
+        AT24C01	1K	128byte	16page
+        AT24C02	2K	256byte	32page
+        AT24C04	4K	512byte	32page
+        AT24C08	8K	1024byte	64page
+        AT24C16	16K	2048byte	128page
+        4)设备地址
+        所有规格的E²PROM的设备地址高四位是固定的1010
+        后三位设备地址通过A2 A1 A0进行选择
+        最低位是读写标志位
+        5)读写操作
+        两种写操作
+            按字节写和按页写
+            
+        三种读操作
+            当前地址读和随机地址读和顺序读
+</code></pre>
+<h1 id="二-I²C设备之OLED"><a href="#二-I²C设备之OLED" class="headerlink" title="二.I²C设备之OLED"></a>二.I²C设备之OLED</h1><pre><code>    1.OLED的简介
+    OLED叫做有机发光二极管,在嵌入式领域中属于显示类型的设备
+    和LCD(液晶显示屏)显示的方法不同,
+    LCD在显示时需要背光灯,OLED在显示时不需要背光灯
+    显示屏是显示屏,触摸屏是触摸屏,是两个设备
+    如果将来操作的设备既有显示屏也有触摸屏,就要写两份驱动程序
+    一个是显示屏驱动,一个是触摸屏驱动
+    2.屏幕的显示
+    屏幕上是由N多个像素点组成的,所以大家平常所说的屏幕分辨率
+    指的是像素点的个数
+    1024×768
+    1920×1080
+    之所以屏幕可以显示出各种颜色是因为像素点会在显存中占用存储空间
+    像素点会在显存中占用多大的存储空间?
+    和像素点的位色有关(位色可以分为16位色和32位色 )
+    比如说显示设备是16位色,说明一个像素点在显存中占用16位(2byte)
+    比如说显示设备是32位色,说明一个像素点在显存中占用32位(4byte)
+    配色方案
+    常用的显示设备的配色方案(RGB YUV)
+    16位色RGB配色方案	XXXXX YYYYYY ZZZZZ
+            R	G	B
+        0xF800	全红
+        0x07E0	全绿
+        0x001F	全蓝
+        0xFFFF	全白
+        0x0000	全黑
+    32位色RGB配色方案	RRRRRRRR XXXXXXXX YYYYYYYY ZZZZZZZZ
+            保留的	   R	      G	        B
+        0xFF0000	全红
+        0xFF00	全绿
+        0xFF	全蓝
+    3.开发板上的显示屏
+    STM32F103-&gt;OLED屏幕-&gt;0.96寸-&gt;128×64-&gt;I²C接口
+    STM32F407-&gt;LCD屏幕-&gt;2.8寸-&gt;320×240-&gt;FSMC(内存)接口
+    4.从官网找资料
+    OLED屏幕-&gt;亿阳电子
+</code></pre>
+<h1 id="LCD-液晶显示器320-240"><a href="#LCD-液晶显示器320-240" class="headerlink" title="LCD(液晶显示器320 * 240)"></a>LCD(液晶显示器320 * 240)</h1><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><pre><code>    单片机:
+    uart(串口屏)
+        液晶显示器接的是串口,能通过串口把数据发送给LCD,就能够显示
+        例:通过串口把坐标发送过去,再把显示的字符(字的编码)发送过去
+        (一般来说这种屏都是自带字库的)		
+    spi(SPI总线)
+        液晶显示器接的是SPI总线
+    sram(内存接口)
+        LCD连接到了主芯片的内存接口上的,访问LCD就和访问内存一样,
+        通过指针的方式去访问
+
+    SOC : RGB LVDS HDMI VGA MIPI
+
+    我们的stm32开发板的液晶显示用的是sram接口,相当于接到了内存接口上
+    所以我们先看一下内存的访问
+</code></pre>
+<h2 id="内存的访问-通过三总线来访问-lt-01m4的总线和SRAM的总线-gt"><a href="#内存的访问-通过三总线来访问-lt-01m4的总线和SRAM的总线-gt" class="headerlink" title="内存的访问(通过三总线来访问)&lt;01m4的总线和SRAM的总线&gt;"></a>内存的访问(通过三总线来访问)&lt;01m4的总线和SRAM的总线&gt;</h2><p>m4的总线和SRAM的总线<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/01m4%E7%9A%84%E6%80%BB%E7%BA%BF%E5%92%8CSRAM%E7%9A%84%E6%80%BB%E7%BA%BF.png"></p>
+<pre><code>    addr	传输地址
+    --------------
+    --------------
+    --------------
+    --------------
+    data	传输数据
+    --------------
+    --------------
+    ctrl	控制读写时序/片选...
+
+    例:
+    假如执行*(int *)0x4 = 1;
+    三总线的电平信号应该是这样的
+    addr
+    第0位地址线--------------0
+    第1位地址线--------------0
+    第2位地址线--------------1
+    第3位地址线--------------0
+    data
+    第0位数据线--------------1
+    第1位数据线--------------0
+
+    假如执行*(int *)0xC = 3;
+    三总线的电平信号应该是这样的
+    addr
+    第0位地址线--------------0
+    第1位地址线--------------0
+    第2位地址线--------------1
+    第3位地址线--------------1
+    data
+    第0位数据线--------------1
+    第1位数据线--------------1
+
+    看&lt;02LCD电路图&gt;
+</code></pre>
+<p>02LCD电路图<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/02LCD%E7%94%B5%E8%B7%AF%E5%9B%BE.png"></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a><FSMC_A12>简介</h2><pre><code>    因为FSMC_A12这个管脚只区分地址线的第12位所以(1)和(2) | (3)和(4)执行效果一样
+    (1)(*(int *)0x1000) = 2;
+    (2)(*(int *)0x1001) = 2;
+    (3)(*(int *)0x0000) = 2;
+    (4)(*(int *)0x0001) = 2;
+
+    地址线只区分第12位是因为把这一位当作命令来使用,下面我们来区分
+    (1)和(3) | (2)和(4)的区别
+
+    LCD的背部是有一个控制芯片(LCD自带)的,
+    LCD模块上的引脚是连接控制芯片的,
+    控制芯片在控制LCD的显示,
+    我们开发板上使用的LCD控制芯片是9341
+    
+    9341内部有很多寄存器、显存
+    当想要在LCD上画点首先需要指定坐标、横屏显示|竖屏显示...
+    -------------------------------
+    (100, 100)	竖 显示点(红色)
+    9341	寄存器0x1234	存储X轴坐标	
+        *(int *)0x1234 = 100;
+    -------------------------------
+    这些信息都需要在9341中的寄存器里设置
+    我们之前操作GPIO知道,每一个寄存器都有一个地址,为了和我们的地址总线的地址区分,我们管寄存器的地址叫做[命令cmd]
+    当我们将来往寄存器里写数据,我们的LCD是这样规定的
+    1.先把命令写过来
+    2.再把数据写过来
+    ---------------------------------------------------------------
+    例 : 假如寄存器的地址[命令]是0x10,想要给这个寄存器写数据2
+    0x10 &lt;------- 2
+    不管是0x10还是数据2,都是要通过内存接口发送给LCD,走的都是数据线,对于STM32来说&lt;0x10&gt;和&lt;2&gt;都是数据,
+    所以发送时必须要区分开,发送的是命令还是数据(用的就是地址线的第12位来区分)
+    所以需要知道地址线的第12位是高电平表示命令,还是低电平表示命令
+    需要查看&lt;LCD的手册&gt;
+    
+    地址线的第12位为1的时候表示数据
+    地址线的第12位为0的时候表示命令
+    1.先把命令写过来
+    (*(int *)0x0000) = 0x10;
+    2.再把数据写过来
+    (*(int *)0x1000) = 2
+    执行完这两步操作数据2就写到了&lt;0x10&gt;的那个寄存器中了
+    ---------------------------------------------------------------
+
+    对于显存来说也是这样的方式,显存本身就是一段存储空间,内部就会有地址&lt;命令&gt;
+    如果在LCD上画一个点
+    1.首先把显存的&lt;命令&gt;发过去
+    2.再把数据发过去(点的坐标、颜色)
+
+    接下来我们来看看片选
+</code></pre>
+<h2 id="片选"><a href="#片选" class="headerlink" title="片选"></a>片选</h2><p>片选简介<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/04%E7%89%87%E9%80%89%E7%AE%80%E4%BB%8B.png"></p>
+<pre><code>    内存控制器可以支持多个设备(SRAM LCD DM9000...)
+    我们查看&lt;STM32手册&gt;中的FSMC来看看我们的内存控制器,可以支持哪些设备
+
+    &lt;P1191&gt;-------PSRAM(4个存储区域)代表有4个片选
+    &lt;P1192&gt;-------NOR/PSRAM(我们的LCD接的是这块)
+                ---&gt;FSMC_NE[4:1]4个片选
+                ---&gt;FSMC_NBL[1:0]控制访问位宽的
+                (有可能接8位内存或者接16位内存)
+    &lt;P1194&gt;-------NOR/PSRAM
+            4 x 64MB可以接4片内存,每片64MB大小
+            内存的范围是0x6000 0000 - 0x6FFF FFFF
+            每一片内存的地址不会重复,所以
+            0x6000 0000	第一片内存起始地址
+            
+            0x6400 0000	第二片内存起始地址
+            
+            0x6800 0000	第三片内存起始地址
+            
+            0x6C00 0000	第四片内存起始地址
+    -------------------------------
+    31	30	29	28	27	26	25	24
+    0	1	1	0	0	0	X	X
+    0	1	1	0	0	1	X	X
+    0	1	1	0	1	0	X	X
+    0	1	1	0	1	1	X	X
+    -------------------------------
+
+            
+    其实当我们使用第一片内存的空间地址时,自动会让片选1有效(内部译码器已经规定好了)
+    我们通过LCD硬件原理图中得到 &lt;FSMC_NE4&gt;说明我们的LCD使用的是片选4
+    所以我们将来访问LCD就需要访问 0x6C00 0000 - 0x6FFF FFFF这个地址范围
+
+    通过上面一系列的信息(地址线 + 片选)我们知道了
+    往这个地址写的是 0x6C000000 命令
+    往这个地址写的是 0x6C001000 数据
+
+
+    &lt;P1194&gt;表185说的也是片选如果第26和27位
+            00	片选1
+            01	片选2
+            10	片选3
+            11	片选4
+    
+    &lt;P1195&gt;表186说的是访问内存的位宽区别
+        当我们选择8位位宽来访问内存,会把地址线的0~25作为地址
+        如果选择16位的方式来访问，HADDR[25:1]&gt;&gt;1才是真实地址
+        ---------------------------------------------------
+        原理:
+        我们在访问内存时,内存中有很多字节
+        如果按照8位(1字节)来访问内存
+                只看后四位
+        0x1000--------- 0000
+        0x1001--------- 0001
+        0x1002--------- 0010
+        0x1003--------- 0011
+        0x1004--------- 0100
+        0x1005--------- 0101
+        0x1006--------- 0110
+        0x1007--------- 0111
+        上面都是每一个字节的地址,如果按照16位(2字节)来访问就应该是
+                只看后四位
+        0x1000--------- 0000
+        0x1002--------- 0010
+        0x1004--------- 0100
+        0x1006--------- 0110
+        0x1008--------- 1000
+        0x100A--------- 1010
+        以16位方式来访问,最低位肯定是0,所以16位访问方式
+        地址线的[25:1]需要 右移 1位
+        ---------------------------------------------------
+        所以经过上面位宽的选择我们之前分析的
+        往这个地址写的是 0x6C000000 命令
+        往这个地址写的是 0x6C001000 数据
+        有问题
+        写命令的没有问题,但是写数据的有问题
+        当我们选择16位的方式访问LCD时
+        把0x6C001000放到地址线的时候会变成0x6C000800
+        硬件会帮我们把[25：1]右移1位,所以就不符合我们的LCD了
+        所以我们在选择地址的时候应该选择0x6C002000
+        当我们写数据时这个地址右移1位就会变成0x6C001000
+        
+        命令	0x6C000000
+        数据	0x6C002000
+    ------------------------------------------
+    (100, 100)		0x1234
+    1.*(int *)0x6C000000 = 0x1234;
+    2.*(int *)0x6C002000 = 100;
+    
+    把100写到0x1234
+
+    LCD_CMD= 0x1234;
+    LCD_DATA = 100;
+    ------------------------------------------		
+</code></pre>
+<h2 id="LCD显示"><a href="#LCD显示" class="headerlink" title="LCD显示"></a>LCD显示</h2><pre><code>    LCD固件
+    在LCD上画的任何东西,都是一个点一个点画的(点阵)
+
+    颜色	RGB(通过三原色表示)	YUV(通过分量来表示Y亮度 UV色度)
+    我们用的是RGB方式
+    RGB888
+        一个像素点占24位
+        11111111 11111111 11111111	白色
+        最红	 最绿	   最蓝
+    RGB565
+        一个像素点占16位
+        11111 111111 11111		白色
+        红	绿	蓝
+    我们的LCD(9341)用的是RGB565,分辨率是320 * 240
+    显存需要320 * 240 * 2(byte)字节
+</code></pre>
+<p>LCD调节亮度<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/03LCD%E8%B0%83%E8%8A%82%E4%BA%AE%E5%BA%A6.png"><br>lcd扫描<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/05lcd%E6%89%AB%E6%8F%8F.png"><br>开发板俯视图<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/06%E5%BC%80%E5%8F%91%E6%9D%BF%E4%BF%AF%E8%A7%86%E5%9B%BE.PNG"><br>cfont文件中显示A<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/cfont%E6%96%87%E4%BB%B6%E4%B8%AD%E6%98%BE%E7%A4%BAA.png"><br>FSMC的配置<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/FSMC%E7%9A%84%E9%85%8D%E7%BD%AE.png"><br>俯视图<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/%E4%BF%AF%E8%A7%86%E5%9B%BE.png"><br>取字模<br><img src="/images/2022-8-15_STM32/2022-8-15_STM32/note/14day/stm32f407zgt6%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%8A%E7%9A%84LCD/%E5%8F%96%E5%AD%97%E6%A8%A1.png"></p>
+<pre><code>    固件分析	lcd.h
+
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">unsigned</span> <span class="type">char</span> shang[<span class="number">128</span>] = &#123;<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0xFF</span>,<span class="number">0xF0</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0xFF</span>,<span class="number">0xE0</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0xC0</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0xE0</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x71</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0x1C</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0x1F</span>,<span class="number">0x80</span>,<span class="number">0x10</span>,<span class="number">0x01</span>,<span class="number">0x11</span>,<span class="number">0x00</span>,<span class="number">0x1F</span>,<span class="number">0xFF</span>,<span class="number">0x11</span>,<span class="number">0x00</span>,<span class="number">0x1F</span>,<span class="number">0xFF</span>,<span class="number">0x11</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x03</span>,<span class="number">0x21</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x02</span>,<span class="number">0x21</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x22</span>,<span class="number">0x3F</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x42</span>,<span class="number">0x3D</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0xC2</span>,<span class="number">0x10</span>,<span class="number">0x00</span>,<span class="number">0x03</span>,<span class="number">0x82</span>,<span class="number">0x00</span>,<span class="number">0x20</span>,<span class="number">0x07</span>,<span class="number">0x02</span>,<span class="number">0x00</span>,<span class="number">0x30</span>,<span class="number">0x03</span>,<span class="number">0x06</span>,<span class="number">0x00</span>,<span class="number">0x1C</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x06</span>,<span class="number">0x00</span>,<span class="number">0x3C</span>,<span class="number">0x00</span>,<span class="number">0x07</span>,<span class="number">0xFF</span>,<span class="number">0xF8</span>,<span class="number">0x00</span>,<span class="number">0x07</span>,<span class="number">0xFF</span>,<span class="number">0xF0</span>,<span class="number">0x00</span>,<span class="number">0x03</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">unsigned</span> <span class="type">char</span> guan[<span class="number">128</span>] = </span><br><span class="line">&#123;<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x02</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x44</span>,<span class="number">0x04</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x42</span>,<span class="number">0x18</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0xC3</span>,<span class="number">0x30</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x81</span>,<span class="number">0xE0</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x83</span>,<span class="number">0xE0</span>,<span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0xFE</span>,<span class="number">0x70</span>,<span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0xF0</span>,<span class="number">0x3C</span>,<span class="number">0x20</span>,<span class="number">0x00</span>,<span class="number">0xC0</span>,<span class="number">0x00</span>,<span class="number">0x40</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x40</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x80</span>,<span class="number">0x03</span>,<span class="number">0xFF</span>,<span class="number">0xE1</span>,<span class="number">0x80</span>,<span class="number">0x03</span>,<span class="number">0xFF</span>,<span class="number">0x83</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x02</span>,<span class="number">0x00</span>,<span class="number">0x0E</span>,<span class="number">0x00</span>,<span class="number">0x02</span>,<span class="number">0x00</span>,<span class="number">0x3C</span>,<span class="number">0x00</span>,<span class="number">0x02</span>,<span class="number">0x7F</span>,<span class="number">0xF0</span>,<span class="number">0x00</span>,<span class="number">0x04</span>,<span class="number">0x7F</span>,<span class="number">0x1F</span>,<span class="number">0xE0</span>,</span><br><span class="line"><span class="number">0x04</span>,<span class="number">0x00</span>,<span class="number">0x1E</span>,<span class="number">0x70</span>,<span class="number">0x04</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x10</span>,<span class="number">0x06</span>,<span class="number">0x01</span>,<span class="number">0xE0</span>,<span class="number">0x18</span>,<span class="number">0x07</span>,<span class="number">0xFF</span>,<span class="number">0xF0</span>,<span class="number">0x18</span>,</span><br><span class="line"><span class="number">0x03</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x18</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x18</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x18</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x38</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x70</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x03</span>,<span class="number">0xF0</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">move</span><span class="params">(参数)</span></span><br><span class="line">&#123;</span><br><span class="line">	圆心坐标 x ,y</span><br><span class="line">	dir = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">switch</span>(dir)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span> :</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span> :</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span> :</span><br><span class="line">			<span class="keyword">if</span>(y == <span class="number">240</span> - r - <span class="number">1</span>)</span><br><span class="line">				dir = <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(x == <span class="number">320</span> - r - <span class="number">1</span>)</span><br><span class="line">				dir = <span class="number">4</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				dir = <span class="number">3</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span> :</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">switch</span>(dir)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span> : x--, y--; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span> : x++, y--; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span> : x++, y++; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span> : x--, y++; <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	lcd_draw_cir(x, y)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/stm32-note/" rel="tag"># stm32_note</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/STM32/stm32_15day/" rel="prev" title="stm32_note_15day">
+      <i class="fa fa-chevron-left"></i> stm32_note_15day
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/16/embsky/STM32/stm32_13day/" rel="next" title="stm32_note_13day">
+      stm32_note_13day <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E6%B8%A9%E6%95%85%E7%9F%A5%E6%96%B0"><span class="nav-number">1.</span> <span class="nav-text">一.温故知新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-I%C2%B2C%E8%AE%BE%E5%A4%87%E4%B9%8BOLED"><span class="nav-number">2.</span> <span class="nav-text">二.I²C设备之OLED</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LCD-%E6%B6%B2%E6%99%B6%E6%98%BE%E7%A4%BA%E5%99%A8320-240"><span class="nav-number">3.</span> <span class="nav-text">LCD(液晶显示器320 * 240)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">3.1.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%9A%84%E8%AE%BF%E9%97%AE-%E9%80%9A%E8%BF%87%E4%B8%89%E6%80%BB%E7%BA%BF%E6%9D%A5%E8%AE%BF%E9%97%AE-lt-01m4%E7%9A%84%E6%80%BB%E7%BA%BF%E5%92%8CSRAM%E7%9A%84%E6%80%BB%E7%BA%BF-gt"><span class="nav-number">3.2.</span> <span class="nav-text">内存的访问(通过三总线来访问)&lt;01m4的总线和SRAM的总线&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">3.3.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%87%E9%80%89"><span class="nav-number">3.4.</span> <span class="nav-text">片选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LCD%E6%98%BE%E7%A4%BA"><span class="nav-number">3.5.</span> <span class="nav-text">LCD显示</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="naoemb"
+      src="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+  <p class="site-author-name" itemprop="name">naoemb</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hexgio" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hexgio@outlook.com" title="E-Mail → mailto:hexgio@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/hexgio" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;hexgio" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ynblog.cf/" title="关联博客 → https:&#x2F;&#x2F;ynblog.cf" rel="noopener" target="_blank"><i class=" fa-fw"></i>关联博客</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">naoemb</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">355k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:22</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}
+	siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
