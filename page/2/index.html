@@ -501,6 +501,178 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://naoemb.github.io/2023/02/16/embsky/STM32/stm32_15day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="naoemb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="naoemb">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/embsky/STM32/stm32_15day/" class="post-title-link" itemprop="url">stm32_note_15day</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-02 23:30:45" itemprop="dateModified" datetime="2022-09-02T23:30:45+08:00">2022-09-02</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-2<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<pre><code>一.I²C接口设备之SHT30
+    1.SHT30传感器的简介
+    在我们使用的STM32F103开发板上有两个用来采集温湿度的传感器
+    DHT11和SHT30
+    DHT11传感器属于入门级别的传感器(做实验时会经常使用的传感器)
+    SHT30传感器属于工业级传感器(做产品时会经常使用的传感器)
+    2.从官网中查找资料
+        1)测量范围 湿度:0%-100%	温度:-40℃ - 125℃
+        2)误差范围 湿度:±2%		温度:±0.2℃
+        3)通过温度的误差发现
+        SHT30传感器,既可以采集到整数数据,也可以采集到小数数据
+        4)SHT30传感器是I²C的接口
+    3.通过手册了解SHT30
+    打开&lt;STM32RBT6\DataSheet\传感器&gt;目录下&lt;sht30_datasheet.pdf&gt;
+        1)8管脚的封装形式
+        2)SHT30传感器本身是模拟型的传感器,
+            内部自带AD转换,可以自行转换
+        3)两种设备地址
+        ---------------------------------------------
+        手册中的描述
+        如果ADDR管脚接VSS(接地)	使用的是设备地址A	0x44
+        如果ADDR管脚接VDD(接电)	使用的是设备地址B	0x45
+        ---------------------------------------------
+        分析内容
+        设备地址A	0x44	转换成二进制	01000100
+        设备地址B	0x45	转换成二进制	01000101
+        因为I²C总线规定设备地址是7bit的,最低位是读写标志位
+        但是手册中说的设备地址A和设备地址B最低位被占用了
+        所以0x44和0x45并不是最终的设备地址
+        因为0x44和0x45最低位被占用了,
+        用来区分设备地址A和设备地址B的,但是最高位没有被占用
+        需要把设备地址A和设备地址B都左移一位
+        设备地址A	01000100 &lt;&lt; 1 10001000	0x88
+        设备地址B	01000101 &lt;&lt; 1 10001010	0x8A
+        所以最终的设备地址是
+        设备地址A	0x88
+        设备地址B	0x8A
+        ---------------------------------------------
+        上述的内容将来在很多的嵌入式设备中都会碰到,要多留一个心眼!
+        ---------------------------------------------
+        4)经过开发板原理图的分析
+        ADDR管脚连接了GND,所以我们开发板上的SHT30的设备地址是
+        0x88
+        5)设置采样频率
+        需要发送采样的指令	0x2737
+            1&gt;产生开始信号
+            2&gt;发送设备地址 + 写的标志(0x88)
+            3&gt;等待ACK
+            4&gt;发送采样指令的高字节(0x27)
+            5&gt;等待ACK
+            6&gt;发送采样指令的低字节(0x37)
+            7&gt;等待ACK
+            8&gt;产生结束信号
+        6)发送读取数据的指令
+        读取数据的指令	0xE000
+            1&gt;产生开始信号
+            2&gt;发送设备地址 + 写的标志(0x88)
+            3&gt;等待ACK
+            4&gt;发送读取数据指令的高字节(0xE0)
+            5&gt;等待ACK
+            6&gt;发送读取数据指令的低字节(0x00)
+            7&gt;等待ACK
+        7)读取数据
+            1&gt;产生开始信号
+            2&gt;发送设备地址 + 读的标志(0x89)
+            3&gt;等待ACK
+            4&gt;读取温度的高字节数据
+            5&gt;产生ACK
+            6&gt;读取温度的低字节数据
+            7&gt;产生ACK
+            8&gt;读取校验字节
+            9&gt;产生ACK
+            A&gt;读取湿度的高字节数据
+            B&gt;产生ACK
+            C&gt;读取湿度的低字节数据
+            D&gt;产生ACK
+            E&gt;读取检验字节
+            F&gt;不产生ACK
+            G&gt;产生结束信号
+        8)读取出的数据不能直接使用,需要转换
+        需要把温度的高字节和低字节的数据拼成一个2byte的数据
+        需要把湿度的高字节和低字节的数据拼成一个2byte的数据
+        代入公式转换
+        湿度 = 100 * (double)(2byte湿度数据) / 65535;
+        温度 = -45 + 175 * (double)(2byte温度数据) / 65535;
+        9)最终结果的显示
+        可以通过USART1或者OLED显示出来
+==============================
+任务
+1.和同组的同学串一遍手册分析出的内容
+2.搞一个新的项目工程,写SHT30的驱动程序
+==============================
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://naoemb.github.io/2023/02/16/embsky/STM32/stm32_14day/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -846,178 +1018,6 @@
 
 
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">unsigned</span> <span class="type">char</span> shang[<span class="number">128</span>] = &#123;<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0xFF</span>,<span class="number">0xF0</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0xFF</span>,<span class="number">0xE0</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0xC0</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0xE0</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x71</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0x1C</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0x1F</span>,<span class="number">0x80</span>,<span class="number">0x10</span>,<span class="number">0x01</span>,<span class="number">0x11</span>,<span class="number">0x00</span>,<span class="number">0x1F</span>,<span class="number">0xFF</span>,<span class="number">0x11</span>,<span class="number">0x00</span>,<span class="number">0x1F</span>,<span class="number">0xFF</span>,<span class="number">0x11</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x03</span>,<span class="number">0x21</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x02</span>,<span class="number">0x21</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x22</span>,<span class="number">0x3F</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x42</span>,<span class="number">0x3D</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0xC2</span>,<span class="number">0x10</span>,<span class="number">0x00</span>,<span class="number">0x03</span>,<span class="number">0x82</span>,<span class="number">0x00</span>,<span class="number">0x20</span>,<span class="number">0x07</span>,<span class="number">0x02</span>,<span class="number">0x00</span>,<span class="number">0x30</span>,<span class="number">0x03</span>,<span class="number">0x06</span>,<span class="number">0x00</span>,<span class="number">0x1C</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x06</span>,<span class="number">0x00</span>,<span class="number">0x3C</span>,<span class="number">0x00</span>,<span class="number">0x07</span>,<span class="number">0xFF</span>,<span class="number">0xF8</span>,<span class="number">0x00</span>,<span class="number">0x07</span>,<span class="number">0xFF</span>,<span class="number">0xF0</span>,<span class="number">0x00</span>,<span class="number">0x03</span>,<span class="number">0x80</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">unsigned</span> <span class="type">char</span> guan[<span class="number">128</span>] = </span><br><span class="line">&#123;<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x02</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x44</span>,<span class="number">0x04</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x42</span>,<span class="number">0x18</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0xC3</span>,<span class="number">0x30</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x81</span>,<span class="number">0xE0</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x83</span>,<span class="number">0xE0</span>,<span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0xFE</span>,<span class="number">0x70</span>,<span class="number">0x00</span>,<span class="number">0x01</span>,<span class="number">0xF0</span>,<span class="number">0x3C</span>,<span class="number">0x20</span>,<span class="number">0x00</span>,<span class="number">0xC0</span>,<span class="number">0x00</span>,<span class="number">0x40</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x40</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x80</span>,<span class="number">0x03</span>,<span class="number">0xFF</span>,<span class="number">0xE1</span>,<span class="number">0x80</span>,<span class="number">0x03</span>,<span class="number">0xFF</span>,<span class="number">0x83</span>,<span class="number">0x00</span>,</span><br><span class="line"><span class="number">0x02</span>,<span class="number">0x00</span>,<span class="number">0x0E</span>,<span class="number">0x00</span>,<span class="number">0x02</span>,<span class="number">0x00</span>,<span class="number">0x3C</span>,<span class="number">0x00</span>,<span class="number">0x02</span>,<span class="number">0x7F</span>,<span class="number">0xF0</span>,<span class="number">0x00</span>,<span class="number">0x04</span>,<span class="number">0x7F</span>,<span class="number">0x1F</span>,<span class="number">0xE0</span>,</span><br><span class="line"><span class="number">0x04</span>,<span class="number">0x00</span>,<span class="number">0x1E</span>,<span class="number">0x70</span>,<span class="number">0x04</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x10</span>,<span class="number">0x06</span>,<span class="number">0x01</span>,<span class="number">0xE0</span>,<span class="number">0x18</span>,<span class="number">0x07</span>,<span class="number">0xFF</span>,<span class="number">0xF0</span>,<span class="number">0x18</span>,</span><br><span class="line"><span class="number">0x03</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x18</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x18</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x18</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x38</span>,</span><br><span class="line"><span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x70</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x03</span>,<span class="number">0xF0</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">move</span><span class="params">(参数)</span></span><br><span class="line">&#123;</span><br><span class="line">	圆心坐标 x ,y</span><br><span class="line">	dir = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">switch</span>(dir)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span> :</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span> :</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span> :</span><br><span class="line">			<span class="keyword">if</span>(y == <span class="number">240</span> - r - <span class="number">1</span>)</span><br><span class="line">				dir = <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(x == <span class="number">320</span> - r - <span class="number">1</span>)</span><br><span class="line">				dir = <span class="number">4</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				dir = <span class="number">3</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span> :</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">switch</span>(dir)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span> : x--, y--; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span> : x++, y--; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span> : x++, y++; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span> : x--, y++; <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	lcd_draw_cir(x, y)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://naoemb.github.io/2023/02/16/embsky/STM32/stm32_15day/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="naoemb">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="naoemb">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/02/16/embsky/STM32/stm32_15day/" class="post-title-link" itemprop="url">stm32_note_15day</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-02-16 08:03:05" itemprop="dateCreated datePublished" datetime="2023-02-16T08:03:05+08:00">2023-02-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-02 23:30:45" itemprop="dateModified" datetime="2022-09-02T23:30:45+08:00">2022-09-02</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>2022-9-2<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
-<pre><code>一.I²C接口设备之SHT30
-    1.SHT30传感器的简介
-    在我们使用的STM32F103开发板上有两个用来采集温湿度的传感器
-    DHT11和SHT30
-    DHT11传感器属于入门级别的传感器(做实验时会经常使用的传感器)
-    SHT30传感器属于工业级传感器(做产品时会经常使用的传感器)
-    2.从官网中查找资料
-        1)测量范围 湿度:0%-100%	温度:-40℃ - 125℃
-        2)误差范围 湿度:±2%		温度:±0.2℃
-        3)通过温度的误差发现
-        SHT30传感器,既可以采集到整数数据,也可以采集到小数数据
-        4)SHT30传感器是I²C的接口
-    3.通过手册了解SHT30
-    打开&lt;STM32RBT6\DataSheet\传感器&gt;目录下&lt;sht30_datasheet.pdf&gt;
-        1)8管脚的封装形式
-        2)SHT30传感器本身是模拟型的传感器,
-            内部自带AD转换,可以自行转换
-        3)两种设备地址
-        ---------------------------------------------
-        手册中的描述
-        如果ADDR管脚接VSS(接地)	使用的是设备地址A	0x44
-        如果ADDR管脚接VDD(接电)	使用的是设备地址B	0x45
-        ---------------------------------------------
-        分析内容
-        设备地址A	0x44	转换成二进制	01000100
-        设备地址B	0x45	转换成二进制	01000101
-        因为I²C总线规定设备地址是7bit的,最低位是读写标志位
-        但是手册中说的设备地址A和设备地址B最低位被占用了
-        所以0x44和0x45并不是最终的设备地址
-        因为0x44和0x45最低位被占用了,
-        用来区分设备地址A和设备地址B的,但是最高位没有被占用
-        需要把设备地址A和设备地址B都左移一位
-        设备地址A	01000100 &lt;&lt; 1 10001000	0x88
-        设备地址B	01000101 &lt;&lt; 1 10001010	0x8A
-        所以最终的设备地址是
-        设备地址A	0x88
-        设备地址B	0x8A
-        ---------------------------------------------
-        上述的内容将来在很多的嵌入式设备中都会碰到,要多留一个心眼!
-        ---------------------------------------------
-        4)经过开发板原理图的分析
-        ADDR管脚连接了GND,所以我们开发板上的SHT30的设备地址是
-        0x88
-        5)设置采样频率
-        需要发送采样的指令	0x2737
-            1&gt;产生开始信号
-            2&gt;发送设备地址 + 写的标志(0x88)
-            3&gt;等待ACK
-            4&gt;发送采样指令的高字节(0x27)
-            5&gt;等待ACK
-            6&gt;发送采样指令的低字节(0x37)
-            7&gt;等待ACK
-            8&gt;产生结束信号
-        6)发送读取数据的指令
-        读取数据的指令	0xE000
-            1&gt;产生开始信号
-            2&gt;发送设备地址 + 写的标志(0x88)
-            3&gt;等待ACK
-            4&gt;发送读取数据指令的高字节(0xE0)
-            5&gt;等待ACK
-            6&gt;发送读取数据指令的低字节(0x00)
-            7&gt;等待ACK
-        7)读取数据
-            1&gt;产生开始信号
-            2&gt;发送设备地址 + 读的标志(0x89)
-            3&gt;等待ACK
-            4&gt;读取温度的高字节数据
-            5&gt;产生ACK
-            6&gt;读取温度的低字节数据
-            7&gt;产生ACK
-            8&gt;读取校验字节
-            9&gt;产生ACK
-            A&gt;读取湿度的高字节数据
-            B&gt;产生ACK
-            C&gt;读取湿度的低字节数据
-            D&gt;产生ACK
-            E&gt;读取检验字节
-            F&gt;不产生ACK
-            G&gt;产生结束信号
-        8)读取出的数据不能直接使用,需要转换
-        需要把温度的高字节和低字节的数据拼成一个2byte的数据
-        需要把湿度的高字节和低字节的数据拼成一个2byte的数据
-        代入公式转换
-        湿度 = 100 * (double)(2byte湿度数据) / 65535;
-        温度 = -45 + 175 * (double)(2byte温度数据) / 65535;
-        9)最终结果的显示
-        可以通过USART1或者OLED显示出来
-==============================
-任务
-1.和同组的同学串一遍手册分析出的内容
-2.搞一个新的项目工程,写SHT30的驱动程序
-==============================
 </code></pre>
 
       
